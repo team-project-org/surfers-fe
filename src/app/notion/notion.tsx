@@ -4,28 +4,22 @@ import { NotionRenderer } from "react-notion-x";
 import 'react-notion-x/src/styles.css'
 
 interface INotionProps {
-	call: () => any;
+	recordMap: any;
 }
 
 const Notion: React.FunctionComponent<INotionProps> = (props) => {
-	const { call } = props;
-  const [recordMap, setRecordMap] = useState(undefined)
-
-  useEffect(() => {
-    call().then((data: any) => {
-      setRecordMap(data)
-    })
-  }, [])
+	const { recordMap } = props;
   
-
 	return (
 		<div>
-      dawdwa
-			{recordMap && <NotionRenderer
-				disableHeader // notion 헤더 안보이도록
-				recordMap={recordMap}
-				fullPage={true} // 전체 페이지 설정
-			/>}
+      노션 테스트
+			<div style={{ width: '100%', maxWidth: 1000 }}>
+				{recordMap && <NotionRenderer
+					disableHeader // notion 헤더 안보이도록
+					recordMap={recordMap}
+					fullPage={true} // 전체 페이지 설정
+				/>}
+			</div>
 		</div>
 	);
 };
