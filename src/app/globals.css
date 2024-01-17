@@ -6,3 +6,7 @@ body {
   color: white;
   width: 100px;
 }
+
+.notion-page-icon-hero {
+  left: 0 !important;
+}
