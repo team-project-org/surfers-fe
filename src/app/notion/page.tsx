@@ -11,8 +11,6 @@ export default async function Page() {
 }
 
 export async function getData() {
-
   const recordMap = await notion.getPage("65f9c48b5a624405b14e7711570e1ab0");
-
   return recordMap
 }

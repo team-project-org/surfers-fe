@@ -3,9 +3,13 @@ import Document, { Head, Html, Main, NextScript } from 'next/document';
 import type { DocumentContext } from 'next/document';
 
 const SuffersDocument = () => (
-  <Html lang="en">
+  <Html lang="kr">
     <Head />
     <body>
+      dawdada
+      adawdaw
+      dawdawdaw
+      dddad
       <Main />
       <NextScript />
     </body>
