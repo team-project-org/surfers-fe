@@ -19,6 +19,8 @@ interface ICardViewProps {
 	title: string | any;
 	description?: string | any;
 	loading: boolean;
+	children?: any;
+	onClick?: (e: any) => void;
 }
 
 const { Meta } = Card;
@@ -30,9 +32,14 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 		title,
 		description = undefined,
 		loading,
+		children = undefined,
+		onClick = undefined,
 	} = props;
 	return (
-		<div>
+		<div
+			onClick={onClick && ((e) => onClick(e))}
+			style={onClick && { cursor: "pointer" }}
+		>
 			<Card
 				cover={cover && <img alt={cover.alt} src={cover.url} />}
 				loading={avatar === undefined && loading}
@@ -49,6 +56,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 						description={description}
 					/>
 				</Skeleton>
+				{children}
 			</Card>
 		</div>
 	);

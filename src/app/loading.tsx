@@ -1,6 +1,10 @@
-"use client"
-import { Spin } from "antd";
+"use client";
+import { Flex, Spin } from "antd";
 
 export default function Loading() {
-  return <Spin />
+	return (
+		<Flex justify={"center"} align={"center"} style={{ height: 500 }}>
+			<Spin />
+		</Flex>
+	);
 }
