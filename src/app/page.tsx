@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Main from "@/app/main";
 
 export default function Home() {
 	return (
 		<div>
-			홈페이지
+			<Main />
 			<ul>
 				<li>
 					<Link href="/projects">프로젝트</Link>
