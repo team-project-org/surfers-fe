@@ -4,9 +4,9 @@ import { Switch } from "antd";
 import CardView from "@/app/cardview";
 import GridView from "@/app/gridview";
 
-interface IProjectsProps {}
+interface ITalentsProps {}
 
-const Projects: FunctionComponent<IProjectsProps> = (props) => {
+const Talents: FunctionComponent<ITalentsProps> = (props) => {
 	const [loading, setLoading] = useState(false);
 
 	const onChange = (checked: boolean) => {
@@ -26,10 +26,7 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 						<CardView
 							title="스프린터 프로젝트"
 							loading={loading}
-							cover={{
-								alt: "example",
-								url: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-							}}
+							avatar="https://api.dicebear.com/7.x/miniavs/svg?seed=1"
 							description="This is the description"
 						/>
 					);
@@ -39,4 +36,4 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 	);
 };
 
-export default Projects;
+export default Talents;
