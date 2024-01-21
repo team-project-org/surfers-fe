@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 import HeaderLayout from "@/app/headerlayout";
@@ -18,10 +17,8 @@ export default function RootLayout({
 		<html lang="en">
 			<body>
 				<AntdRegistry>
-          <HeaderLayout>
-            {children}
-          </HeaderLayout>
-        </AntdRegistry>
+					<HeaderLayout>{children}</HeaderLayout>
+				</AntdRegistry>
 			</body>
 		</html>
 	);

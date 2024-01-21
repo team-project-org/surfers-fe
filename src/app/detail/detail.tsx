@@ -3,16 +3,16 @@ import React, { useEffect, useState, FunctionComponent } from "react";
 import { NotionRenderer } from "react-notion-x";
 import 'react-notion-x/src/styles.css'
 
-interface INotionProps {
+interface IDetailProps {
 	recordMap: any;
 }
 
-const Notion: FunctionComponent<INotionProps> = (props) => {
+const Detail: FunctionComponent<IDetailProps> = (props) => {
 	const { recordMap } = props;
   
 	return (
 		<div>
-      노션 테스트
+      상세페이지
 			<div style={{ width: '100%', maxWidth: 1000 }}>
 				{recordMap && <NotionRenderer
 					disableHeader // notion 헤더 안보이도록
@@ -24,4 +24,4 @@ const Notion: FunctionComponent<INotionProps> = (props) => {
 	);
 };
 
-export default Notion;
+export default Detail;
