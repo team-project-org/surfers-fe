@@ -25,7 +25,8 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 				{[...Array(16)].map((_, i) => {
 					return (
 						<CardView
-							title="김유빈"
+							key={i}
+							title="강동호"
 							loading={loading}
 							onClick={() => {
 								router.push(`talents/${i}`);

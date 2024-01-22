@@ -25,6 +25,7 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 				{[...Array(16)].map((_, i) => {
 					return (
 						<CardView
+							key={i}
 							title="스프린터 프로젝트"
 							loading={loading}
 							onClick={() => {
