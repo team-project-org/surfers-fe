@@ -1,29 +1,33 @@
 {
-  "name": "sprinter-next",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@ant-design/cssinjs": "^1.18.2",
-    "@ant-design/nextjs-registry": "^1.0.0",
-    "antd": "^5.13.1",
-    "next": "14.0.4",
-    "notion-client": "^6.16.0",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-notion-x": "^6.16.0"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4",
-    "typescript": "^5"
-  }
+	"name": "sprinter-next",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"docker-build": "docker build -t dongho1596/surfers-fe .",
+		"docker-deploy": "docker push dongho1596/surfers-fe",
+		"docker-buildx-deploy": "docker buildx build --push --no-cache --platform linux/arm64/v8,linux/amd64 -t dongho1596/surfers-fe .",
+		"docker-run": "docker run -d -p 80:80 dongho1596/surfers-fe"
+	},
+	"dependencies": {
+		"@ant-design/cssinjs": "^1.18.2",
+		"@ant-design/nextjs-registry": "^1.0.0",
+		"antd": "^5.13.1",
+		"next": "14.0.4",
+		"notion-client": "^6.16.0",
+		"react": "^18",
+		"react-dom": "^18",
+		"react-notion-x": "^6.16.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"eslint": "^8",
+		"eslint-config-next": "14.0.4",
+		"typescript": "^5"
+	}
 }
