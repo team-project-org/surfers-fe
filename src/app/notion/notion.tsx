@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, FunctionComponent } from "react";
+import React, { FunctionComponent } from "react";
 import { NotionRenderer } from "react-notion-x";
 import "react-notion-x/src/styles.css";
 
