@@ -3,7 +3,7 @@ import Main from "@/app/main";
 
 export default function Home() {
 	return (
-		<div>
+		<div className="App">
 			<Main />
 			<ul>
 				<li>
