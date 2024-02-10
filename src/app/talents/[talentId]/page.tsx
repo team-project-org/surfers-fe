@@ -1,25 +1,29 @@
 import Detail from "./detail";
-import { NotionAPI } from "notion-client";
 import "./projectDetail.css";
 import Notion from "@/app/notion";
 import CardView from "@/app/cardview";
 import { Divider } from "antd";
-
-const notion = new NotionAPI();
+import getNotion from "@/server/actions/getNotion";
+import { HydrationBoundary, QueryClient, dehydrate } from "@tanstack/react-query";
 
 export default async function Page({ params }: any) {
 	const { projectId } = params;
-	const recordMap = await getData();
+	const notionId = "65f9c48b5a624405b14e7711570e1ab0";
+	const queryClient = new QueryClient();
+	await queryClient.prefetchQuery({
+		queryKey: ['notion', notionId],
+		queryFn: async () => {
+			const data = await getNotion(notionId)
+			return data
+		}
+	});
 	return (
 		<CardView>
 			<Detail projectId={projectId} />
 			<Divider orientation="left">이력서 상세</Divider>
-			<Notion recordMap={recordMap} />
+			<HydrationBoundary state={dehydrate(queryClient)}>
+				<Notion id={notionId} />
+			</HydrationBoundary>
 		</CardView>
 	);
-}
-
-export async function getData() {
-	const recordMap = await notion.getPage("65f9c48b5a624405b14e7711570e1ab0");
-	return recordMap;
 }

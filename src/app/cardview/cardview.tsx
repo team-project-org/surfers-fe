@@ -32,7 +32,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 	} = props;
 	return (
 		<Card
-			hoverable
+			hoverable={onClick != undefined}
 			onClick={onClick && ((e) => onClick(e))}
 			cover={
 				cover && (
