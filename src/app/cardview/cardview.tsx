@@ -1,7 +1,6 @@
 "use client";
 import React, { FunctionComponent } from "react";
 import { Avatar, Card, Skeleton } from "antd";
-import "./cardview.css";
 
 interface ICoverProps {
 	alt?: string;

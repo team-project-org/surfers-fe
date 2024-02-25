@@ -3,6 +3,8 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 import HeaderLayout from "@/app/headerlayout";
 import Provider from "./utils/Provider";
+import { ConfigProvider } from "antd";
+import { white, primary, header } from "@/app/color";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -19,9 +21,25 @@ export default function RootLayout({
 			<body>
 				<AntdRegistry>
 					<Provider>
-						<HeaderLayout>
-							{children}
-						</HeaderLayout>
+						<ConfigProvider
+							theme={{
+								token: {
+									colorPrimary: primary,
+									borderRadius: 12,
+								},
+								components: {
+									Layout: {
+										headerBg: header,
+									},
+									Menu: {
+										colorBgContainer: header,
+										colorText: white,
+									},
+								},
+							}}
+						>
+							<HeaderLayout>{children}</HeaderLayout>
+						</ConfigProvider>
 					</Provider>
 				</AntdRegistry>
 			</body>

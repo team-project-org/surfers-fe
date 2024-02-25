@@ -68,7 +68,6 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 					Suffers
 				</div>
 				<Menu
-					theme="dark"
 					mode="horizontal"
 					selectedKeys={[pathname]}
 					items={menus}
