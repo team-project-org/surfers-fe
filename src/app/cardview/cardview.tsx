@@ -1,11 +1,6 @@
 "use client";
 import React, { FunctionComponent } from "react";
 import { Avatar, Card, Skeleton } from "antd";
-import {
-	EditOutlined,
-	EllipsisOutlined,
-	SettingOutlined,
-} from "@ant-design/icons";
 import "./cardview.css";
 
 interface ICoverProps {
@@ -36,29 +31,38 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 		onClick = undefined,
 	} = props;
 	return (
-		<div
+		<Card
+			hoverable={onClick != undefined}
 			onClick={onClick && ((e) => onClick(e))}
-			style={onClick && { cursor: "pointer" }}
-		>
-			<Card
-				cover={cover && <img alt={cover.alt} src={cover.url} />}
-				loading={avatar === undefined && loading}
-				className={cover !== undefined ? "ant-card-cover" : undefined}
-			>
-				<Skeleton
-					loading={avatar !== undefined && loading}
-					avatar={avatar !== undefined}
-					active
-				>
-					<Meta
-						avatar={avatar && <Avatar src={avatar} />}
-						title={title}
-						description={description}
+			cover={
+				cover && (
+					<div
+						style={{
+							backgroundImage: `url(${cover.url})`,
+							backgroundPosition: "center",
+							backgroundSize: "contain",
+							borderRadius: "4px 4px 0px 0px",
+							height: 200,
+						}}
 					/>
-				</Skeleton>
-				{children}
-			</Card>
-		</div>
+				)
+			}
+			loading={avatar === undefined && loading}
+			className={cover !== undefined ? "ant-card-cover" : undefined}
+		>
+			<Skeleton
+				loading={avatar !== undefined && loading}
+				avatar={avatar !== undefined}
+				active
+			>
+				<Meta
+					avatar={avatar && <Avatar src={avatar} />}
+					title={title}
+					description={description}
+				/>
+			</Skeleton>
+			{children}
+		</Card>
 	);
 };
 
