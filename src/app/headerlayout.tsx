@@ -54,7 +54,16 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 
 	return (
 		<Layout>
-			<Header style={{ display: "flex", alignItems: "center" }}>
+			<Header
+				style={{
+					display: "flex",
+					alignItems: "center",
+					position: "sticky",
+					top: 0,
+					zIndex: 100,
+					width: "100%",
+				}}
+			>
 				<div className="demo-logo" onClick={() => router.push("/")}>
 					Suffers
 				</div>
@@ -74,7 +83,7 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 			</Header>
 			<Content style={{ padding: "16px" }}>
 				<Flex justify={"center"} align={"flex-start"}>
-					{children}
+					<div style={{ maxWidth: 1200 }}>{children}</div>
 				</Flex>
 			</Content>
 		</Layout>
