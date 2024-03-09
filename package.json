@@ -20,6 +20,7 @@
 		"antd": "^5.13.1",
 		"next": "14.0.4",
 		"notion-client": "^6.16.0",
+		"pocketbase": "^0.21.1",
 		"react": "^18",
 		"react-dom": "^18",
 		"react-notion-x": "^6.16.0",
