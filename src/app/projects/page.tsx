@@ -4,14 +4,14 @@ import {
 	HydrationBoundary,
 	QueryClient,
 } from "@tanstack/react-query";
-import getProject from "@/server/actions/getProject";
+import getProject from "@/server/actions/getProjectList";
 
 export default async function Page() {
 	const queryClient = new QueryClient();
 	await queryClient.prefetchQuery({
-		queryKey: ["project", 1, 20],
+		queryKey: ["project", 1, 24],
 		queryFn: async () => {
-			const data = await getProject(1, 20);
+			const data = await getProject(1);
 			return data;
 		},
 	});

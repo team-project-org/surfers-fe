@@ -1,18 +1,19 @@
 "use client";
 import React, { FunctionComponent, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Switch } from "antd";
+import { Flex, Pagination, Switch } from "antd";
 import CardView from "@/app/cardview";
 import GridView from "@/app/gridview";
 import { useRouter } from "next/navigation";
-import getProject from "@/server/actions/getProject";
-import Loading from "../loading";
+import Loading from "@/app/loading";
+import getProjectList from "@/server/actions/getProjectList";
 
 interface IProjectsProps {}
 
 const Projects: FunctionComponent<IProjectsProps> = (props) => {
 	const [loading, setLoading] = useState(false);
 	const router = useRouter();
+	const [page, setPage] = useState(1);
 	const onChange = (checked: boolean) => {
 		setLoading(!checked);
 	};
@@ -24,9 +25,9 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 		isFetching,
 		isFetchedAfterMount,
 	} = useQuery({
-		queryKey: ["project", 1, 20],
+		queryKey: ["project", page, 24],
 		queryFn: async () => {
-			const data = await getProject(1, 20);
+			const data = await getProjectList(1);
 			return data;
 		},
 	});
@@ -49,7 +50,8 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 	}
 
 	console.log("data", data);
-	const { items = [] }: { items: any } = data as any;
+	const { items = [], totalPages }: { items: any; totalPages: number } =
+		data as any;
 
 	return (
 		<div>
@@ -59,23 +61,6 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 				style={{ marginBottom: 16 }}
 			/>
 			<GridView>
-				{/* {[...Array(16)].map((_, i) => {
-					return (
-						<CardView
-							key={i}
-							title="스프린터 프로젝트"
-							loading={loading}
-							onClick={() => {
-								router.push(`projects/${i}`);
-							}}
-							cover={{
-								alt: "example",
-								url: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
-							}}
-							description="This is the description"
-						/>
-					);
-				})} */}
 				{items.map((item: any) => {
 					const {
 						collectionId,
@@ -105,6 +90,13 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 					);
 				})}
 			</GridView>
+			<Flex justify={"center"} align={"flex-start"} style={{ paddingTop: 20 }}>
+				<Pagination
+					defaultCurrent={page}
+					onChange={setPage}
+					total={totalPages}
+				/>
+			</Flex>
 		</div>
 	);
 };
