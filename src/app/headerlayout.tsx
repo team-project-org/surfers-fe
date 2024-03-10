@@ -82,7 +82,7 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 			</Header>
 			<Content style={{ padding: "16px" }}>
 				<Flex justify={"center"} align={"flex-start"}>
-					<div style={{ maxWidth: 1200 }}>{children}</div>
+					<div style={{ maxWidth: 1200, width: "100%" }}>{children}</div>
 				</Flex>
 			</Content>
 		</Layout>
