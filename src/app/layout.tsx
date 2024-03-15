@@ -4,7 +4,7 @@ import "./globals.css";
 import HeaderLayout from "@/app/headerlayout";
 import Provider from "./utils/Provider";
 import { ConfigProvider } from "antd";
-import { white, primary, header } from "@/app/color";
+import { white, primary, black } from "@/app/color";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -26,14 +26,15 @@ export default function RootLayout({
 								token: {
 									colorPrimary: primary,
 									borderRadius: 12,
+									colorText: black
 								},
 								components: {
 									Layout: {
-										headerBg: header,
+										headerBg: white,
 									},
 									Menu: {
-										colorBgContainer: header,
-										colorText: white,
+										colorBgContainer: white,
+										// colorText: white,
 									},
 								},
 							}}

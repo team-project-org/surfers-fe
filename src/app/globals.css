@@ -3,8 +3,11 @@ body {
 }
 
 .demo-logo {
-	color: white;
-	width: 100px;
+	width: 200px;
+	height: 64px;
+	background-image: url('/logo.png');
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .notion-page-icon-hero {

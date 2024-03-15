@@ -4,6 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import type { MenuProps } from "antd";
 import { Button, Flex, Layout, Menu } from "antd";
 import { pageRouter } from "@/router";
+import logo from "@/image/logo.png"
 
 const menus: MenuProps["items"] = pageRouter.map(({ path, title }) => ({
 	key: path,
@@ -17,7 +18,6 @@ interface IHeaderProps {
 const { Header, Content } = Layout;
 
 const getHeaderAction = (pathname: string) => {
-	let url = undefined;
 	switch (pathname) {
 		case "/projects":
 			return (
@@ -65,7 +65,7 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 				}}
 			>
 				<div className="demo-logo" onClick={() => router.push("/")}>
-					Suffers
+					{/* <img src={"./logo.png"} alt="BigCo Inc. logo"/> */}
 				</div>
 				<Menu
 					mode="horizontal"
