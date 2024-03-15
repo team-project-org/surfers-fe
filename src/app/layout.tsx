@@ -31,10 +31,14 @@ export default function RootLayout({
 								components: {
 									Layout: {
 										headerBg: white,
+										headerHeight: 70,
+										bodyBg: white
 									},
 									Menu: {
 										colorBgContainer: white,
-										// colorText: white,
+										colorPrimary: black,
+										activeBarHeight: 5,
+										itemPaddingInline: 30,
 									},
 								},
 							}}

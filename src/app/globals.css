@@ -2,7 +2,7 @@ body {
 	margin: 0px;
 }
 
-.demo-logo {
+.logo {
 	width: 200px;
 	height: 64px;
 	background-image: url('/logo.png');
