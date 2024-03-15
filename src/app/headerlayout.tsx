@@ -22,7 +22,7 @@ const getHeaderAction = (pathname: string) => {
 			return (
 				<Button
 					type="primary"
-					shape="round"
+					size="large"
 					href="https://forms.gle/eRBXKorxwi1SQ9fz5"
 					target="_blank"
 				>
@@ -33,7 +33,7 @@ const getHeaderAction = (pathname: string) => {
 			return (
 				<Button
 					type="primary"
-					shape="round"
+					size="large"
 					href="https://forms.gle/eRBXKorxwi1SQ9fz5"
 					target="_blank"
 				>

@@ -4,7 +4,7 @@ body {
 
 .logo {
 	width: 200px;
-	height: 64px;
+	height: 70px;
 	background-image: url('/logo.png');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -12,4 +12,31 @@ body {
 
 .notion-page-icon-hero {
 	left: 62px !important;
+}
+
+.ant-menu-horizontal {
+	border-bottom: none !important;
+  transition: none !important;
+}
+
+.ant-menu-item {
+	font-size: 20px;
+}
+
+.ant-menu-item-selected {
+	font-weight: bold;
+}
+
+.ant-menu-item-selected::after {
+	height: 5px;
+	background-color: black;
+	border: none;
+	border-radius: 10px;
+}
+
+.ant-menu-item:hover::after {
+	height: 5px;
+	background-color: black;
+	border: none;
+	border-radius: 10px;
 }
