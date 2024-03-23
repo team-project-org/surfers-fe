@@ -60,7 +60,7 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 				onChange={onChange}
 				style={{ marginBottom: 16 }}
 			/>
-			<GridView>
+			<GridView glutter={[{ xs: 8, sm: 16, md: 24, lg: 24 }, { xs: 8, sm: 16, md: 24, lg: 24 }]}>
 				{items.map((item: any) => {
 					const {
 						collectionId,
@@ -83,7 +83,8 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 								router.push(`projects/${id}`);
 							}}
 							cover={{
-								url: image,
+								// url: image,
+								url: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
 							}}
 							description={email}
 						/>
