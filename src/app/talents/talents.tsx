@@ -1,6 +1,6 @@
 "use client";
 import React, { FunctionComponent, useState } from "react";
-import { Flex, Pagination, Switch } from "antd";
+import { Flex, Pagination, Segmented, Switch } from "antd";
 import CardView from "@/app/cardview";
 import GridView from "@/app/gridview";
 import { useRouter } from "next/navigation";
@@ -55,11 +55,14 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 
 	return (
 		<div>
-			<Switch
-				checked={!loading}
-				onChange={onChange}
-				style={{ marginBottom: 16 }}
-			/>
+			<Flex justify={"start"} align={"center"} style={{ width: "100%", paddingBottom: 10 }}>
+				<Segmented
+					options={["디자이너", "개발자", "기타 직군"]}
+					onChange={(value) => {
+						console.log(value); // string
+					}}
+				/>
+			</Flex>
 			<GridView>
 				{items.map((item: any) => {
 					const { collectionId, id, email, name, job, profileImageUrl } = item;

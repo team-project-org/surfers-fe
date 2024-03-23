@@ -29,7 +29,7 @@ const GridView: FunctionComponent<Partial<IGridViewProps>> = (props) => {
 					{ xs: 8, sm: 16, md: 24, lg: 32 },
 					{ xs: 8, sm: 16, md: 24, lg: 32 },
 				]}
-				justify="center"
+				justify="start"
 				align="top"
 			>
 				{children?.map((v, i) => {

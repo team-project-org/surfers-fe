@@ -4,7 +4,7 @@ import "./globals.css";
 import HeaderLayout from "@/app/headerlayout";
 import Provider from "./utils/Provider";
 import { ConfigProvider } from "antd";
-import { transparent, primary, black } from "@/app/color";
+import { transparent, primary, black, white } from "@/app/color";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -44,6 +44,25 @@ export default function RootLayout({
 									},
 									Button: {
 										borderRadiusLG: 12
+									},
+									Segmented: {
+										// itemColor: 
+										itemColor: black,
+										itemActiveBg: primary,
+										itemHoverColor: white,
+										itemSelectedColor: white,
+										controlItemBgActive: primary,
+										trackBg: 'white',
+										controlItemBgHover: 'white',
+										colorBgLayout: primary,
+										colorBgBase: primary,
+										colorBgContainer: primary,
+										itemHoverBg: primary,
+										itemSelectedBg: primary,
+										borderRadius: 20,
+										// itemColor: white,
+										// colorText: white,
+										// colorTextLabel: white
 									}
 								},
 							}}
