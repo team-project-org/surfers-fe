@@ -40,3 +40,13 @@ body {
 	border: none;
 	border-radius: 10px;
 }
+
+.blur {
+	filter: blur(1px);
+	-webkit-filter: blur(1px);
+}
+
+.blur:hover {
+	filter: none;
+	-webkit-filter: none;
+}

@@ -1,12 +1,12 @@
 "use client";
 import React, { FunctionComponent, useState } from "react";
 import { Flex, Pagination, Segmented, Switch } from "antd";
-import CardView from "@/app/cardview";
 import GridView from "@/app/gridview";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "@/app/loading";
 import getTalentList from "@/server/actions/getTalentList";
+import TalentCardView from "@/app/talentCardView";
 
 interface ITalentsProps {}
 
@@ -67,14 +67,17 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 				{items.map((item: any) => {
 					const { collectionId, id, email, name, job, profileImageUrl } = item;
 					return (
-						<CardView
+						<TalentCardView
 							key={id}
 							title={name}
+							cover={{
+								url: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+							}}
 							loading={loading}
 							onClick={() => {
 								router.push(`talents/${id}`);
 							}}
-							avatar="https://api.dicebear.com/7.x/miniavs/svg?seed=1"
+							// avatar="https://api.dicebear.com/7.x/miniavs/svg?seed=1"
 							description={email}
 						/>
 					);
