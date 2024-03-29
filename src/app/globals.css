@@ -2,10 +2,33 @@ body {
 	margin: 0px;
 }
 
+.space {
+	background-color: black;
+}
+
+.stars {
+	background-image: url("/stars.png");
+	background-position: center;
+	background-size: contain;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
 .logo {
 	width: 200px;
 	height: 70px;
-	background-image: url('/logo.png');
+	background-image: url("/logo.png");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.white_logo {
+	width: 200px;
+	height: 70px;
+	background-image: url("/sprinter_logo_white.png");
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -16,7 +39,7 @@ body {
 
 .ant-menu-horizontal {
 	border-bottom: none !important;
-  transition: none !important;
+	transition: none !important;
 }
 
 .ant-menu-item {

@@ -1,12 +1,13 @@
 "use client";
 import React, { FunctionComponent } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import type { MenuProps } from "antd";
 import { Button, Flex, Layout, Menu } from "antd";
 import { pageRouter } from "@/router";
 
 const menus: MenuProps["items"] = pageRouter.map(({ path, title }) => ({
-	key: path,
+	key: path.split("&")[0],
+	path: path,
 	label: title,
 }));
 
@@ -25,7 +26,7 @@ const getHeaderAction = (pathname: string) => {
 					size="large"
 					href="https://forms.gle/eRBXKorxwi1SQ9fz5"
 					target="_blank"
-					style={{ fontWeight: 'bold' }}
+					style={{ fontWeight: "bold" }}
 				>
 					프로젝트 등록
 				</Button>
@@ -37,7 +38,7 @@ const getHeaderAction = (pathname: string) => {
 					size="large"
 					href="https://forms.gle/eRBXKorxwi1SQ9fz5"
 					target="_blank"
-					style={{ fontWeight: 'bold' }}
+					style={{ fontWeight: "bold" }}
 				>
 					인재풀 등록
 				</Button>
@@ -50,6 +51,8 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 	const { children } = props;
 	const router = useRouter();
 	const pathname = usePathname();
+	const searchParams = useSearchParams();
+	const token = searchParams.get("token");
 
 	const headerAction = getHeaderAction(pathname);
 
@@ -63,7 +66,8 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 						position: "sticky",
 						top: 0,
 						zIndex: 100,
-						width: 1200,
+						maxWidth: 1200,
+						width: "100%",
 						paddingLeft: 16,
 						paddingRight: 16,
 					}}
@@ -71,7 +75,7 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 					<div className="logo" onClick={() => router.push("/")} />
 					<Menu
 						mode="horizontal"
-						selectedKeys={[pathname]}
+						selectedKeys={[`${pathname}?token=${token}`]}
 						items={menus}
 						onClick={({ key }) => {
 							router.push(key);
