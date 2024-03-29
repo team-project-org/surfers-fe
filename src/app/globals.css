@@ -26,7 +26,7 @@ body {
 }
 
 .white_logo { 
-    width: 100px; /* 로고 크기 조정 */
+    width: 90px; /* 로고 크기 조정 */
     height: auto; /* 높이를 너비에 맞게 자동으로 조절 */
 	background-position: center;
 	background-repeat: no-repeat;
