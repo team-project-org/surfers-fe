@@ -54,7 +54,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										height: 'auto', // 이미지의 높이를 자동으로 조정하여 비율을 유지
 									}}
 								/> 
-								<Typography.Title level={1} style={{ fontFamily: 'PyeongChangPeace', color: 'white', fontSize: '60px', lineHeight: '150%' , marginTop: '-5px' }}>
+								<Typography.Title level={1} style={{ fontFamily: 'PyeongChangPeace', color: 'white', fontSize: '60px', lineHeight: '150%' , marginTop: '-3px' }}>
 									사이드 프로젝트를<br />
 									시작하는 가장 쉽고 빠른 방법
 								</Typography.Title>
@@ -67,7 +67,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											left: '50%',
 											top: 'calc(50% + 60px)',
 											zIndex: '-1',
-											maxWidth: '102%', // 이미지의 최대 너비를 부모 요소의 너비에 맞게 설정하여 비율을 유지
+											maxWidth: '103%', // 이미지의 최대 너비를 부모 요소의 너비에 맞게 설정하여 비율을 유지
 											height: 'auto', // 이미지의 높이를 자동으로 조정하여 비율을 유지
 							
 									// position: 'absolute',
@@ -80,7 +80,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								}} />
 							</div>
 
-							<Footer style={{ textAlign: "center", marginTop: "85px" }}>
+							<Footer style={{ textAlign: "center", marginTop: "88px" }}>
 								<div style={{
 									margin: '20px auto', // 버튼을 수평 가운데 정렬
 									width: 'fit-content', // 컨텐츠 크기에 맞게 버튼 너비 조정
@@ -90,7 +90,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										alignItems: 'center', // 수직 정렬 설정
 										backgroundColor: '#0012FA', // 버튼 배경색
 										color: 'white', // 버튼 텍스트 색상
-										padding: '15px 28px', // 내부 여백
+										padding: '13px 28px', // 내부 여백
 										borderRadius: '50px', // 모서리를 둥글게 만듦
 										textDecoration: 'none', // 밑줄 제거
 										fontSize: '21px', // 텍스트 크기
