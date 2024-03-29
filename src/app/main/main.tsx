@@ -16,13 +16,14 @@ import "../fonts/font.css";
 5.버튼 제작 및 버튼 내용 구성과 아이콘 삽입 => 완료 
 6.버튼내 링크 연결 => 완료 
 7.캐릭터, 아이콘, 링 배치 => 완료
+8.
 
 */
 
 const { Title, Text, Link } = Typography;
 const { Content, Footer } = Layout;
 
-interface IMainProps {}
+interface IMainProps { }
 
 const Main: FunctionComponent<IMainProps> = (props) => {
 	const {
@@ -45,42 +46,45 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								textAlign: "center",
 							}}
 						>
-							<div style={{ position: 'relative' , top:'40px' }}>
+							<div style={{ position: 'relative', top: '40px' }}>
 								<img
-									src="../character.png"  // 이미지 경로를 적절히 변경해야 합니다.
+									src="../character.png"  
 									alt="character"
 									style={{
 										maxWidth: '35%', // 이미지의 최대 너비를 부모 요소의 너비에 맞게 설정하여 비율을 유지
 										height: 'auto', // 이미지의 높이를 자동으로 조정하여 비율을 유지
 									}}
-								/> 
-								<Typography.Title level={1} style={{ fontFamily: 'PyeongChangPeace', color: 'white', fontSize: '60px', lineHeight: '150%' , marginTop: '-3px' }}>
+								/>
+								<Typography.Title level={1} style={{ fontFamily: 'PyeongChangPeace', color: 'white', fontSize: '60px', lineHeight: '150%', marginTop: '-3px' }}>
 									사이드 프로젝트를<br />
 									시작하는 가장 쉽고 빠른 방법
+									<img
+									src="../sticker.png"  
+									alt="sticker"
+									style={{
+										position: 'absolute',
+										top: 110,
+										left: 854,
+										maxWidth: '10%', // 이미지의 최대 너비를 부모 요소의 너비에 맞게 설정하여 비율을 유지
+										height: 'auto', // 이미지의 높이를 자동으로 조정하여 비율을 유지
+									}}
+								/>
 								</Typography.Title>
-								<Typography.Text style={{ fontFamily: 'Pretendard-Light', fontSize: '18px', color: 'white' }}>
+								<Typography.Text style={{ fontFamily: 'Pretendard-Regular', fontSize: '18px', color: 'white' }}>
 									개발자, 디자이너, 기획자 등 IT 업계 검증 가능한 다양한 팀원들을 만나보세요.
 								</Typography.Text>
 								<img src="../ring.png" alt="ring" style={{
-											position: 'absolute',
-											transform: 'translate(-50%, -50%)',
-											left: '50%',
-											top: 'calc(50% + 60px)',
-											zIndex: '-1',
-											maxWidth: '103%', // 이미지의 최대 너비를 부모 요소의 너비에 맞게 설정하여 비율을 유지
-											height: 'auto', // 이미지의 높이를 자동으로 조정하여 비율을 유지
-							
-									// position: 'absolute',
-									// top: 'calc(50% + 75px)',  // 이미지를 위로 이동하여 중앙으로 정렬될 수 있도록 수정
-									// left: '48%',
-									// transform: 'translate(-50%, -50%)', // 이미지 중앙 정렬을 위해 수정
-									// width: '1227.74px', 
-									// height: '817.02px',
-									// zIndex: '-1'
+									position: 'absolute',
+									transform: 'translate(-50%, -49%)',
+									left: '50%',
+									top: 'calc(50% + 60px)',
+									zIndex: '-1',
+									maxWidth: '104%', // 이미지의 최대 너비를 부모 요소의 너비에 맞게 설정하여 비율을 유지
+									height: 'auto', // 이미지의 높이를 자동으로 조정하여 비율을 유지
 								}} />
 							</div>
 
-							<Footer style={{ textAlign: "center", marginTop: "88px" }}>
+							<Footer style={{ textAlign: "center", marginTop: "100px" }}>
 								<div style={{
 									margin: '20px auto', // 버튼을 수평 가운데 정렬
 									width: 'fit-content', // 컨텐츠 크기에 맞게 버튼 너비 조정
@@ -102,9 +106,9 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								</div>
 							</Footer>
 						</div>
-						
 
-						
+
+
 
 						<ResponseCarousel
 							items={[
