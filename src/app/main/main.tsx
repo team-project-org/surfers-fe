@@ -4,6 +4,21 @@ import { Layout, theme, Typography, Space } from "antd";
 import ResponseCarousel from "./responseCarousel";
 import MainHeader from "@/app/mainheader";
 
+
+/*
+
+[feat] info-main-contents-and-button by ricksclone
+
+1.로고 화질 개선 => mainheader에 화질 개선된 img 파일로 넣고 globals.css 크기 조정해서 완료
+2.폰트 설치 및 css 파일 구성 => 
+3.메인 문구 작성 및 배치
+4.서브 문구 작성 및 배치
+5.버튼 제작 및 버튼 내용 구성과 아이콘 삽입
+6.버튼내 링크 연결 - 새창 열림으로  
+
+
+*/
+
 const { Title, Text, Link } = Typography;
 const { Content, Footer } = Layout;
 
