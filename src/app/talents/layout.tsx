@@ -37,6 +37,7 @@ export default function RootLayout({
 						Menu: {
 							colorBgContainer: transparent,
 							colorPrimary: black,
+							colorText: black,
 							activeBarHeight: 5,
 							itemPaddingInline: 30,
 						},

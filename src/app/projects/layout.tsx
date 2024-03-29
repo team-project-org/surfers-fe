@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { AntdRegistry } from "@ant-design/nextjs-registry";
 import HeaderLayout from "@/app/headerlayout";
 import { ConfigProvider } from "antd";
 import { transparent, primary, black, white } from "@/app/color";
@@ -37,6 +36,7 @@ export default function RootLayout({
 						Menu: {
 							colorBgContainer: transparent,
 							colorPrimary: black,
+							colorText: black,
 							activeBarHeight: 5,
 							itemPaddingInline: 30,
 						},

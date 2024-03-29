@@ -2,6 +2,21 @@ body {
 	margin: 0px;
 }
 
+.space {
+	background-color: black;
+}
+
+.stars {
+	background-image: url("/stars.png");
+	background-position: center;
+	background-size: contain;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+
 .logo {
 	width: 200px;
 	height: 70px;

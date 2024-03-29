@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
-import HeaderLayout from "@/app/headerlayout";
 import Provider from "./utils/Provider";
 import { ConfigProvider } from "antd";
 import { transparent, primary, black, white } from "@/app/color";
-import { usePathname } from "next/navigation";
-import TokenChecker from "@/app/utils/TokenChekcker";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -38,7 +35,9 @@ export default function RootLayout({
 										headerHeight: 70,
 										headerPadding: 10,
 										paddingContentHorizontal: 100,
-										bodyBg: black,
+										bodyBg: transparent,
+										colorText: white,
+										footerBg: transparent,
 									},
 									Menu: {
 										colorBgContainer: transparent,

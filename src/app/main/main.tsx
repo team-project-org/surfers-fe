@@ -22,8 +22,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 						style={{
 							padding: 24,
 							textAlign: "center",
-							background: colorBgContainer,
-							borderRadius: borderRadiusLG,
+							// background: colorBgContainer,
+							// borderRadius: borderRadiusLG,
 						}}
 					>
 						<ResponseCarousel
@@ -68,8 +68,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					<div
 						style={{
 							padding: 24,
-							background: colorBgContainer,
-							borderRadius: borderRadiusLG,
+							// background: colorBgContainer,
+							// borderRadius: borderRadiusLG,
 						}}
 					>
 						<Space direction="vertical">
