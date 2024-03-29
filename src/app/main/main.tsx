@@ -70,7 +70,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									}}
 								/>
 								</Typography.Title>
-								<Typography.Text style={{ fontFamily: 'Pretendard-Regular', fontSize: '18px', color: 'white' }}>
+								<Typography.Text style={{ fontFamily: 'Pretendard-Regular', fontSize: '17px', color: 'white' }}>
 									개발자, 디자이너, 기획자 등 IT 업계 검증 가능한 다양한 팀원들을 만나보세요.
 								</Typography.Text>
 								<img src="../ring.png" alt="ring" style={{
@@ -106,6 +106,39 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								</div>
 							</Footer>
 						</div>
+
+						<div style={{ position: 'relative' }}>
+							<img src="../mainimage2.png" alt="mainimage2" style={{
+								maxWidth: '73%', // 이미지의 최대 너비를 부모 요소의 너비에 맞게 설정하여 비율을 유지
+								height: 'auto', // 이미지의 높이를 자동으로 조정하여 비율을 유지
+								marginTop: '40px',
+								zIndex: '-2'
+							}} />
+							<Typography.Text style={{
+								position: 'absolute',
+								fontFamily: 'Pretendard-SemiBold',
+								fontSize: '26px',
+								color: 'white',
+								bottom: '120px', // 이미지 아래쪽에 텍스트 배치
+								left: '50%', // 이미지 가로 중앙에 텍스트 배치
+								transform: 'translate(-50%, -50%)', // 텍스트를 정확히 가운데로 이동시킴
+							}}>
+								IT 업계 협업 풀 스프린터
+							</Typography.Text>
+							<Typography.Text style={{
+								position: 'absolute',
+								fontFamily: 'Pretendard-Regular',
+								fontSize: '16px',
+								color: 'white',
+								top: '750px', // 이미지 아래쪽에 텍스트 배치
+								left: '50%', // 이미지 가로 중앙에 텍스트 배치
+								transform: 'translate(-50%, -50%)', // 텍스트를 정확히 가운데로 이동시킴
+							}}>
+								<br />사이드프로젝트 진행에서 가장 긴 시간이 걸리는 팀 모집 과정을<br />
+								가장 간편하게 진행할 수 있는 IT 업계 협업 풀 스프린터 베타서비스를 오픈했어요.
+							</Typography.Text>
+						</div>
+
 
 
 
