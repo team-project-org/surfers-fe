@@ -8,7 +8,23 @@
       url("./Pretendard-Light.otf") format("opentype"),
       url("./Pretendard-Light.woff") format("woff"),
       url("./Pretendard-Regular.woff") format("woff"),
+      url("./Pretendard-Medium.otf") format("opentype"),
+      url("./Pretendard-Medium.woff") format("woff"),
       url("./Pretendard-Regular.otf") format("opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  
+  @font-face {
+    font-family: "PyeongChangPeace";
+    font-display: fallback;
+  
+    src:
+      url("./PyeongChangPeace-Bold.otf") format("opentype"),
+      url("./PyeongChangPeace-Light.otf") format("opentype");
   
     /* 사용할 폰트의 기본 스타일 */
     font-weight: 200;
