@@ -46,7 +46,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								textAlign: "center",
 							}}
 						>
-							{/* 첫번째 메인 설명글 및 이미지와 CTA 버튼 구현  */}
+							{/* 첫번째 메인 설명글 및 이미지와 CTA 버튼 작업  */}
 
 							<div style={{ position: 'relative', top: '40px' }}>
 								<img
@@ -148,7 +148,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 				</Content>
 
 
-				{/* 세번째 메인 설명글과 동영상 첨부 화면  */}
+				{/* 세번째 메인 설명글과 동영상 첨부 작업 => 동영상 후 순위 */}
 
 				<Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
 					<div
@@ -198,39 +198,25 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								팀원 구인 게시글 작성 및 개별 프로필 컨택 기능을 사용할 수 있어요.
 							</p>
 						</div>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-
 					</div>
 				</Content>
 
 
-				<Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+
+				{/* 네번째 메인 설명글 작업  */}
+				<Content style={{ padding: 0, overflow: "hidden", marginTop: '240px' }}>
 					<div
 						style={{
-							padding: 24,
+							backgroundColor: "#0012FA",
+							height: 800,
+							borderRadius: 0,
+							width: "100vw", // 화면 전체 너비로 설정
+							position: "relative", // 부모 요소 설정
+							left: "50%", // 가운데 정렬을 위해 왼쪽으로 50% 이동
+							transform: "translateX(-50%)", // 왼쪽으로 이동한 거리의 반대 방향으로 다시 이동하여 가운데 정렬
 						}}
 					>
-
-
-
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-						<p>long content</p>
-
+						{/* 도형 내용 */}
 					</div>
 				</Content>
 
