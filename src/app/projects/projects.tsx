@@ -60,8 +60,17 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 				onChange={onChange}
 				style={{ marginBottom: 16 }}
 			/>
-			<GridView glutter={[{ xs: 8, sm: 16, md: 24, lg: 24 }, { xs: 8, sm: 16, md: 24, lg: 24 }]}>
-				{items.map((item: any) => {
+			<GridView
+				glutter={[
+					{ xs: 8, sm: 16, md: 24, lg: 24 },
+					{ xs: 8, sm: 16, md: 24, lg: 24 },
+				]}
+				xs={24}
+				sm={12}
+				md={8}
+				lg={8}
+			>
+				{[...items, {}, {}, {}, {}, {}, {}].map((item: any) => {
 					const {
 						collectionId,
 						id,
@@ -84,7 +93,7 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 							}}
 							cover={{
 								// url: image,
-								url: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+								url: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png",
 							}}
 							description={email}
 						/>
