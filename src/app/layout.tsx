@@ -31,7 +31,7 @@ export default function RootLayout({
 								},
 								components: {
 									Layout: {
-										headerBg: transparent,
+										headerBg: black,
 										headerHeight: 70,
 										headerPadding: 10,
 										paddingContentHorizontal: 100,

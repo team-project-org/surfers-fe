@@ -47,7 +47,7 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 
 	return (
 		<div className="space" ref={space}>
-			<div className="stars" style={{ opacity: 1 - scrollPercent * 0.8 }} />
+			<div className="stars" style={{ opacity: Math.max(1 - scrollPercent * 10 / 4, 0) }} />
 			<Layout>
 				<Flex justify={"center"} align={"center"} style={{ width: "100%" }}>
 					<Header
