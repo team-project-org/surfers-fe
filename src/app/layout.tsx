@@ -27,7 +27,8 @@ export default function RootLayout({
 								token: {
 									colorPrimary: primary,
 									borderRadius,
-									colorText: black,
+									colorText: white,
+									colorTextBase: white
 								},
 								components: {
 									Layout: {
@@ -36,7 +37,6 @@ export default function RootLayout({
 										headerPadding: 10,
 										paddingContentHorizontal: 100,
 										bodyBg: transparent,
-										colorText: white,
 										footerBg: transparent,
 									},
 									Menu: {
