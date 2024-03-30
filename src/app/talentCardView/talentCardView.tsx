@@ -8,6 +8,7 @@ import {
 	TwitterOutlined,
 	YoutubeOutlined,
 } from "@ant-design/icons";
+import URLTag from "@/app/component/URLTag";
 
 interface ICoverProps {
 	alt?: string;
@@ -48,7 +49,8 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 							style={{
 								backgroundImage: `url(${cover.url})`,
 								backgroundPosition: "center",
-								backgroundSize: "contain",
+								backgroundSize: "cover",
+								backgroundRepeat: "no-repeat",
 								borderRadius: "16px 16px 0px 0px",
 								height: 200,
 							}}
@@ -84,7 +86,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 				/>
 			</Skeleton>
 			<div style={{ paddingTop: 5 }}>
-				<Tag icon={<TwitterOutlined />} style={{ margin: 2 }} color="#55acee">
+				{/* <Tag icon={<TwitterOutlined />} style={{ margin: 2 }} color="#55acee">
 					Twitter
 				</Tag>
 				<Tag icon={<YoutubeOutlined />} style={{ margin: 2 }} color="#cd201f">
@@ -95,7 +97,11 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 				</Tag>
 				<Tag icon={<LinkedinOutlined />} style={{ margin: 2 }} color="#55acee">
 					LinkedIn
-				</Tag>
+				</Tag> */}
+
+				<URLTag name="Linkedin" />
+				<URLTag name="Behance" />
+				<URLTag name="Notion" />
 			</div>
 			{children}
 		</Card>

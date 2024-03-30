@@ -6,8 +6,7 @@ import { Button, Flex, Layout, Menu } from "antd";
 import { pageRouter } from "@/router";
 
 const menus: MenuProps["items"] = pageRouter.map(({ path, title }) => ({
-	key: path.split("&")[0],
-	path: path,
+	key: path,
 	label: title,
 }));
 
