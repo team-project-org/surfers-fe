@@ -20,6 +20,7 @@ commit explain
 6. IntroBox  : 동호님이 주신 IntroBox 코드대로 수정 
 7. IntrofixDongho: 동호님 IntroBox 수정 
 8. IntroBoxAlign : IT업계 내 인재풀 위치 오른쪽 정렬 
+9. 4mainContents : 4번째 메인 컨텐츠 작업 
 */
 
 const { Title, Text, Link } = Typography;
@@ -152,7 +153,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
             </div>
 
             {/* (2) 두번째 메인 설명글과 이미지 첨부 구현  */}
-
             <div style={{ position: "relative" }}>
               <img
                 src="../mainimage2.png"
@@ -202,7 +202,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
         </Content>
 
         {/* (3) 세번째 설명글과 동영상 첨부 작업 */}
-
         <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
           <div
             style={{
@@ -244,7 +243,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
             </IntroBox>
 
             {/* (3)-2 두번째 기능 설명 글 */}
-            <div style={{ textAlign: "right" }}>
+            <div style={{ textAlign: "right", marginTop: "200px" }}>
               <IntroBox title={"IT업계 내 인재풀"}>
                 <div
                   style={{
@@ -284,13 +283,147 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					Sprinter ©{new Date().getFullYear()} Created by dongho1596
 				</Footer>  */}
       </Layout>
+
+
+      {/* (4) 네번째 설명글과 이미지 첨부 작업 */}
       <Flex
         justify={"center"}
         align={"center"}
-        style={{ backgroundColor: primary, padding: "1000px 100px" }}
+        style={{
+          backgroundColor: primary,
+          padding: "500px 100px",
+          position: "relative",
+          minHeight: "100vh",
+        }}
       >
-        여기에 네번쨰 설명글 넣어주시면 좋을 것 같아요
+        <div style={{ textAlign: "center" }}>
+          {/* 검정색 버튼 모양의 도형 */}
+          <div
+            style={{
+              backgroundColor: "black",
+              width: "200px",
+              height: "50px",
+              borderRadius: "10px",
+              marginRight: "10px",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginBottom: "20px",
+            }}
+          >
+            {/* "서비스 이용방법" 텍스트 */}
+            <div
+              style={{
+                color: "white",
+                fontFamily: "Pretendard-SemiBold",
+                fontSize: "18px",
+              }}
+            >
+              서비스 이용방법
+            </div>
+          </div>
+          {/* 메인 타이틀 텍스트 */}
+          <div
+            style={{
+              fontFamily: "Pretendard-SemiBold",
+              fontSize: "45px",
+              color: "white",
+              marginBottom: "20px",
+            }}
+          >
+            프로필 등록으로
+            <br />
+            인재풀 컨택 및 팀원 구인등의
+            <br />
+            서비스 이용이 가능해요
+          </div>
+          {/* 서비스 이용 방법 도형 그룹 */}
+          <div>
+            <section
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              {/* 서비스 이용 방법 (1) 도형과 텍스트와 이미지 */}
+              <div
+                style={{
+                  backgroundColor: "black",
+                  width: "300px",
+                  height: "446px",
+                  borderRadius: "32px",
+                  marginRight: "10px",
+                  display: "inline-block",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <div
+                  style={{
+                    color: "white",
+                    fontFamily: "Pretendard-SemiBold",
+                    fontSize: "18px",
+                  }}
+                >
+                  안녕하세요
+                </div>
+              </div>
+
+              {/* 서비스 이용 방법 (2) 도형과 텍스트와 이미지 */}
+              <div
+                style={{
+                  backgroundColor: "black",
+                  width: "300px",
+                  height: "446px",
+                  borderRadius: "32px",
+                  marginRight: "10px",
+                  display: "inline-block",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <div
+                  style={{
+                    color: "white",
+                    fontFamily: "Pretendard-SemiBold",
+                    fontSize: "18px",
+                  }}
+                >
+                  추가된 도형 1
+                </div>
+              </div>
+
+              {/* 서비스 이용 방법 (3) 도형과 텍스트와 이미지 */}
+              <div
+                style={{
+                  backgroundColor: "black",
+                  width: "300px",
+                  height: "446px",
+                  borderRadius: "32px",
+                  marginRight: "10px",
+                  display: "inline-block",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "20px",
+                }}
+              >
+                <div
+                  style={{
+                    color: "white",
+                    fontFamily: "Pretendard-SemiBold",
+                    fontSize: "18px",
+                  }}
+                >
+                  추가된 도형 2
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
       </Flex>
+      ;
     </>
   );
 };
