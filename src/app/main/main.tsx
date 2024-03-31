@@ -4,6 +4,7 @@ import { Layout, theme, Typography, Space } from "antd";
 import ResponseCarousel from "./responseCarousel";
 import MainHeader from "@/app/mainheader";
 import "../fonts/font.css";
+import { white, orange, primary } from "@/app/color";
 
 /*
 
@@ -94,7 +95,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									<a href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform" style={{
 										display: 'inline-flex', // 버튼 리다이렉션 주소 지정 및 버튼 내 텍스트 스타일
 										alignItems: 'center',
-										backgroundColor: '#0012FA',
+										backgroundColor: primary,
 										color: 'white',
 										padding: '13px 28px',
 										borderRadius: '50px',
@@ -122,7 +123,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								position: 'absolute',
 								fontFamily: 'Pretendard-SemiBold',
 								fontSize: '26px',
-								color: 'white',
+								color: white,
 								bottom: '120px',
 								left: '50%',
 								transform: 'translate(-50%, -50%)',
@@ -134,7 +135,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								position: 'absolute',
 								fontFamily: 'Pretendard-Regular',
 								fontSize: '16px',
-								color: 'white',
+								color: white,
 								top: '750px',
 								left: '50%',
 								transform: 'translate(-50%, -50%)',
@@ -158,7 +159,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					>
 						{/* 3-1 기능 설명 문구 및 도형 구성  */}
 						<div style={{ position: 'relative', marginTop: '30px', textAlign: 'left', marginLeft: '100px', display: 'flex', flexDirection: 'column' }}>
-							<div style={{ width: '180px', height: '50px', backgroundColor: '#0012FA', borderRadius: '15px', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+							<div style={{ width: '180px', height: '50px', backgroundColor: primary, borderRadius: '15px', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 								{/* 도형 안의 프로필 등록하기 텍스트 */}
 								<p style={{ fontFamily: 'Pretendard-Medium', fontSize: '24px', color: 'white', margin: '0' }}>
 									프로필 등록하기
@@ -167,7 +168,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 							{/* 도형 아래 메인 텍스트 */}
 							<p style={{ fontFamily: 'Pretendard-SemiBold', fontSize: '45px', marginTop: '25px' }}>
 								내 프로필 등록<br />
-								<span style={{ color: '#FFAD0E', lineHeight: '1.5' }}>1분</span> 안에 간편하게
+								<span style={{ color: orange, lineHeight: '1.5' }}>1분</span> 안에 간편하게
 							</p>
 							{/* 도형 아래 서브 텍스트 */}
 							<p style={{ fontFamily: 'Pretendard-Regular', fontSize: '16px', marginTop: '-20px', lineHeight: '1.5' }}>
@@ -181,7 +182,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 						{/* 3-2 기능 설명 문구 및 도형 구성  */}
 						<div style={{ position: 'relative', marginTop: '240px', textAlign: 'left', display: 'flex', flexDirection: 'column' }}>
 							<div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '100px' }}>
-								<div style={{ width: '200px', height: '50px', backgroundColor: '#0012FA', borderRadius: '15px', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+								<div style={{ width: '200px', height: '50px', backgroundColor: primary, borderRadius: '15px', textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 									{/* 도형 안의 프로필 등록하기 텍스트 */}
 									<p style={{ fontFamily: 'Pretendard-Medium', fontSize: '24px', color: 'white', margin: '0' }}>
 										IT 업계 내 인재풀
@@ -190,7 +191,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 							</div>
 							{/* 도형 아래 메인 텍스트 */}
 							<p style={{ fontFamily: 'Pretendard-SemiBold', fontSize: '45px', marginTop: '25px', textAlign: 'right', marginRight: '100px' }}>
-								함께 <span style={{ color: '#FFAD0E', lineHeight: '1.5' }}>성장</span>할<br />좋은 팀과 팀원 찾기
+								함께 <span style={{ color: orange, lineHeight: '1.5' }}>성장</span>할<br />좋은 팀과 팀원 찾기
 							</p>
 							{/* 도형 아래 서브 텍스트 */}
 							<p style={{ fontFamily: 'Pretendard-Regular', fontSize: '16px', marginTop: '-15px', lineHeight: '1.5', textAlign: 'right', marginRight: '100px' }}>
@@ -207,7 +208,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 				<Content style={{ padding: 0, overflow: "hidden", marginTop: '240px', width: "100vw" }}>
 					<div
 						style={{
-							backgroundColor: "#0012FA",
+							backgroundColor: primary,
 							height: 800,
 							borderRadius: 0,
 							width: "100vw", // 화면 전체 너비로 설정
