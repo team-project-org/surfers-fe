@@ -11,9 +11,9 @@ import IntroBox from "@/app/component/IntroBox";
 
 [feat] info-main-contents-and-button by ricksclone
 
-수정 사항 
-1. : header 삭제 및 백그라운드 컬러 설정과 zindex이미지별 위계 설정 
-2.
+commit explain 
+1. Delete Header And zindex : header 삭제 및 백그라운드 컬러 설정과 zindex이미지별 위계 설정 
+2. font Delete : 안사용하는 폰트 삭제 
 
 
 */
