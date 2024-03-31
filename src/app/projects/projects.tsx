@@ -81,20 +81,21 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 				md={8}
 				lg={8}
 			>
-				{[...items, {}, {}, {}, {}, {}, {}].map((item: any) => {
+				{items.map((item: any) => {
 					const {
 						collectionId,
 						id,
 						collectionName,
 						projectName,
+						projectDescription,
 						email,
+						name,
 						created,
 						updated,
 						image,
-						link,
-						openChatLink,
+						postImageUrl,
+						applyEndDate
 					} = item;
-					console.log("image", getRandomOne(projectBanners));
 					return (
 						<CardView
 							key={id}
@@ -104,11 +105,9 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 								router.push(`projects/${id}?token=${token}`);
 							}}
 							cover={{
-								url: image || getRandomOne(projectBanners),
+								url: postImageUrl || getRandomOne(projectBanners),
 							}}
-							description={
-								"같이 게임서비스 즐겁게 개발하실 분 구인합니다.같이 게임서비스 즐겁게 개발하실 분 구인합니다.  저..."
-							}
+							description={projectDescription}
 						/>
 					);
 				})}
