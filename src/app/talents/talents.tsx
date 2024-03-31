@@ -2,18 +2,34 @@
 import React, { FunctionComponent, useState } from "react";
 import { Flex, Pagination, Segmented, Switch } from "antd";
 import GridView from "@/app/gridview";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "@/app/loading";
 import getTalentList from "@/server/actions/getTalentList";
 import TalentCardView from "@/app/talentCardView";
+import getImages from "@/app/utils/getImages";
+import getRandomOne from "@/app/utils/getRandomOne";
 
 interface ITalentsProps {}
+
+const profiles = getImages([
+	"profile/profile.png",
+	"profile/profile2.png",
+	"profile/profile3.png",
+	"profile/profile4.png",
+]);
+
+const talentBanners = getImages([
+	"banner/talent/talent_banner_1.png",
+	"banner/talent/talent_banner_2.png",
+]);
 
 const Talents: FunctionComponent<ITalentsProps> = (props) => {
 	const [loading, setLoading] = useState(false);
 	const router = useRouter();
 	const [page, setPage] = useState(1);
+	const searchParams = useSearchParams();
+	const token = searchParams.get("token");
 	const onChange = (checked: boolean) => {
 		setLoading(!checked);
 	};
@@ -55,7 +71,11 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 
 	return (
 		<div>
-			<Flex justify={"start"} align={"center"} style={{ width: "100%", paddingBottom: 10 }}>
+			<Flex
+				justify={"start"}
+				align={"center"}
+				style={{ width: "100%", paddingBottom: 10 }}
+			>
 				<Segmented
 					options={["디자이너", "개발자", "기타 직군"]}
 					onChange={(value) => {
@@ -65,18 +85,21 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 			</Flex>
 			<GridView>
 				{items.map((item: any) => {
-					const { collectionId, id, email, name, job, profileImageUrl } = item;
+					const { collectionId, id, email, name, job, profileImageUrl, portfolioLinkPlainText } = item;
 					return (
 						<TalentCardView
 							key={id}
-							title={name}
+							name={name}
 							cover={{
-								url: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+								url: getRandomOne(profiles),
 							}}
+							job={job}
 							loading={loading}
 							onClick={() => {
-								router.push(`talents/${id}`);
+								router.push(`talents/${id}?token=${token}`);
 							}}
+							style={{ height: 342 }}
+							portfolioLinkPlainText={portfolioLinkPlainText}
 							// avatar="https://api.dicebear.com/7.x/miniavs/svg?seed=1"
 							description={email}
 						/>

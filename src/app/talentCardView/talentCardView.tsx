@@ -1,6 +1,6 @@
 "use client";
 import React, { FunctionComponent } from "react";
-import { Avatar, Card, Skeleton, Tag } from "antd";
+import { Avatar, Card, Flex, Skeleton, Tag } from "antd";
 import { white } from "@/app/color";
 import {
 	FacebookOutlined,
@@ -8,6 +8,7 @@ import {
 	TwitterOutlined,
 	YoutubeOutlined,
 } from "@ant-design/icons";
+import URLTag from "@/app/component/URLTag";
 
 interface ICoverProps {
 	alt?: string;
@@ -17,7 +18,11 @@ interface ICoverProps {
 interface ICardViewProps {
 	avatar?: string;
 	cover?: ICoverProps;
-	title: string | any;
+	job?: string | any;
+	name?: string | any;
+	title?: string | any;
+	style?: any;
+	portfolioLinkPlainText?: string | any;
 	description?: string | any;
 	loading: boolean;
 	children?: any;
@@ -30,9 +35,13 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 	const {
 		avatar = undefined,
 		cover = undefined,
-		title,
+		job = undefined,
+		name = undefined,
+		title = "스타트업에 관심 있어요 🚀",
 		description = undefined,
+		portfolioLinkPlainText = undefined,
 		loading,
+		style,
 		children = undefined,
 		onClick = undefined,
 	} = props;
@@ -40,6 +49,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 		<Card
 			hoverable={onClick != undefined}
 			onClick={onClick && ((e) => onClick(e))}
+			style={style}
 			cover={
 				cover && (
 					<div style={{ position: "relative" }}>
@@ -48,7 +58,8 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 							style={{
 								backgroundImage: `url(${cover.url})`,
 								backgroundPosition: "center",
-								backgroundSize: "contain",
+								backgroundSize: "cover",
+								backgroundRepeat: "no-repeat",
 								borderRadius: "16px 16px 0px 0px",
 								height: 200,
 							}}
@@ -62,9 +73,9 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 							}}
 						>
 							<div style={{ fontWeight: "bold", fontSize: 20 }}>
-								XXX 디자이너
+								{name}
 							</div>
-							<div>디자이너</div>
+							<div>{job}</div>
 						</div>
 					</div>
 				)
@@ -83,20 +94,22 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 					description={description}
 				/>
 			</Skeleton>
-			<div style={{ paddingTop: 5 }}>
-				<Tag icon={<TwitterOutlined />} style={{ margin: 2 }} color="#55acee">
-					Twitter
-				</Tag>
-				<Tag icon={<YoutubeOutlined />} style={{ margin: 2 }} color="#cd201f">
-					Youtube
-				</Tag>
-				<Tag icon={<FacebookOutlined />} style={{ margin: 2 }} color="#3b5999">
-					Facebook
-				</Tag>
-				<Tag icon={<LinkedinOutlined />} style={{ margin: 2 }} color="#55acee">
-					LinkedIn
-				</Tag>
-			</div>
+			{
+				portfolioLinkPlainText && (
+					<Flex justify={"flex-end"} align={"center"} style={{ paddingTop: 5 }}>
+						{portfolioLinkPlainText?.split(",").map((portfolioLink: string) => {
+							const hostname = new URL(portfolioLink).hostname
+							if (hostname.includes("notion")) {
+								return <URLTag name="Notion" />
+							} else if (hostname.includes("behance")) {
+								return <URLTag name="Behance" />
+							} else if (hostname.includes("linkedin")) {
+								return <URLTag name="Linkedin" />
+							}
+						})}
+					</Flex>
+				)
+			}
 			{children}
 		</Card>
 	);
