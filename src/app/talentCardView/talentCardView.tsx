@@ -1,6 +1,6 @@
 "use client";
 import React, { FunctionComponent } from "react";
-import { Avatar, Card, Skeleton, Tag } from "antd";
+import { Avatar, Card, Flex, Skeleton, Tag } from "antd";
 import { white } from "@/app/color";
 import {
 	FacebookOutlined,
@@ -96,7 +96,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 			</Skeleton>
 			{
 				portfolioLinkPlainText && (
-					<div style={{ paddingTop: 5 }}>
+					<Flex justify={"flex-end"} align={"center"} style={{ paddingTop: 5 }}>
 						{portfolioLinkPlainText?.split(",").map((portfolioLink: string) => {
 							const hostname = new URL(portfolioLink).hostname
 							if (hostname.includes("notion")) {
@@ -107,7 +107,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 								return <URLTag name="Linkedin" />
 							}
 						})}
-					</div>
+					</Flex>
 				)
 			}
 			{children}
