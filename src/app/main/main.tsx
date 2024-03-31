@@ -101,7 +101,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										textDecoration: 'none',
 										fontSize: '21px',
 										fontFamily: 'Pretendard-Medium',
-									}}>
+									}} target="_blank">
 										<span style={{ marginRight: '10px' }}>베타서비스 이용 신청하기</span>
 										<img src="../ei_arrow-left.png" alt="button-icon" style={{ width: '35px', height: '35px' }} />
 									</a>
