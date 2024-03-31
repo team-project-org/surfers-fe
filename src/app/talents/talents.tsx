@@ -85,18 +85,21 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 			</Flex>
 			<GridView>
 				{items.map((item: any) => {
-					const { collectionId, id, email, name, job, profileImageUrl } = item;
+					const { collectionId, id, email, name, job, profileImageUrl, portfolioLinkPlainText } = item;
 					return (
 						<TalentCardView
 							key={id}
-							title={name}
+							name={name}
 							cover={{
 								url: getRandomOne(profiles),
 							}}
+							job={job}
 							loading={loading}
 							onClick={() => {
 								router.push(`talents/${id}?token=${token}`);
 							}}
+							style={{ height: 342 }}
+							portfolioLinkPlainText={portfolioLinkPlainText}
 							// avatar="https://api.dicebear.com/7.x/miniavs/svg?seed=1"
 							description={email}
 						/>

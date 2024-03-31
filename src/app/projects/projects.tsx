@@ -93,12 +93,14 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 						created,
 						updated,
 						image,
+						estimateProgressTerm,
 						postImageUrl,
 						applyEndDate
 					} = item;
 					return (
 						<CardView
 							key={id}
+							style={{ height: 335 }}
 							title={projectName}
 							loading={loading}
 							onClick={() => {
@@ -107,6 +109,8 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 							cover={{
 								url: postImageUrl || getRandomOne(projectBanners),
 							}}
+							estimateProgressTerm={estimateProgressTerm}
+							applyEndDate={applyEndDate}
 							description={projectDescription}
 						/>
 					);
