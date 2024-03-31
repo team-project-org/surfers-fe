@@ -18,11 +18,12 @@ commit explain
 4. fontAdress : font 주소 동호님이 적어주신대로 수정 
 5. code convention 설정 완료 
 6. IntroBox  : 동호님이 주신 IntroBox 코드대로 수정 
+7. IntrofixDongho: 동호님 IntroBox 수정 
+8. IntroBoxAlign : IT업계 내 인재풀 위치 오른쪽 정렬 
 */
 
 const { Title, Text, Link } = Typography;
 const { Content, Footer } = Layout;
-
 
 interface IMainProps {}
 
@@ -30,7 +31,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-
 
   return (
     <>
@@ -244,37 +244,39 @@ const Main: FunctionComponent<IMainProps> = (props) => {
             </IntroBox>
 
             {/* (3)-2 두번째 기능 설명 글 */}
-            <IntroBox title={"IT업계 내 인재풀"}>
-              <div
-                style={{
-                  fontFamily: "Pretendard-SemiBold",
-                  fontSize: "45px",
-                  marginTop: "25px",
-                  textAlign: "right", // 오른쪽 정렬 추가
-                }}
-              >
-                함께{" "}
-                <span style={{ color: orange, lineHeight: "1.5" }}>성장</span>할
-                <br />
-                좋은 팀과 팀원 찾기
-              </div>
-              {/*서브 텍스트 */}
-              <div
-                style={{
-                  fontFamily: "Pretendard-Regular",
-                  fontSize: "16px",
-                  marginTop: 30,
-                  lineHeight: "1.5",
-                  textAlign: "right", // 오른쪽 정렬 추가
-                }}
-              >
-                기존에 사용하던 링크드인, 노션, 깃헙과 같은 기타 여러 링크로
-                <br />
-                복잡하게 프로필 및 커리어 내용을 작성할 필요없이,
-                <br />
-                1분 안에 내 프로필 등록이 가능해요.
-              </div>
-            </IntroBox>
+            <div style={{ textAlign: "right" }}>
+              <IntroBox title={"IT업계 내 인재풀"}>
+                <div
+                  style={{
+                    fontFamily: "Pretendard-SemiBold",
+                    fontSize: "45px",
+                    marginTop: "25px",
+                    textAlign: "right", // 오른쪽 정렬 추가
+                  }}
+                >
+                  함께{" "}
+                  <span style={{ color: orange, lineHeight: "1.5" }}>성장</span>
+                  할
+                  <br />
+                  좋은 팀과 팀원 찾기
+                </div>
+                {/*서브 텍스트 */}
+                <div
+                  style={{
+                    fontFamily: "Pretendard-Regular",
+                    fontSize: "16px",
+                    marginTop: 30,
+                    lineHeight: "1.5",
+                    textAlign: "right", // 오른쪽 정렬 추가
+                  }}
+                >
+                  개발자, 디자이너, 기획자 등 프로필 등록을 완료한 유저들은
+                  <br />
+                  팀원 구인 게시글 작성 및 개별 프로필 컨택 기능을 사용할 수
+                  있어요.
+                </div>
+              </IntroBox>
+            </div>
           </div>
         </Content>
 
