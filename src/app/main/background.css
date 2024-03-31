@@ -1,0 +1,32 @@
+/* background-image로 사용하기 위해 작업하고 있는 파일 
+*/
+
+첫번째 메인 설명글과 이미지
+.character-image {
+  position: relative; /* 상대적 위치 */
+  top: 40px; /* 상단 여백 */
+  z-index: 0; /* z-index 설정 */
+  width: 35%; /* 가로 너비 */
+  height: auto; /* 높이 자동 조정 */
+  background-size: cover; /* 배경 이미지 크기를 커버 */
+  background-position: center; /* 배경 이미지 중앙 정렬 */
+  background-image: url('/character.png');
+
+}
+
+.sticker-image {
+  background-image: url('/sticker.png');
+
+}
+
+.ring-image {
+  background-image: url('/ring.png');
+
+}
+
+/* 두번째 메인 설명글과 이미지 */
+.mainimage2-image {
+  background-image: url('/mainimage2.png');
+
+}
+  

@@ -14,7 +14,7 @@ import IntroBox from "@/app/component/IntroBox";
 commit explain 
 1. Delete Header And zindex : header 삭제 및 백그라운드 컬러 설정과 zindex이미지별 위계 설정 
 2. font Delete : 안사용하는 폰트 삭제 
-
+3. BackgroundImageStop: src를 모두 backgroundImage로 관리 
 
 */
 
