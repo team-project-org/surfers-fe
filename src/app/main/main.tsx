@@ -11,16 +11,14 @@ import IntroBox from "@/app/component/IntroBox";
 
 [feat] info-main-contents-and-button by ricksclone
 
-1.로고 화질 개선 => mainheader에 화질 개선된 img 파일로 넣고 globals.css 크기 조정해서 완료
-2.폰트 설치 및 css 파일 구성 => src 안에 fonts 안에 폰트 다 넣어놓고, import 후 사용 완료
-3.메인 문구 작성 및 배치 => 완료 
-4.서브 문구 작성 및 배치 => 완료 
-5.버튼 제작 및 버튼 내용 구성과 아이콘 삽입 => 완료 
-6.버튼내 링크 연결 => 완료 
-7.캐릭터, 아이콘, 링 배치 => 완료
-8.서비스 Q&A 빛 서비스 소개 헤더 주석처리 
+수정 사항 
+1. : header 삭제 및 백그라운드 컬러 설정과 zindex이미지별 위계 설정 
+2.
+
 
 */
+
+
 
 const { Title, Text, Link } = Typography;
 const { Content, Footer } = Layout;
@@ -34,8 +32,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 
 	return (
 		<>
-			<MainHeader>
-				<Layout style={{ color: white }}>
+				<Layout style={{ backgroundColor: "black" }}>
 					<Content style={{ margin: "24px 16px 0" }}>
 						<div
 							style={{
@@ -50,7 +47,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								}}
 							>
 								{/* 첫번째 메인 설명글 및 이미지와 CTA 버튼 작업  */}
-								<div style={{ position: "relative", top: "40px" }}>
+								<div style={{ position: "relative", top: "40px", zIndex: '0' }}>
 									<img
 										src="/character.png" // 캐릭터 3명 이미지 스타일 지정
 										alt="character"
@@ -110,7 +107,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									/>
 								</div>
 
-								<Footer style={{ textAlign: "center", marginTop: "100px" }}>
+								<Footer style={{ textAlign: "center", marginTop: "100px", position: "relative"  }}>
 									<div
 										style={{
 											// CTA 버튼 스타일 지정
@@ -423,7 +420,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					Sprinter ©{new Date().getFullYear()} Created by dongho1596
 				</Footer>  */}
 				</Layout>
-			</MainHeader>
 			<Flex
 				justify={"center"}
 				align={"center"}
