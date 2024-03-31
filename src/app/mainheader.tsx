@@ -39,6 +39,7 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 	};
 
 	useEffect(() => {
+		handleScroll()
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
