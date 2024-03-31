@@ -13,8 +13,11 @@ interface ICardViewProps {
 	cover?: ICoverProps;
 	title: string | any;
 	description?: string | any;
+	applyEndDate?: string | any;
+	estimateProgressTerm?: string | any;
 	loading: boolean;
 	children?: any;
+	style?: any;
 	onClick?: (e: any) => void;
 }
 
@@ -26,40 +29,46 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 		cover = undefined,
 		title,
 		description = undefined,
+		applyEndDate,
 		loading,
 		children = undefined,
+		estimateProgressTerm,
 		onClick = undefined,
+		style
 	} = props;
 	return (
 		<Card
 			hoverable={onClick != undefined}
 			onClick={onClick && ((e) => onClick(e))}
+			style={style}
 			cover={
 				cover && (
 					<div style={{ position: "relative" }}>
 						<div
 							className="blur"
 							style={{
-								backgroundImage: `url(${cover.url})`,
+								backgroundImage: `url('${cover.url}')`,
 								backgroundPosition: "center",
-								backgroundSize: "contain",
+								backgroundSize: "cover",
 								borderRadius: "16px 16px 0px 0px",
 								height: 200,
 							}}
 						/>
-						<div
-							style={{
-								position: "absolute",
-								top: 16,
-								left: 16,
-								borderRadius: 16,
-								padding: "3px 10px",
-								backgroundColor: primary,
-								color: white
-							}}
-						>
-							<div>🚨마감 3.10~3.30</div>
-						</div>
+						{applyEndDate && (
+							<div
+								style={{
+									position: "absolute",
+									top: 16,
+									left: 16,
+									borderRadius: 16,
+									padding: "3px 10px",
+									backgroundColor: primary,
+									color: white
+								}}
+							>
+								<div>🚨마감 {applyEndDate}</div>
+							</div>
+						)}
 						<div
 							style={{
 								position: "absolute",
@@ -90,7 +99,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 					description={description}
 				/>
 			</Skeleton>
-			<div
+			{estimateProgressTerm && <div
 				style={{
 					marginTop: 10,
 					width: '100%',
@@ -102,8 +111,8 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 				}}
 			>
 				<span>🗓️ 프로젝트 진행 기간</span>
-				<span style={{ color: grey, paddingLeft: 3 }}>3개월</span>
-			</div>
+				<span style={{ color: grey, paddingLeft: 3 }}>{estimateProgressTerm}</span>
+			</div>}
 			{children}
 		</Card>
 	);

@@ -4,16 +4,27 @@ import { useQuery } from "@tanstack/react-query";
 import { Flex, Pagination, Switch } from "antd";
 import CardView from "@/app/cardview";
 import GridView from "@/app/gridview";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Loading from "@/app/loading";
 import getProjectList from "@/server/actions/getProjectList";
+import getImages from "@/app/utils/getImages";
+import getRandomOne from "@/app/utils/getRandomOne";
 
 interface IProjectsProps {}
+
+const projectBanners = getImages([
+	"banner/project/project_banner_1.png",
+	"banner/project/project_banner_2.png",
+]);
+
+console.log("projectBanners", projectBanners);
 
 const Projects: FunctionComponent<IProjectsProps> = (props) => {
 	const [loading, setLoading] = useState(false);
 	const router = useRouter();
 	const [page, setPage] = useState(1);
+	const searchParams = useSearchParams();
+	const token = searchParams.get("token");
 	const onChange = (checked: boolean) => {
 		setLoading(!checked);
 	};
@@ -55,38 +66,52 @@ const Projects: FunctionComponent<IProjectsProps> = (props) => {
 
 	return (
 		<div>
-			<Switch
+			{/* <Switch
 				checked={!loading}
 				onChange={onChange}
 				style={{ marginBottom: 16 }}
-			/>
-			<GridView glutter={[{ xs: 8, sm: 16, md: 24, lg: 24 }, { xs: 8, sm: 16, md: 24, lg: 24 }]}>
+			/> */}
+			<GridView
+				glutter={[
+					{ xs: 8, sm: 16, md: 24, lg: 24 },
+					{ xs: 8, sm: 16, md: 24, lg: 24 },
+				]}
+				xs={24}
+				sm={12}
+				md={8}
+				lg={8}
+			>
 				{items.map((item: any) => {
 					const {
 						collectionId,
 						id,
 						collectionName,
 						projectName,
+						projectDescription,
 						email,
+						name,
 						created,
 						updated,
 						image,
-						link,
-						openChatLink,
+						estimateProgressTerm,
+						postImageUrl,
+						applyEndDate
 					} = item;
 					return (
 						<CardView
 							key={id}
+							style={{ height: 335 }}
 							title={projectName}
 							loading={loading}
 							onClick={() => {
-								router.push(`projects/${id}`);
+								router.push(`projects/${id}?token=${token}`);
 							}}
 							cover={{
-								// url: image,
-								url: "https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+								url: postImageUrl || getRandomOne(projectBanners),
 							}}
-							description={email}
+							estimateProgressTerm={estimateProgressTerm}
+							applyEndDate={applyEndDate}
+							description={projectDescription}
 						/>
 					);
 				})}

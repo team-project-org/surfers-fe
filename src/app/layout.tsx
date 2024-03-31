@@ -27,16 +27,16 @@ export default function RootLayout({
 								token: {
 									colorPrimary: primary,
 									borderRadius,
-									colorText: black,
+									colorText: white,
+									colorTextBase: white
 								},
 								components: {
 									Layout: {
-										headerBg: transparent,
+										headerBg: black,
 										headerHeight: 70,
 										headerPadding: 10,
 										paddingContentHorizontal: 100,
 										bodyBg: transparent,
-										colorText: white,
 										footerBg: transparent,
 									},
 									Menu: {

@@ -9,7 +9,7 @@ body {
 .stars {
 	background-image: url("/stars.png");
 	background-position: center;
-	background-size: contain;
+	background-size: 1200px;
 	position: fixed;
 	top: 0px;
 	left: 0px;
