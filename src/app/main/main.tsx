@@ -31,8 +31,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 	} = theme.useToken();
 
 	return (
-		<MainHeader>
-			<Layout>
+			<Layout style={{ backgroundColor: "black" }}>
 				<Content style={{ margin: "24px 16px 0" }}>
 					<div
 						style={{
@@ -48,7 +47,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 						>
 							{/* 첫번째 메인 설명글 및 이미지와 CTA 버튼 작업  */}
 
-							<div style={{ position: 'relative', top: '40px' }}>
+							<div style={{ position: 'relative', top: '40px', zIndex: '0'  }}>
 								<img
 									src="../character.png"  // 캐릭터 3명 이미지 스타일 지정  
 									alt="character"
@@ -85,8 +84,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									height: 'auto',
 								}} />
 							</div>
-
-							<Footer style={{ textAlign: "center", marginTop: "100px" }}>
+							<Footer style={{ textAlign: "center", marginTop: "100px",  position: "relative"}}>
 								<div style={{ 	// CTA 버튼 스타일 지정
 									margin: '20px auto',
 									width: 'fit-content',
@@ -101,8 +99,9 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										textDecoration: 'none',
 										fontSize: '21px',
 										fontFamily: 'Pretendard-Medium',
+										zIndex: 1,
 									}}>
-										<span style={{ marginRight: '10px' }}>베타서비스 이용 신청하기</span>
+										<span style={{ marginRight: '10px' , }}>베타서비스 이용 신청하기</span>
 										<img src="../ei_arrow-left.png" alt="button-icon" style={{ width: '35px', height: '35px' }} />
 									</a>
 								</div>
@@ -227,7 +226,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 
 
 			</Layout>
-		</MainHeader>
 	);
 };
 
