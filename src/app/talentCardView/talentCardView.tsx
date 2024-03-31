@@ -2,12 +2,6 @@
 import React, { FunctionComponent } from "react";
 import { Avatar, Card, Flex, Skeleton, Tag } from "antd";
 import { white } from "@/app/color";
-import {
-	FacebookOutlined,
-	LinkedinOutlined,
-	TwitterOutlined,
-	YoutubeOutlined,
-} from "@ant-design/icons";
 import URLTag from "@/app/component/URLTag";
 
 interface ICoverProps {
@@ -72,9 +66,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 								color: white,
 							}}
 						>
-							<div style={{ fontWeight: "bold", fontSize: 20 }}>
-								{name}
-							</div>
+							<div style={{ fontWeight: "bold", fontSize: 20 }}>{name}</div>
 							<div>{job}</div>
 						</div>
 					</div>
@@ -94,28 +86,29 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 					description={description}
 				/>
 			</Skeleton>
-			{
-				(portfolioLinkPlainText != undefined || portfolioLinkPlainText != "") && (
-					<Flex justify={"flex-end"} align={"center"} style={{ paddingTop: 5 }}>
-						{portfolioLinkPlainText?.split(",").map((portfolioLink: string) => {
-							try {
-								const hostname = new URL(portfolioLink).hostname
-								let selectType = undefined
-								if (hostname.includes("notion")) {
-									selectType = "Notion"
-								} else if (hostname.includes("behance")) {
-									selectType = "Behance"
-								} else if (hostname.includes("linkedin")) {
-									selectType = 'Linkedin'
-								}
-								return selectType && <URLTag key={portfolioLink} name={selectType} />
-							} catch (e) {
-								return null
+			{(portfolioLinkPlainText != undefined ||
+				portfolioLinkPlainText != "") && (
+				<Flex justify={"flex-end"} align={"center"} style={{ paddingTop: 5 }}>
+					{portfolioLinkPlainText?.split(",").map((portfolioLink: string) => {
+						try {
+							const hostname = new URL(portfolioLink).hostname;
+							let selectType = undefined;
+							if (hostname.includes("notion")) {
+								selectType = "Notion";
+							} else if (hostname.includes("behance")) {
+								selectType = "Behance";
+							} else if (hostname.includes("linkedin")) {
+								selectType = "Linkedin";
 							}
-						})}
-					</Flex>
-				)
-			}
+							return (
+								selectType && <URLTag key={portfolioLink} name={selectType} />
+							);
+						} catch (e) {
+							return null;
+						}
+					})}
+				</Flex>
+			)}
 			{children}
 		</Card>
 	);

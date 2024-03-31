@@ -3,7 +3,7 @@ import React, { FunctionComponent } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import type { MenuProps } from "antd";
 import { Button, Flex, Layout, Menu } from "antd";
-import { pageRouter } from "@/router";
+import { pageRouter, sprinter_token } from "@/router";
 
 const menus: MenuProps["items"] = pageRouter.map(({ path, title }) => ({
 	key: path,
@@ -11,6 +11,7 @@ const menus: MenuProps["items"] = pageRouter.map(({ path, title }) => ({
 }));
 
 interface IHeaderProps {
+	belowHeader: any;
 	children: any;
 }
 
@@ -27,7 +28,7 @@ const getHeaderAction = (pathname: string) => {
 					target="_blank"
 					style={{ fontWeight: "bold" }}
 				>
-					프로젝트 등록
+					게시물 등록하기
 				</Button>
 			);
 		case "/talents":
@@ -39,7 +40,7 @@ const getHeaderAction = (pathname: string) => {
 					target="_blank"
 					style={{ fontWeight: "bold" }}
 				>
-					인재풀 등록
+					인재풀 등록하기
 				</Button>
 			);
 	}
@@ -47,7 +48,7 @@ const getHeaderAction = (pathname: string) => {
 };
 
 const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
-	const { children } = props;
+	const { belowHeader, children } = props;
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
@@ -71,7 +72,10 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 						paddingRight: 16,
 					}}
 				>
-					<div className="logo" onClick={() => router.push("/")} />
+					<div
+						className="logo"
+						onClick={() => router.push(`/talents?token=${token}`)}
+					/>
 					<Menu
 						mode="horizontal"
 						selectedKeys={[`${pathname}?token=${token}`]}
@@ -86,6 +90,7 @@ const HeaderLayout: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 					)}
 				</Header>
 			</Flex>
+			{belowHeader}
 			<Content style={{ padding: "16px" }}>
 				<Flex justify={"center"} align={"flex-start"}>
 					<div style={{ maxWidth: 1200, width: "100%" }}>{children}</div>

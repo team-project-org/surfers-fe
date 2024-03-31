@@ -1,6 +1,6 @@
 "use client";
 import React, { FunctionComponent, useState } from "react";
-import { Flex, Pagination, Segmented, Switch } from "antd";
+import { Flex, Pagination, Segmented } from "antd";
 import GridView from "@/app/gridview";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
@@ -17,11 +17,6 @@ const profiles = getImages([
 	"profile/profile2.png",
 	"profile/profile3.png",
 	"profile/profile4.png",
-]);
-
-const talentBanners = getImages([
-	"banner/talent/talent_banner_1.png",
-	"banner/talent/talent_banner_2.png",
 ]);
 
 const Talents: FunctionComponent<ITalentsProps> = (props) => {
@@ -85,7 +80,15 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 			</Flex>
 			<GridView>
 				{items.map((item: any) => {
-					const { collectionId, id, email, name, job, profileImageUrl, portfolioLinkPlainText } = item;
+					const {
+						collectionId,
+						id,
+						email,
+						name,
+						job,
+						profileImageUrl,
+						portfolioLinkPlainText,
+					} = item;
 					return (
 						<TalentCardView
 							key={id}

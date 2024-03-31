@@ -1,11 +1,12 @@
+"use client";
 import React, { FunctionComponent } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 type CarouselData = {
-	title: string;
-	text: string;
-	imageUrl: string;
+	title?: string;
+	text?: string;
+	imageUrl?: string;
 };
 
 interface IReactiveCarouselProps {

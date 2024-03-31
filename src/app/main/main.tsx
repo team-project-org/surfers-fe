@@ -1,7 +1,7 @@
 "use client";
 import React, { FunctionComponent } from "react";
 import { Layout, theme, Typography, Space } from "antd";
-import ResponseCarousel from "./responseCarousel";
+import ResponseCarousel from "../component/responseCarousel";
 import MainHeader from "@/app/mainheader";
 
 const { Title, Text, Link } = Typography;
