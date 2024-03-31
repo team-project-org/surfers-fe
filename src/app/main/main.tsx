@@ -3,7 +3,7 @@ import React, { FunctionComponent, useState, useEffect } from "react";
 import { Layout, theme, Typography, Space, Flex } from "antd";
 import ResponseCarousel from "./responseCarousel";
 import MainHeader from "@/app/mainheader";
-import "../fonts/font.css";
+import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
 
@@ -14,7 +14,8 @@ import IntroBox from "@/app/component/IntroBox";
 commit explain 
 1. Delete Header And zindex : header 삭제 및 백그라운드 컬러 설정과 zindex이미지별 위계 설정 
 2. font Delete : 안사용하는 폰트 삭제 
-3. BackgroundImageStop: src를 모두 backgroundImage로 관리 
+3. BackgroundStop: src를 모두 backgroundImage로 관리할 수 있게 background.css 작업을 하다가 오류에 겁 먹고 백로그 후 순위로 미룸 ㅠㅠ 추후 일괄 수정 
+4. 
 
 */
 
