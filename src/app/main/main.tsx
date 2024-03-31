@@ -204,7 +204,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 
 
 				{/* 네번째 메인 설명글 작업  */}
-				<Content style={{ padding: 0, overflow: "hidden", marginTop: '240px' }}>
+				<Content style={{ padding: 0, overflow: "hidden", marginTop: '240px', width: "100vw" }}>
 					<div
 						style={{
 							backgroundColor: "#0012FA",
