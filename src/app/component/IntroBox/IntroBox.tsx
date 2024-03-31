@@ -4,15 +4,16 @@ import React, { FunctionComponent } from "react";
 interface IIntroBoxProps {
 	title: string;
 	children: any;
+	right?: boolean;
 }
 
 const IntroBox: FunctionComponent<IIntroBoxProps> = (props) => {
-	const { title, children } = props;
+	const { title, children, right } = props;
 	return (
-		<div>
+		<div style={right ? { textAlign: "right" } : {}}>
 			<div
 				style={{
-					width: "180px",
+					width: "auto",
 					height: "50px",
 					backgroundColor: primary,
 					borderRadius: "15px",
@@ -22,11 +23,11 @@ const IntroBox: FunctionComponent<IIntroBoxProps> = (props) => {
 					alignItems: "center",
 				}}
 			>
-				{/* 도형 안의 프로필 등록하기 텍스트 */}
 				<div
 					style={{
 						fontFamily: "Pretendard-Medium",
 						fontSize: "24px",
+						padding: 18,
 						color: white,
 						margin: "0",
 					}}
@@ -34,7 +35,7 @@ const IntroBox: FunctionComponent<IIntroBoxProps> = (props) => {
 					{title}
 				</div>
 			</div>
-      {children}
+			{children}
 		</div>
 	);
 };

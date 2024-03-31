@@ -17,7 +17,7 @@ commit explain
 3. Background Stop: src를 모두 backgroundImage로 관리할 수 있게 background.css 작업을 하다가 이미지별 스타일이 달라지는 오류가 생기길래 후 순위로 미뤘습니다 ㅠㅠ 추후 일괄 수정 
 4. fontAdress : font 주소 동호님이 적어주신대로 수정 
 5. code convention 설정 완료 
-6. 
+6. IntroBox  : 동호님이 주신 IntroBox 코드대로 수정 
 */
 
 const { Title, Text, Link } = Typography;
