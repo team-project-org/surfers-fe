@@ -95,19 +95,23 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 				/>
 			</Skeleton>
 			{
-				portfolioLinkPlainText && (
+				(portfolioLinkPlainText != undefined || portfolioLinkPlainText != "") && (
 					<Flex justify={"flex-end"} align={"center"} style={{ paddingTop: 5 }}>
 						{portfolioLinkPlainText?.split(",").map((portfolioLink: string) => {
-							const hostname = new URL(portfolioLink).hostname
-							let selectType = undefined
-							if (hostname.includes("notion")) {
-								selectType = "Notion"
-							} else if (hostname.includes("behance")) {
-								selectType = "Behance"
-							} else if (hostname.includes("linkedin")) {
-								selectType = 'Linkedin'
+							try {
+								const hostname = new URL(portfolioLink).hostname
+								let selectType = undefined
+								if (hostname.includes("notion")) {
+									selectType = "Notion"
+								} else if (hostname.includes("behance")) {
+									selectType = "Behance"
+								} else if (hostname.includes("linkedin")) {
+									selectType = 'Linkedin'
+								}
+								return selectType && <URLTag key={portfolioLink} name={selectType} />
+							} catch (e) {
+								return null
 							}
-							return <URLTag key={portfolioLink} name={selectType} />
 						})}
 					</Flex>
 				)
