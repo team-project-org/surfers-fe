@@ -26,6 +26,8 @@ commit explain
 12. 4mainContentsSave : 4번째 메인 컨텐츠 작업 
 13. PromptFont : 새로운 폰트 추가 
 14. 4mainFinish : 4번째 메인 컨텐츠 완성  
+15. FooterSave : 푸터 1차 작업 진행 
+
 */
 
 const { Title, Text, Link } = Typography;
@@ -42,11 +44,13 @@ const Main: FunctionComponent<IMainProps> = (props) => {
     <>
       <Layout style={{ backgroundColor: "black" }}>
         {/*상단헤더의 스프린터 로고 삽입*/}
-        <div style={{ marginRight: "auto", marginLeft: "70px", marginTop: "30px" }}>
+        <div
+          style={{ marginRight: "auto", marginLeft: "70px", marginTop: "30px" }}
+        >
           <img
             src="/logowhite.png"
             alt="Logo"
-            style={{ maxWidth: "20%", height: "auto"}}
+            style={{ maxWidth: "20%", height: "auto" }}
           />
         </div>
         <Content style={{ margin: "24px 16px 0" }}>
@@ -236,8 +240,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 {/* <span style={{ color: orange, lineHeight: "1.5" }}>
                   1분
                 </span>{" "} */}
-				1분
-                안에 간편하게
+                1분 안에 간편하게
               </div>
               {/* 서브 텍스트 */}
               <div
@@ -269,7 +272,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 >
                   함께{" "}
                   {/* <span style={{ color: orange, lineHeight: "1.5" }}>성장</span> */}
-				  성장할
+                  성장할
                   <br />
                   좋은 팀과 팀원 찾기
                 </div>
@@ -301,10 +304,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           backgroundColor: primary,
           // padding: "0px 100px",
           position: "relative",
-          minHeight: "80vh", // 파란색 배경 높이 조절
+          minHeight: "75vh", // 파란색 배경 높이 조절
         }}
       >
-        <div style={{ textAlign: "center", marginTop: "-80px" }}>
+        <div style={{ textAlign: "center", marginTop: "-50px" }}>
           {/* 검정색 버튼 모양의 도형 */}
           <div
             style={{
@@ -535,7 +538,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
         style={{
           backgroundColor: "#002DCC", // 배경색 설정
           textAlign: "center",
-          height: "15vh", // 약 4분의 1 높이 설정
+          height: "10vh", // 약 4분의 1 높이 설정
           paddingTop: "50px", // 위쪽 여백 설정
           marginTop: "-20px", // 여백 제거
         }}
@@ -558,14 +561,13 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           </a>
         </div>
 
-		<div style={{  }}>
+        <div style={{ marginTop: "20px" }}>
           <img
             src="/logowhite.png"
             alt="Logo"
-            style={{ maxWidth: "10%", height: "auto"}}
+            style={{ maxWidth: "8%", height: "auto" }}
           />
         </div>
-
       </Footer>
     </>
   );
