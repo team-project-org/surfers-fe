@@ -24,7 +24,7 @@ commit explain
 10. Save : 4번째 메인 컨텐츠 작업 중간 저장
 11. Primary color : 디쟌팀 지정 메인 색으로 변경 #0036FA
 12. 4mainContentsSave : 4번째 메인 컨텐츠 작업 
-
+13. PromptFont : 새로운 폰트 추가 
 */
 
 const { Title, Text, Link } = Typography;
