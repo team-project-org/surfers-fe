@@ -21,6 +21,7 @@ commit explain
 7. IntrofixDongho: 동호님 IntroBox 수정 
 8. IntroBoxAlign : IT업계 내 인재풀 위치 오른쪽 정렬 
 9. 4mainContents : 4번째 메인 컨텐츠 작업 
+10. Save : 중간 저장 
 */
 
 const { Title, Text, Link } = Typography;
@@ -283,8 +284,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					Sprinter ©{new Date().getFullYear()} Created by dongho1596
 				</Footer>  */}
       </Layout>
-
-
       {/* (4) 네번째 설명글과 이미지 첨부 작업 */}
       <Flex
         justify={"center"}
@@ -337,7 +336,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
             <br />
             서비스 이용이 가능해요
           </div>
-          {/* 서비스 이용 방법 도형 그룹 */}
+
+          {/* 서비스 이용 방법 도형 그룹 section */}
           <div>
             <section
               style={{
@@ -359,14 +359,25 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   marginBottom: "20px",
                 }}
               >
+                {/* 이미지 (1) */}
+                <img
+                  src="/Serviceimage1.png"
+                  alt="ServiceInfoImage1"
+                  style={{
+                    width: "50%", // 도형의 가로 크기의 절반
+                    height: "auto", // 이미지 비율 유지
+                    borderRadius: "32px", // 이미지에도 모서리를 둥글게
+                  }}
+                />
                 <div
                   style={{
                     color: "white",
-                    fontFamily: "Pretendard-SemiBold",
+                    fontFamily: "Pretendard-Light",
                     fontSize: "18px",
                   }}
                 >
-                  안녕하세요
+                  따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로
+                  간편하게 내 프로필 등록하기.
                 </div>
               </div>
 
@@ -384,14 +395,23 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   marginBottom: "20px",
                 }}
               >
+                {/* 이미지 (2) */}
+                <img
+                  src="/Serviceimage2.png"
+                  alt="ServiceInfoImage2"
+                  style={{
+                    width: "50%", // 도형의 가로 크기의 절반
+                    height: "auto", // 이미지 비율 유지
+                  }}
+                />
                 <div
                   style={{
                     color: "white",
-                    fontFamily: "Pretendard-SemiBold",
+                    fontFamily: "Pretendard-Light",
                     fontSize: "18px",
                   }}
                 >
-                  추가된 도형 1
+                  베타서비스 오픈 후 연락처와 메일로 오는 사이트 링크 확인하기
                 </div>
               </div>
 
@@ -407,16 +427,30 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: "20px",
+                  padding: "0 20px", // 텍스트 좌우 여백 설정
+                  boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
                 }}
               >
+                {/* 이미지 (2) */}
+                <img
+                  src="/Serviceimage3.png"
+                  alt="ServiceInfoImage3"
+                  style={{
+                    width: "auto", // 이미지 비율 유지
+                    height: "40%", // 도형의 세로 크기의 절반
+                    margin: "10px", // 여백 설정
+                  }}
+                />
                 <div
                   style={{
                     color: "white",
-                    fontFamily: "Pretendard-SemiBold",
+                    fontFamily: "Pretendard-Light",
                     fontSize: "18px",
+                    textAlign: "center", // 텍스트 가운데 정렬
                   }}
                 >
-                  추가된 도형 2
+                  사이트 접속 후, 인재풀 둘러보기 및 게시글 작성하기 등의 서비스
+                  이용하기.
                 </div>
               </div>
             </section>
