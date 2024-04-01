@@ -22,8 +22,8 @@ commit explain
 8. IntroBoxAlign : IT업계 내 인재풀 위치 오른쪽 정렬 
 9. 4mainContents : 4번째 메인 컨텐츠 작업 
 10. Save : 4번째 메인 컨텐츠 작업 중간 저장
-11.  
-
+11. Primary color : 디쟌팀 지정 메인 색으로 변경 #0036FA
+12. 4mainContentsSave : 4번째 메인 컨텐츠 작업 
 
 */
 
@@ -311,7 +311,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               alignItems: "center",
               justifyContent: "center",
               marginBottom: "20px",
-			  margin: "auto", // 가운데 정렬을 위해 추가
+              margin: "auto", // 가운데 정렬을 위해 추가
             }}
           >
             {/* "서비스 이용방법" 텍스트 */}
@@ -355,10 +355,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               <div
                 style={{
                   backgroundColor: "black",
-                  width: "300px",
-                  height: "400px",
+                  width: "320px",
+                  height: "410px",
                   borderRadius: "32px",
-                  marginRight: "10px",
+                  marginRight: "40px",
                   display: "inline-block",
                   alignItems: "center",
                   justifyContent: "center",
@@ -386,6 +386,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     textAlign: "left", // 텍스트 왼쪽으로 정렬
                     paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
                     lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+					marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
                   }}
                 >
                   따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로
@@ -397,10 +398,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               <div
                 style={{
                   backgroundColor: "black",
-                  width: "300px",
-                  height: "400px",
+                  width: "320px",
+                  height: "410px",
                   borderRadius: "32px",
-                  marginRight: "10px",
+                  marginRight: "40px",
                   display: "inline-block",
                   alignItems: "center",
                   justifyContent: "center",
@@ -415,7 +416,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   alt="ServiceInfoImage2"
                   style={{
                     width: "auto", // 이미지 비율 유지
-                    height: "40%", // 도형의 세로 크기의 절반
+                    height: "45%", // 도형의 세로 크기의 절반
                     margin: "10px", // 여백 설정
                     marginTop: "80px", // 텍스트와 이미지를 아래로 이동
                   }}
@@ -428,6 +429,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     textAlign: "left", // 텍스트 왼쪽으로 정렬
                     paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
                     lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+					marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
                   }}
                 >
                   베타서비스 오픈 후 연락처와 메일로 오는 사이트 링크 확인하기
@@ -438,8 +440,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               <div
                 style={{
                   backgroundColor: "black",
-                  width: "300px",
-                  height: "400px",
+                  width: "320px",
+                  height: "410px",
                   borderRadius: "32px",
                   marginRight: "10px",
                   display: "inline-block",
@@ -456,7 +458,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   alt="ServiceInfoImage3"
                   style={{
                     width: "auto", // 이미지 비율 유지
-                    height: "40%", // 도형의 세로 크기의 절반
+                    height: "45%", // 도형의 세로 크기의 절반
                     margin: "10px", // 여백 설정
                     marginTop: "80px", // 텍스트와 이미지를 아래로 이동
                   }}
@@ -469,6 +471,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     textAlign: "left", // 텍스트 왼쪽으로 정렬
                     paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
                     lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+					marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
                   }}
                 >
                   사이트 접속 후, 인재풀 둘러보기
