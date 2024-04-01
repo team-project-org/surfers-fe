@@ -25,6 +25,7 @@ commit explain
 11. Primary color : 디쟌팀 지정 메인 색으로 변경 #0036FA
 12. 4mainContentsSave : 4번째 메인 컨텐츠 작업 
 13. PromptFont : 새로운 폰트 추가 
+14.4mainFinish : 
 */
 
 const { Title, Text, Link } = Typography;
@@ -356,7 +357,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 style={{
                   backgroundColor: "black",
                   width: "320px",
-                  height: "410px",
+                  height: "400px",
                   borderRadius: "32px",
                   marginRight: "40px",
                   display: "inline-block",
@@ -367,6 +368,19 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
                 }}
               >
+                <div
+                  style={{
+                    color: "white",
+                    fontFamily: "Prompt",
+                    fontSize: "22px",
+                    textAlign: "left", // 텍스트 왼쪽으로 정렬
+                    paddingLeft: "15px", // 텍스트 좀 더 왼쪽으로 이동
+                    marginTop: "25px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+                  }}
+                >
+                  STEP 1
+                </div>
+
                 {/* 이미지 (1) */}
                 <img
                   src="/Serviceimage1.png"
@@ -375,7 +389,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     width: "90%", // 도형의 가로 크기의 절반
                     height: "auto", // 이미지 비율 유지
                     borderRadius: "32px", // 이미지에도 모서리를 둥글게
-                    marginTop: "80px", // 텍스트와 이미지를 아래로 이동
+                    marginTop: "10px", // 텍스트와 이미지를 아래로 이동
                   }}
                 />
                 <div
@@ -386,7 +400,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     textAlign: "left", // 텍스트 왼쪽으로 정렬
                     paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
                     lineHeight: "150%", // 문장 사이 여백을 조절합니다.
-					marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+                    marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
                   }}
                 >
                   따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로
@@ -399,7 +413,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 style={{
                   backgroundColor: "black",
                   width: "320px",
-                  height: "410px",
+                  height: "400px",
                   borderRadius: "32px",
                   marginRight: "40px",
                   display: "inline-block",
@@ -410,6 +424,19 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
                 }}
               >
+                <div
+                  style={{
+                    color: "white",
+                    fontFamily: "Prompt",
+                    fontSize: "22px",
+                    textAlign: "left", // 텍스트 왼쪽으로 정렬
+                    paddingLeft: "15px", // 텍스트 좀 더 왼쪽으로 이동
+                    marginTop: "25px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+                  }}
+                >
+                  STEP 2
+                </div>
+
                 {/* 이미지 (2) */}
                 <img
                   src="/Serviceimage2.png"
@@ -418,7 +445,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     width: "auto", // 이미지 비율 유지
                     height: "45%", // 도형의 세로 크기의 절반
                     margin: "10px", // 여백 설정
-                    marginTop: "80px", // 텍스트와 이미지를 아래로 이동
+                    marginTop: "11px", // 텍스트와 이미지를 아래로 이동
                   }}
                 />
                 <div
@@ -429,7 +456,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     textAlign: "left", // 텍스트 왼쪽으로 정렬
                     paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
                     lineHeight: "150%", // 문장 사이 여백을 조절합니다.
-					marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+                    marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
                   }}
                 >
                   베타서비스 오픈 후 연락처와 메일로 오는 사이트 링크 확인하기
@@ -441,7 +468,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 style={{
                   backgroundColor: "black",
                   width: "320px",
-                  height: "410px",
+                  height: "400px",
                   borderRadius: "32px",
                   marginRight: "10px",
                   display: "inline-block",
@@ -452,6 +479,19 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
                 }}
               >
+                <div
+                  style={{
+                    color: "white",
+                    fontFamily: "Prompt",
+                    fontSize: "22px",
+                    textAlign: "left", // 텍스트 왼쪽으로 정렬
+                    paddingLeft: "15px", // 텍스트 좀 더 왼쪽으로 이동
+                    marginTop: "25px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+                  }}
+                >
+                  STEP 3
+                </div>
+
                 {/* 이미지 (3) */}
                 <img
                   src="/Serviceimage3.png"
@@ -460,7 +500,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     width: "auto", // 이미지 비율 유지
                     height: "45%", // 도형의 세로 크기의 절반
                     margin: "10px", // 여백 설정
-                    marginTop: "80px", // 텍스트와 이미지를 아래로 이동
+                    marginTop: "10px", // 텍스트와 이미지를 아래로 이동
                   }}
                 />
                 <div
@@ -469,9 +509,9 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     fontFamily: "Pretendard-Light",
                     fontSize: "18px",
                     textAlign: "left", // 텍스트 왼쪽으로 정렬
-                    paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
+                    paddingLeft: "15px", // 텍스트 좀 더 왼쪽으로 이동
                     lineHeight: "150%", // 문장 사이 여백을 조절합니다.
-					marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+                    marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
                   }}
                 >
                   사이트 접속 후, 인재풀 둘러보기
