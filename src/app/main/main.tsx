@@ -552,7 +552,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           }}
         >
           <a
-            href="https://www.sprinter.gmail.com"
+            href="https://www.sprinterteam.com"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "white", textDecoration: "none" }}
