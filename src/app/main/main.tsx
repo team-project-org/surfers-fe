@@ -21,7 +21,10 @@ commit explain
 7. IntrofixDongho: 동호님 IntroBox 수정 
 8. IntroBoxAlign : IT업계 내 인재풀 위치 오른쪽 정렬 
 9. 4mainContents : 4번째 메인 컨텐츠 작업 
-10. Save : 중간 저장 
+10. Save : 4번째 메인 컨텐츠 작업 중간 저장
+11.  
+
+
 */
 
 const { Title, Text, Link } = Typography;
@@ -290,7 +293,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
         align={"center"}
         style={{
           backgroundColor: primary,
-          padding: "500px 100px",
+          // padding: "0px 100px",
           position: "relative",
           minHeight: "100vh",
         }}
@@ -300,25 +303,26 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           <div
             style={{
               backgroundColor: "black",
-              width: "200px",
+              width: "190px",
               height: "50px",
-              borderRadius: "10px",
+              borderRadius: "15px",
               marginRight: "10px",
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               marginBottom: "20px",
+			  margin: "auto", // 가운데 정렬을 위해 추가
             }}
           >
             {/* "서비스 이용방법" 텍스트 */}
             <div
               style={{
                 color: "white",
-                fontFamily: "Pretendard-SemiBold",
-                fontSize: "18px",
+                fontFamily: "Pretendard-Medium",
+                fontSize: "23px",
               }}
             >
-              서비스 이용방법
+              서비스 이용 방법
             </div>
           </div>
           {/* 메인 타이틀 텍스트 */}
@@ -328,6 +332,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               fontSize: "45px",
               color: "white",
               marginBottom: "20px",
+              lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+              marginTop: "20px",
             }}
           >
             프로필 등록으로
@@ -338,7 +344,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           </div>
 
           {/* 서비스 이용 방법 도형 그룹 section */}
-          <div>
+          <div style={{ marginTop: "60px" }}>
             <section
               style={{
                 display: "flex",
@@ -350,13 +356,15 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 style={{
                   backgroundColor: "black",
                   width: "300px",
-                  height: "446px",
+                  height: "400px",
                   borderRadius: "32px",
                   marginRight: "10px",
                   display: "inline-block",
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: "20px",
+                  padding: "0 20px", // 텍스트 좌우 여백 설정
+                  boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
                 }}
               >
                 {/* 이미지 (1) */}
@@ -364,9 +372,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   src="/Serviceimage1.png"
                   alt="ServiceInfoImage1"
                   style={{
-                    width: "50%", // 도형의 가로 크기의 절반
+                    width: "90%", // 도형의 가로 크기의 절반
                     height: "auto", // 이미지 비율 유지
                     borderRadius: "32px", // 이미지에도 모서리를 둥글게
+                    marginTop: "80px", // 텍스트와 이미지를 아래로 이동
                   }}
                 />
                 <div
@@ -374,6 +383,9 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     color: "white",
                     fontFamily: "Pretendard-Light",
                     fontSize: "18px",
+                    textAlign: "left", // 텍스트 왼쪽으로 정렬
+                    paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
+                    lineHeight: "150%", // 문장 사이 여백을 조절합니다.
                   }}
                 >
                   따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로
@@ -386,41 +398,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 style={{
                   backgroundColor: "black",
                   width: "300px",
-                  height: "446px",
-                  borderRadius: "32px",
-                  marginRight: "10px",
-                  display: "inline-block",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: "20px",
-                }}
-              >
-                {/* 이미지 (2) */}
-                <img
-                  src="/Serviceimage2.png"
-                  alt="ServiceInfoImage2"
-                  style={{
-                    width: "50%", // 도형의 가로 크기의 절반
-                    height: "auto", // 이미지 비율 유지
-                  }}
-                />
-                <div
-                  style={{
-                    color: "white",
-                    fontFamily: "Pretendard-Light",
-                    fontSize: "18px",
-                  }}
-                >
-                  베타서비스 오픈 후 연락처와 메일로 오는 사이트 링크 확인하기
-                </div>
-              </div>
-
-              {/* 서비스 이용 방법 (3) 도형과 텍스트와 이미지 */}
-              <div
-                style={{
-                  backgroundColor: "black",
-                  width: "300px",
-                  height: "446px",
+                  height: "400px",
                   borderRadius: "32px",
                   marginRight: "10px",
                   display: "inline-block",
@@ -433,12 +411,13 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               >
                 {/* 이미지 (2) */}
                 <img
-                  src="/Serviceimage3.png"
-                  alt="ServiceInfoImage3"
+                  src="/Serviceimage2.png"
+                  alt="ServiceInfoImage2"
                   style={{
                     width: "auto", // 이미지 비율 유지
                     height: "40%", // 도형의 세로 크기의 절반
                     margin: "10px", // 여백 설정
+                    marginTop: "80px", // 텍스트와 이미지를 아래로 이동
                   }}
                 />
                 <div
@@ -446,10 +425,56 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     color: "white",
                     fontFamily: "Pretendard-Light",
                     fontSize: "18px",
-                    textAlign: "center", // 텍스트 가운데 정렬
+                    textAlign: "left", // 텍스트 왼쪽으로 정렬
+                    paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
+                    lineHeight: "150%", // 문장 사이 여백을 조절합니다.
                   }}
                 >
-                  사이트 접속 후, 인재풀 둘러보기 및 게시글 작성하기 등의 서비스
+                  베타서비스 오픈 후 연락처와 메일로 오는 사이트 링크 확인하기
+                </div>
+              </div>
+
+              {/* 서비스 이용 방법 (3) 도형과 텍스트와 이미지 */}
+              <div
+                style={{
+                  backgroundColor: "black",
+                  width: "300px",
+                  height: "400px",
+                  borderRadius: "32px",
+                  marginRight: "10px",
+                  display: "inline-block",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "20px",
+                  padding: "0 20px", // 텍스트 좌우 여백 설정
+                  boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
+                }}
+              >
+                {/* 이미지 (3) */}
+                <img
+                  src="/Serviceimage3.png"
+                  alt="ServiceInfoImage3"
+                  style={{
+                    width: "auto", // 이미지 비율 유지
+                    height: "40%", // 도형의 세로 크기의 절반
+                    margin: "10px", // 여백 설정
+                    marginTop: "80px", // 텍스트와 이미지를 아래로 이동
+                  }}
+                />
+                <div
+                  style={{
+                    color: "white",
+                    fontFamily: "Pretendard-Light",
+                    fontSize: "18px",
+                    textAlign: "left", // 텍스트 왼쪽으로 정렬
+                    paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
+                    lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+                  }}
+                >
+                  사이트 접속 후, 인재풀 둘러보기
+                  <br />
+                  및 게시글 작성하기 등의 서비스
+                  <br />
                   이용하기.
                 </div>
               </div>
