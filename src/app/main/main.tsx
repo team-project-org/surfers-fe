@@ -25,7 +25,7 @@ commit explain
 11. Primary color : 디쟌팀 지정 메인 색으로 변경 #0036FA
 12. 4mainContentsSave : 4번째 메인 컨텐츠 작업 
 13. PromptFont : 새로운 폰트 추가 
-14.4mainFinish : 
+14. 4mainFinish : 4번째 메인 컨텐츠 완성  
 */
 
 const { Title, Text, Link } = Typography;
@@ -41,6 +41,14 @@ const Main: FunctionComponent<IMainProps> = (props) => {
   return (
     <>
       <Layout style={{ backgroundColor: "black" }}>
+        {/*상단헤더의 스프린터 로고 삽입*/}
+        <div style={{ marginRight: "auto", marginLeft: "70px", marginTop: "30px" }}>
+          <img
+            src="/logowhite.png"
+            alt="Logo"
+            style={{ maxWidth: "20%", height: "auto"}}
+          />
+        </div>
         <Content style={{ margin: "24px 16px 0" }}>
           <div
             style={{
@@ -225,9 +233,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               >
                 내 프로필 등록
                 <br />
-                <span style={{ color: orange, lineHeight: "1.5" }}>
+                {/* <span style={{ color: orange, lineHeight: "1.5" }}>
                   1분
-                </span>{" "}
+                </span>{" "} */}
+				1분
                 안에 간편하게
               </div>
               {/* 서브 텍스트 */}
@@ -259,8 +268,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   }}
                 >
                   함께{" "}
-                  <span style={{ color: orange, lineHeight: "1.5" }}>성장</span>
-                  할
+                  {/* <span style={{ color: orange, lineHeight: "1.5" }}>성장</span> */}
+				  성장할
                   <br />
                   좋은 팀과 팀원 찾기
                 </div>
@@ -283,10 +292,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
             </div>
           </div>
         </Content>
-
-        {/* <Footer style={{ textAlign: "center" }}>
-					Sprinter ©{new Date().getFullYear()} Created by dongho1596
-				</Footer>  */}
       </Layout>
       {/* (4) 네번째 설명글과 이미지 첨부 작업 */}
       <Flex
@@ -296,10 +301,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           backgroundColor: primary,
           // padding: "0px 100px",
           position: "relative",
-          minHeight: "100vh",
+          minHeight: "80vh", // 파란색 배경 높이 조절
         }}
       >
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", marginTop: "-80px" }}>
           {/* 검정색 버튼 모양의 도형 */}
           <div
             style={{
@@ -334,18 +339,18 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               color: "white",
               marginBottom: "20px",
               lineHeight: "150%", // 문장 사이 여백을 조절합니다.
-              marginTop: "20px",
+              marginTop: "30px",
             }}
           >
             프로필 등록으로
             <br />
-            인재풀 컨택 및 팀원 구인등의
+            인재풀 컨택 및 팀원 구인 등의
             <br />
             서비스 이용이 가능해요
           </div>
 
           {/* 서비스 이용 방법 도형 그룹 section */}
-          <div style={{ marginTop: "60px" }}>
+          <div style={{ marginTop: "70px" }}>
             <section
               style={{
                 display: "flex",
@@ -386,7 +391,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   src="/Serviceimage1.png"
                   alt="ServiceInfoImage1"
                   style={{
-                    width: "90%", // 도형의 가로 크기의 절반
+                    width: "90%", // 도형의 가로 크기의 절반ㄹ
                     height: "auto", // 이미지 비율 유지
                     borderRadius: "32px", // 이미지에도 모서리를 둥글게
                     marginTop: "10px", // 텍스트와 이미지를 아래로 이동
@@ -525,7 +530,43 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           </div>
         </div>
       </Flex>
-      ;
+      ;{/* (5) Footer */}
+      <Footer
+        style={{
+          backgroundColor: "#002DCC", // 배경색 설정
+          textAlign: "center",
+          height: "15vh", // 약 4분의 1 높이 설정
+          paddingTop: "50px", // 위쪽 여백 설정
+          marginTop: "-20px", // 여백 제거
+        }}
+      >
+        {/* 가운데 정렬된 텍스트 */}
+        <div
+          style={{
+            color: "white",
+            fontFamily: "Pretendard-Light",
+            fontSize: "18px",
+          }}
+        >
+          <a
+            href="https://www.sprinter.gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "white", textDecoration: "none" }}
+          >
+            www.sprinterteam.com
+          </a>
+        </div>
+
+		<div style={{  }}>
+          <img
+            src="/logowhite.png"
+            alt="Logo"
+            style={{ maxWidth: "10%", height: "auto"}}
+          />
+        </div>
+
+      </Footer>
     </>
   );
 };
