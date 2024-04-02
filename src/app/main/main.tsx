@@ -6,6 +6,7 @@ import MainHeader from "@/app/mainheader";
 import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
+import MainHeader from "@/app/mainheader";
 
 /*
 
@@ -29,7 +30,6 @@ commit explain
 15. FooterSave : 푸터 1차 작업 진행 
 
 */
-
 const { Title, Text, Link } = Typography;
 const { Content, Footer } = Layout;
 
