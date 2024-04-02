@@ -66,6 +66,10 @@ export default function RootLayout({
 									},
 									Card: {
 										borderRadius,
+										paddingXL: 16,
+										paddingMD: 16,
+										paddingLG: 16,
+										paddingSM: 16
 									},
 								},
 							}}

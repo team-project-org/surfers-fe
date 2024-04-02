@@ -25,7 +25,7 @@ interface ICardViewProps {
 
 const { Meta } = Card;
 
-const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
+const TalentCardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 	const {
 		avatar = undefined,
 		cover = undefined,
@@ -50,7 +50,7 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 						<div
 							className="blur"
 							style={{
-								backgroundImage: `url(${cover.url})`,
+								backgroundImage: `url('${cover.url}')`,
 								backgroundPosition: "center",
 								backgroundSize: "cover",
 								backgroundRepeat: "no-repeat",
@@ -86,32 +86,29 @@ const CardView: FunctionComponent<Partial<ICardViewProps>> = (props) => {
 					description={description}
 				/>
 			</Skeleton>
-			{(portfolioLinkPlainText != undefined ||
-				portfolioLinkPlainText != "") && (
-				<Flex justify={"flex-end"} align={"center"} style={{ paddingTop: 5 }}>
-					{portfolioLinkPlainText?.split(",").map((portfolioLink: string) => {
-						try {
-							const hostname = new URL(portfolioLink).hostname;
-							let selectType = undefined;
-							if (hostname.includes("notion")) {
-								selectType = "Notion";
-							} else if (hostname.includes("behance")) {
-								selectType = "Behance";
-							} else if (hostname.includes("linkedin")) {
-								selectType = "Linkedin";
-							}
-							return (
-								selectType && <URLTag key={portfolioLink} name={selectType} />
-							);
-						} catch (e) {
-							return null;
+			<Flex justify={"flex-end"} align={"center"} style={{ paddingTop: 5, height: 45, display: 'flex' }}>
+				{portfolioLinkPlainText?.split(",").map((portfolioLink: string) => {
+					try {
+						const hostname = new URL(portfolioLink).hostname;
+						let selectType = undefined;
+						if (hostname.includes("notion")) {
+							selectType = "Notion";
+						} else if (hostname.includes("behance")) {
+							selectType = "Behance";
+						} else if (hostname.includes("linkedin")) {
+							selectType = "Linkedin";
 						}
-					})}
-				</Flex>
-			)}
+						return (
+							selectType && <URLTag key={portfolioLink} name={selectType} />
+						);
+					} catch (e) {
+						return null;
+					}
+				})}
+			</Flex>
 			{children}
 		</Card>
 	);
 };
 
-export default CardView;
+export default TalentCardView;

@@ -1,6 +1,6 @@
 "use client";
 import React, { FunctionComponent, useState } from "react";
-import { Flex, Pagination, Segmented } from "antd";
+import { Flex, Pagination, Segmented, Typography } from "antd";
 import GridView from "@/app/gridview";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
@@ -18,6 +18,8 @@ const profiles = getImages([
 	"profile/profile3.png",
 	"profile/profile4.png",
 ]);
+
+const { Title } = Typography;
 
 const Talents: FunctionComponent<ITalentsProps> = (props) => {
 	const [loading, setLoading] = useState(false);
@@ -67,10 +69,12 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 	return (
 		<div>
 			<Flex
-				justify={"start"}
-				align={"center"}
-				style={{ width: "100%", paddingBottom: 10 }}
+				justify={"flex-start"}
+				flex={'column'}
+				align={"start"}
+				style={{ width: "100%", paddingBottom: 10, flexDirection: 'column' }}
 			>
+    		<Title level={3}>인재풀 둘러보기</Title>
 				<Segmented
 					options={["디자이너", "개발자", "기타 직군"]}
 					onChange={(value) => {
@@ -86,24 +90,26 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 						email,
 						name,
 						job,
+						simpleIntroduce,
 						profileImageUrl,
 						portfolioLinkPlainText,
 					} = item;
+					const imageUrl = profileImageUrl || getRandomOne(profiles)
+					console.log('imageUrl', imageUrl)
 					return (
 						<TalentCardView
 							key={id}
 							name={name}
 							cover={{
-								url: getRandomOne(profiles),
+								url: imageUrl,
 							}}
 							job={job}
 							loading={loading}
 							onClick={() => {
 								router.push(`talents/${id}?token=${token}`);
 							}}
-							style={{ height: 342 }}
+							title={simpleIntroduce}
 							portfolioLinkPlainText={portfolioLinkPlainText}
-							// avatar="https://api.dicebear.com/7.x/miniavs/svg?seed=1"
 							description={email}
 						/>
 					);
