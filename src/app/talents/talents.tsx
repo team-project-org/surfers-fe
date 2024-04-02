@@ -74,7 +74,7 @@ const Talents: FunctionComponent<ITalentsProps> = (props) => {
 				align={"start"}
 				style={{ width: "100%", paddingBottom: 10, flexDirection: 'column' }}
 			>
-    		<Title level={3}>인재풀 둘러보기</Title>
+    		<Title level={3} style={{ marginTop: 0 }}>인재풀 둘러보기</Title>
 				<Segmented
 					options={["디자이너", "개발자", "기타 직군"]}
 					onChange={(value) => {
