@@ -2,7 +2,6 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { Layout, theme, Typography, Space, Flex } from "antd";
 import ResponseCarousel from "./responseCarousel";
-import MainHeader from "@/app/mainheader";
 import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
