@@ -39,6 +39,7 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 	};
 
 	useEffect(() => {
+		handleScroll()
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
@@ -62,8 +63,9 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 							paddingLeft: 16,
 							paddingRight: 16,
 						}}
-					>
-						<div className="white_logo" onClick={() => router.push("/")} />
+					> 	
+						<img className="white_logo" //로고 화질 좋은 이미지로 넣어서 화질 깨짐 방지
+						src="/logowhite.png" alt="Main Logo" onClick={() => router.push("/")} />
 						<Menu
 							mode="horizontal"
 							selectedKeys={[pathname]}

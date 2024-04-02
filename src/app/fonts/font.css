@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Pretendard";
+    font-display: fallback;
+  
+    src:
+      url("./Pretendard-SemiBold.otf") format("opentype"),
+      url("./Pretendard-Light.otf") format("opentype"),
+      url("./Pretendard-Medium.otf") format("opentype"),
+      url("./Pretendard-Regular.otf") format("opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  
+  @font-face {
+    font-family: "PyeongChangPeace";
+    font-display: fallback;
+  
+    src:
+      url("./PyeongChangPeace-Bold.otf") format("opentype");
+  
+    /* 사용할 폰트의 기본 스타일 */
+    font-weight: 200;
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: "Prompt";
+    src: url("./Prompt.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
