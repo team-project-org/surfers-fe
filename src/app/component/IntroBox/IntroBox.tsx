@@ -9,8 +9,10 @@ interface IIntroBoxProps {
 }
 
 const IntroBox: FunctionComponent<IIntroBoxProps> = (props) => {
-	const { title, children, right, backgroundColor } = props;
+	const { title, children, right, backgroundColor } = props;  // backgroundColor 추가
 	const defaultBackgroundColor = primary;
+	const textColor = title === "테스트 진행 후 오픈" ? "black" : "white"; // 제목이 "테스트 진행 후 오픈"일 때만 텍스트 색상을 검정색으로 설정
+
 	return (
 		<div style={right ? { textAlign: "right" } : {}}>
 			<div
@@ -23,6 +25,7 @@ const IntroBox: FunctionComponent<IIntroBoxProps> = (props) => {
 					display: "inline-flex",
 					justifyContent: "center",
 					alignItems: "center",
+					marginTop: "25px",
 				}}
 			>
 				<div
@@ -30,7 +33,7 @@ const IntroBox: FunctionComponent<IIntroBoxProps> = (props) => {
 						fontFamily: "Pretendard-Medium",
 						fontSize: "24px",
 						padding: 18,
-						color: white,
+						color: textColor, // 텍스트 색상을 조건에 따라 동적으로 설정
 						margin: "0",
 					}}
 				>
