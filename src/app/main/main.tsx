@@ -1,14 +1,14 @@
 "use client";
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { Layout, theme, Typography, Space, Flex } from "antd";
-import ResponseCarousel from "./responseCarousel";
+// import ResponseCarousel from "./responseCarousel";
 import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
 import MainHeader from "@/app/mainheader";
 
 /*
-
+안녕하세요 
 [feat] info-main-contents-and-button by ricksclone
 
 commit explain 
@@ -259,39 +259,70 @@ const Main: FunctionComponent<IMainProps> = (props) => {
             </IntroBox>
 
             {/* (3)-2 두번째 기능 설명 글 */}
-            <div style={{ textAlign: "right", marginTop: "200px" }}>
-              <IntroBox title={"IT업계 내 인재풀"}>
-                <div
-                  style={{
-                    fontFamily: "Pretendard-SemiBold",
-                    fontSize: "45px",
-                    marginTop: "25px",
-                    textAlign: "right", // 오른쪽 정렬 추가
-                  }}
-                >
-                  함께{" "}
-                  {/* <span style={{ color: orange, lineHeight: "1.5" }}>성장</span> */}
-                  성장할
-                  <br />
-                  좋은 팀과 팀원 찾기
-                </div>
-                {/*서브 텍스트 */}
-                <div
-                  style={{
-                    fontFamily: "Pretendard-Regular",
-                    fontSize: "16px",
-                    marginTop: 30,
-                    lineHeight: "1.5",
-                    textAlign: "right", // 오른쪽 정렬 추가
-                  }}
-                >
-                  개발자, 디자이너, 기획자 등 프로필 등록을 완료한 유저들은
-                  <br />
-                  팀원 구인 게시글 작성 및 개별 프로필 컨택 기능을 사용할 수
-                  있어요.
-                </div>
-              </IntroBox>
-            </div>
+            <IntroBox right title={"IT업계 내 인재풀"}>
+              <div
+                style={{
+                  fontFamily: "Pretendard-SemiBold",
+                  fontSize: "45px",
+                  marginTop: "25px",
+                  textAlign: "right", // 오른쪽 정렬 추가
+                }}
+              >
+                함께{" "}
+                {/* <span style={{ color: orange, lineHeight: "1.5" }}>성장</span> */}
+                성장할
+                <br />
+                좋은 팀과 팀원 찾기
+              </div>
+              {/*서브 텍스트 */}
+              <div
+                style={{
+                  fontFamily: "Pretendard-Regular",
+                  fontSize: "16px",
+                  marginTop: 30,
+                  lineHeight: "1.5",
+                  textAlign: "right", // 오른쪽 정렬 추가
+                }}
+              >
+                개발자, 디자이너, 기획자 등 프로필 등록을 완료한 유저들은
+                <br />
+                팀원 구인 게시글 작성 및 개별 프로필 컨택 기능을 사용할 수
+                있어요.
+              </div>
+            </IntroBox>
+
+            {/* (3)-3 세번째 기능 설명 글 */}
+            <IntroBox title={"테스트 진행 후 오픈"} backgroundColor={orange}>
+              <div
+                style={{
+                  fontFamily: "Pretendard-SemiBold",
+                  fontSize: "45px",
+                  marginTop: "25px",
+                }}
+              >
+                내 프로필 등록
+                <br />
+                {/* <span style={{ color: orange, lineHeight: "1.5" }}>
+                  1분
+                </span>{" "} */}
+                1분 안에 간편하게
+              </div>
+              {/* 서브 텍스트 */}
+              <div
+                style={{
+                  fontFamily: "Pretendard-Regular",
+                  fontSize: "16px",
+                  marginTop: 30,
+                  lineHeight: "1.5",
+                }}
+              >
+                기존에 사용하던 링크드인, 노션, 깃헙과 같은 기타 여러 링크로
+                <br />
+                복잡하게 프로필 및 커리어 내용을 작성할 필요없이,
+                <br />
+                1분 안에 내 프로필 등록이 가능해요.
+              </div>
+            </IntroBox>
           </div>
         </Content>
       </Layout>
@@ -466,7 +497,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
                   }}
                 >
-                  베타서비스 오픈 후 연락처와 메일로 오는 사이트 링크 확인하기
+                  베타서비스 오픈 후 연락처와 메일로 전송되는 사이트 링크
+                  확인하기
                 </div>
               </div>
 
