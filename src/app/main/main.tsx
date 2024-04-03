@@ -27,9 +27,25 @@ commit explain
 13. PromptFont : 새로운 폰트 추가 
 14. 4mainFinish : 4번째 메인 컨텐츠 완성  
 15. FooterSave : 푸터 1차 작업 진행 
-16. 
+
+
+-협업 기능 설명 컨텐츠 추가 o
+-IntroBox 글자색,배경색 추가후 적용 o
+-이미지 삽입 스타일 지정 o
+-안내메세지 도형 작업 진행 동호님이 말씀해주신 내용 적용 { background-color:rgba(255, 255, 255, 0.1); } o
+-테스트 진행 후 오픈 아래 이미지 추가하기
+-영상추가하기 1,2,3
+-전체 코드 간격 및 줄 조정 위에서부터 아래로 천천히 
+-가운데 정렬과 UX writing 수정 
+-화면 일치 및 위계 설정
+-이벤트 설계 
+-manipulate 연동 
+-기능 글자 간격 150%로 정리 o
+
+
 
 */
+
 const { Title, Text, Link } = Typography;
 const { Content, Footer } = Layout;
 
@@ -232,7 +248,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   style={{
                     fontFamily: "Pretendard-SemiBold",
                     fontSize: "45px",
-                    marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절 
+                    marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절
+                    lineHeight: "1.5",
                   }}
                 >
                   내 프로필 등록
@@ -269,6 +286,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     fontSize: "45px",
                     marginTop: "25px",
                     textAlign: "right", // 오른쪽 정렬 추가
+					lineHeight: "1.5"
                   }}
                 >
                   함께{" "}
@@ -303,6 +321,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     fontFamily: "Pretendard-SemiBold",
                     fontSize: "45px",
                     marginTop: "25px",
+                    lineHeight: "1.5",
                   }}
                 >
                   협업 경험을 확인하고,
@@ -339,6 +358,40 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   }}
                 />
               </IntroBox>
+            </div>
+
+            {/* (3)-3 세번째 기능 설명 아래 안내 메세지*/}
+            <div
+              style={{
+                position: "relative",
+                width: "460px", // 도형의 가로 크기
+                height: "75px", // 도형의 세로 크기
+                backgroundColor: "rgba(255, 255, 255, 0.1)", // 배경색
+                borderRadius: "15px", // 도형의 모서리를 둥글게 만듦
+                display: "flex", // 내부 요소들을 가로로 정렬
+                alignItems: "center", // 내부 요소들을 세로로 정렬
+                padding: "0 20px", // 내부 여백
+				marginTop: 30,
+              }}
+            >
+              {/* 느낌표 아이콘 */}
+              <img
+                src="alerticon.png"
+                alt="alerticon"
+                style={{ width: "30px", height: "auto", marginRight: "10px" }}
+              />
+              {/* 안내 텍스트 */}
+              <span
+                style={{
+                  fontFamily: "Arial",
+                  color: "white",
+                  fontSize: "16px",
+				  lineHeight: "1.5",
+                }}
+              >
+                해당 기능은 서비스 오픈 이후 유저 테스트를 거쳐 적용되며, <br />
+                기술 평가를 제외한 협업 역량에 대해서 다룹니다.
+              </span>
             </div>
           </div>
         </Content>
@@ -388,7 +441,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 fontSize: "45px",
                 color: "white",
                 marginBottom: "20px",
-                lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+				lineHeight: "1.5", // 문장 사이 여백을 조절합니다.
                 marginTop: "30px",
               }}
             >
