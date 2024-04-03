@@ -32,9 +32,9 @@ commit explain
 -협업 기능 설명 컨텐츠 추가 o
 -IntroBox 글자색,배경색 추가후 적용 o
 -이미지 삽입 스타일 지정 o
--안내메세지 도형 작업 진행 동호님이 말씀해주신 내용 적용 { background-color:rgba(255, 255, 255, 0.1); } o
--테스트 진행 후 오픈 아래 이미지 추가하기
--영상추가하기 1,2,3
+- alert message : 안내메세지 도형 작업 진행 동호님이 말씀해주신 내용 적용 { background-color:rgba(255, 255, 255, 0.1); } o
+-테스트 진행 후 오픈 아래 이미지 추가하기 o
+-영상추가하기 1,2,3 o
 -전체 코드 간격 및 줄 조정 위에서부터 아래로 천천히 
 -가운데 정렬과 UX writing 수정 
 -화면 일치 및 위계 설정
@@ -277,6 +277,19 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               </IntroBox>
             </div>
 
+            {/* 프로필 등록하기 영상첨부 */}
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-300px' }}>
+              <iframe
+                width="500"
+                height="300"
+                src={`https://www.youtube.com/embed/7ff0ymV4gLc`}
+                title="YouTube video player"
+                frameBorder="0" // frameborder로 넣기
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+
             {/* (3)-2 두번째 기능 설명 글 */}
             <div style={{ marginTop: "250px" }}>
               <IntroBox right title={"IT업계 내 인재풀"}>
@@ -286,7 +299,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     fontSize: "45px",
                     marginTop: "25px",
                     textAlign: "right", // 오른쪽 정렬 추가
-					lineHeight: "1.5"
+                    lineHeight: "1.5",
                   }}
                 >
                   함께{" "}
@@ -311,6 +324,19 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   있어요.
                 </div>
               </IntroBox>
+            </div>
+
+            {/*IT업계 내 인재풀 영상첨부 */}
+            <div style={{ marginTop: '-300px' }}>
+              <iframe
+                width="500"
+                height="300"
+                src={`https://www.youtube.com/embed/7ff0ymV4gLc`}
+                title="YouTube video player"
+                frameBorder="0" // frameborder로 넣기
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
 
             {/* (3)-3 세번째 기능 설명 글 */}
@@ -354,7 +380,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     width: "43%", // 도형의 가로 크기의 절반
                     height: "auto", // 이미지 비율 유지
                     float: "right",
-                    marginTop: "-285px",
+                    marginTop: "-315px",
                   }}
                 />
               </IntroBox>
@@ -371,7 +397,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 display: "flex", // 내부 요소들을 가로로 정렬
                 alignItems: "center", // 내부 요소들을 세로로 정렬
                 padding: "0 20px", // 내부 여백
-				marginTop: 30,
+                marginTop: 30,
               }}
             >
               {/* 느낌표 아이콘 */}
@@ -386,7 +412,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   fontFamily: "Arial",
                   color: "white",
                   fontSize: "16px",
-				  lineHeight: "1.5",
+                  lineHeight: "1.5",
                 }}
               >
                 해당 기능은 서비스 오픈 이후 유저 테스트를 거쳐 적용되며, <br />
@@ -441,7 +467,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 fontSize: "45px",
                 color: "white",
                 marginBottom: "20px",
-				lineHeight: "1.5", // 문장 사이 여백을 조절합니다.
+                lineHeight: "1.5", // 문장 사이 여백을 조절합니다.
                 marginTop: "30px",
               }}
             >
