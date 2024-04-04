@@ -1,5 +1,5 @@
 "use client";
-import React, { FunctionComponent, useState, useEffect } from "react";
+import React, { FunctionComponent, useRef, useState, useEffect } from "react";
 import { Layout, theme, Typography, Space, Flex } from "antd";
 // import ResponseCarousel from "./responseCarousel";
 import "@/app/fonts/font.css";
@@ -8,42 +8,15 @@ import IntroBox from "@/app/component/IntroBox";
 import MainHeader from "@/app/mainheader";
 
 /*
-안녕하세요 
-[feat] info-main-contents-and-button by ricksclone
-
-commit explain 
-1. Delete Header And zindex : header 삭제 및 백그라운드 컬러 설정과 zindex이미지별 위계 설정 
-2. font Delete : 안사용하는 폰트 삭제 
-3. Background Stop: src를 모두 backgroundImage로 관리할 수 있게 background.css 작업을 하다가 이미지별 스타일이 달라지는 오류가 생기길래 후 순위로 미뤘습니다 ㅠㅠ 추후 일괄 수정 
-4. fontAdress : font 주소 동호님이 적어주신대로 수정 
-5. code convention 설정 완료 
-6. IntroBox  : 동호님이 주신 IntroBox 코드대로 수정 
-7. IntrofixDongho: 동호님 IntroBox 수정 
-8. IntroBoxAlign : IT업계 내 인재풀 위치 오른쪽 정렬 
-9. 4mainContents : 4번째 메인 컨텐츠 작업 
-10. Save : 4번째 메인 컨텐츠 작업 중간 저장
-11. Primary color : 디쟌팀 지정 메인 색으로 변경 #0036FA
-12. 4mainContentsSave : 4번째 메인 컨텐츠 작업 
-13. PromptFont : 새로운 폰트 추가 
-14. 4mainFinish : 4번째 메인 컨텐츠 완성  
-15. FooterSave : 푸터 1차 작업 진행 
-
-
--협업 기능 설명 컨텐츠 추가 o
--IntroBox 글자색,배경색 추가후 적용 o
--이미지 삽입 스타일 지정 o
-- alert message : 안내메세지 도형 작업 진행 동호님이 말씀해주신 내용 적용 { background-color:rgba(255, 255, 255, 0.1); } o
--테스트 진행 후 오픈 아래 이미지 추가하기 o
--영상추가하기 1,2,3 o
 -전체 코드 간격 및 줄 조정 위에서부터 아래로 천천히 
 -가운데 정렬과 UX writing 수정 
 -화면 일치 및 위계 설정
 -이벤트 설계 
 -manipulate 연동 
--기능 글자 간격 150%로 정리 o
 
-
-
+<동호님 추가 작업> 
+배경에 바둑판 별모양 깔기
+배경 색 파란색감 적용하기
 */
 
 const { Title, Text, Link } = Typography;
@@ -97,7 +70,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   style={{
                     fontFamily: "PyeongChangPeace",
                     color: "white",
-                    fontSize: "60px",
+                    fontSize: "calc(4vw + 20px)", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
                     lineHeight: "150%",
                     marginTop: "-3px",
                   }}
@@ -110,8 +83,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     alt="sticker"
                     style={{
                       position: "absolute",
-                      top: 110,
-                      left: 854,
+                      top: 130,
+                      left: 980,
                       maxWidth: "10%",
                       height: "auto",
                     }}
@@ -120,7 +93,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                 <Typography.Text
                   style={{
                     fontFamily: "Pretendard-Regular",
-                    fontSize: "17px",
+                    fontSize: "calc(1vw + 10px)", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
                     color: "white",
                   }}
                 >
@@ -137,7 +110,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     left: "50%",
                     top: "calc(50% + 60px)",
                     zIndex: "-1",
-                    maxWidth: "104%",
+                    maxWidth: "110%",
                     height: "auto",
                   }}
                 />
@@ -167,7 +140,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                       padding: "13px 28px",
                       borderRadius: "50px",
                       textDecoration: "none",
-                      fontSize: "21px",
+                      fontSize: "calc(0.7vw + 14px)", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
                       fontFamily: "Pretendard-Medium",
                     }}
                     target="_blank"
@@ -178,7 +151,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     <img
                       src="../ei_arrow-left.png"
                       alt="button-icon"
-                      style={{ width: "35px", height: "35px" }}
+                      style={{
+                        width: "calc(1.5vw + 25px)",
+                        height: "calc(1.5vw + 25px)",
+                      }} // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
                     />
                   </a>
                 </div>
@@ -219,7 +195,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                   fontFamily: "Pretendard-Regular",
                   fontSize: "16px",
                   color: white,
-                  top: "750px",
+                  top: "780px",
                   left: "50%",
                   transform: "translate(-50%, +50%)",
                 }}
@@ -278,11 +254,17 @@ const Main: FunctionComponent<IMainProps> = (props) => {
             </div>
 
             {/* 프로필 등록하기 영상첨부 */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-300px' }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "flex-end",
+                marginTop: "-300px",
+              }}
+            >
               <iframe
                 width="500"
                 height="300"
-                src={`https://www.youtube.com/embed/7ff0ymV4gLc`}
+                src={`https://www.youtube.com/embed/bHoefwpj6L8`}
                 title="YouTube video player"
                 frameBorder="0" // frameborder로 넣기
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -327,11 +309,11 @@ const Main: FunctionComponent<IMainProps> = (props) => {
             </div>
 
             {/*IT업계 내 인재풀 영상첨부 */}
-            <div style={{ marginTop: '-300px' }}>
+            <div style={{ marginTop: "-300px" }}>
               <iframe
                 width="500"
                 height="300"
-                src={`https://www.youtube.com/embed/7ff0ymV4gLc`}
+                src={`https://www.youtube.com/embed/f8YqprA7hms`}
                 title="YouTube video player"
                 frameBorder="0" // frameborder로 넣기
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -538,7 +520,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     }}
                   >
                     따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로
-                    간편하게 내 프로필 등록하기.
+                    간편하게 내 프로필 등록하기
                   </div>
                 </div>
 
@@ -653,7 +635,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
                     <br />
                     및 게시글 작성하기 등의 서비스
                     <br />
-                    이용하기.
+                    이용하기
                   </div>
                 </div>
               </section>
@@ -670,11 +652,20 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           }}
         >
           {/* 가운데 정렬된 텍스트 */}
+
+		  <div style={{ marginTop: "50px" }}>
+            <img
+              src="/logowhite.png"
+              alt="Logo"
+              style={{ maxWidth: "8%", height: "auto" }}
+            />
+          </div>
           <div
             style={{
               color: "white",
               fontFamily: "Pretendard-Light",
               fontSize: "18px",
+			  marginTop: "20px"
             }}
           >
             <a
@@ -686,14 +677,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               www.sprinterteam.com
             </a>
           </div>
-
-          <div style={{ marginTop: "20px" }}>
-            <img
-              src="/logowhite.png"
-              alt="Logo"
-              style={{ maxWidth: "8%", height: "auto" }}
-            />
-          </div>
+		  <div><br />All rights reserved sprinter</div>
         </Footer>
       </Layout>
     </>
