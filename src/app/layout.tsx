@@ -29,11 +29,11 @@ export default function RootLayout({
 									colorPrimary: primary,
 									borderRadius,
 									colorText: white,
-									colorTextBase: white
+									colorTextBase: white,
 								},
 								components: {
 									Layout: {
-										headerBg: black,
+										headerBg: transparent,
 										headerHeight: 70,
 										headerPadding: 10,
 										paddingContentHorizontal: 100,
@@ -70,7 +70,7 @@ export default function RootLayout({
 										paddingXL: 16,
 										paddingMD: 16,
 										paddingLG: 16,
-										paddingSM: 16
+										paddingSM: 16,
 									},
 								},
 							}}

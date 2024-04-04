@@ -39,7 +39,7 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 	};
 
 	useEffect(() => {
-		handleScroll()
+		handleScroll();
 		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => {
 			window.removeEventListener("scroll", handleScroll);
@@ -48,7 +48,10 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 
 	return (
 		<div className="space" ref={space}>
-			<div className="stars" style={{ opacity: Math.max(1 - scrollPercent * 10 / 4, 0) }} />
+			<div
+				className="stars"
+				style={{ opacity: Math.max(1 - (scrollPercent * 10) / 4, 0) }}
+			/>
 			<Layout>
 				<Flex justify={"center"} align={"center"} style={{ width: "100%" }}>
 					<Header
@@ -63,13 +66,12 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 							paddingLeft: 16,
 							paddingRight: 16,
 						}}
-					> 	
-						<img className="white_logo" //로고 화질 좋은 이미지로 넣어서 화질 깨짐 방지
-						src="/logowhite.png" alt="Main Logo" onClick={() => router.push("/")} />
+					>
+						<div className="white_logo" onClick={() => router.push("/")} />
 						<Menu
 							mode="horizontal"
 							selectedKeys={[pathname]}
-							items={menus}
+							// items={menus}
 							onClick={({ key }) => {
 								router.push(key);
 							}}
@@ -77,9 +79,9 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 						/>
 					</Header>
 				</Flex>
-				<Content style={{ padding: "16px", zIndex: 1 }}>
+				<Content style={{ zIndex: 1 }}>
 					<Flex justify={"center"} align={"flex-start"}>
-						<div style={{ maxWidth: 1200, width: "100%" }}>{children}</div>
+						<div>{children}</div>
 					</Flex>
 				</Content>
 			</Layout>
