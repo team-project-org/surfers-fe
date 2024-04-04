@@ -7,17 +7,6 @@ import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
 import MainHeader from "@/app/mainheader";
 
-/*
--전체 코드 간격 및 줄 조정 위에서부터 아래로 천천히 
--가운데 정렬과 UX writing 수정 
--화면 일치 및 위계 설정
--이벤트 설계 
--manipulate 연동 
-
-<동호님 추가 작업> 
-배경에 바둑판 별모양 깔기
-배경 색 파란색감 적용하기
-*/
 
 const { Title, Text, Link } = Typography;
 const { Content, Footer } = Layout;
@@ -308,7 +297,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               </IntroBox>
             </div>
 
-            {/*IT업계 내 인재풀 영상첨부 */}
+            {/*IT업계 내 인재풀 동영상첨부 */}
             <div style={{ marginTop: "-300px" }}>
               <iframe
                 width="500"
@@ -647,13 +636,13 @@ const Main: FunctionComponent<IMainProps> = (props) => {
           style={{
             backgroundColor: "#002DCC", // 배경색 설정
             textAlign: "center",
-            height: "20vh", // 약 4분의 1 높이 설정
+            height: "18vh", // 약 4분의 1 높이 설정
             marginTop: "-20px", // 여백 제거
           }}
         >
           {/* 가운데 정렬된 텍스트 */}
 
-		  <div style={{ marginTop: "50px" }}>
+          <div style={{ marginTop: "30px" }}>
             <img
               src="/logowhite.png"
               alt="Logo"
@@ -665,7 +654,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               color: "white",
               fontFamily: "Pretendard-Light",
               fontSize: "18px",
-			  marginTop: "20px"
+              marginTop: "20px",
             }}
           >
             <a
@@ -677,7 +666,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
               www.sprinterteam.com
             </a>
           </div>
-		  <div><br />All rights reserved sprinter</div>
+          <div>
+            <br />
+            All rights reserved sprinter
+          </div>
         </Footer>
       </Layout>
     </>
