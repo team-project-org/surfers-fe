@@ -38,116 +38,100 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								maxWidth: "1200px",
 							}}
 						>
-							<div
+							<Flex
+								justify={"center"}
+								align={"center"}
 								style={{
-									padding: 24,
+									position: "relative",
 									textAlign: "center",
+									flexDirection: "column",
+									backgroundImage: "url('/ring.png')",
+									backgroundSize: "cover",
+									padding: "40px 0",
+									backgroundPosition: "center",
+									backgroundRepeat: "no-repeat",
 								}}
 							>
 								{/* (1) 첫번째 메인 설명 글과 버튼 작업  */}
-								<div style={{ position: "relative", top: "40px", zIndex: "0" }}>
-									<img
-										src="/character.png" // 캐릭터 3명 이미지 스타일 지정
-										alt="character"
-										style={{
-											maxWidth: "35%",
-											height: "auto",
-										}}
-									/>
-									<Typography.Title
-										level={1}
-										style={{
-											fontFamily: "PyeongChangPeace",
-											color: "white",
-											fontSize: "5rem", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
-											lineHeight: "150%",
-											marginTop: "-3px",
-										}}
-									>
-										사이드 프로젝트를
-										<br />
-										시작하는 가장 쉽고 빠른 방법
-										<img
-											src="/sticker.png" // Beta 스티커 이미지 스타일 지정
-											alt="sticker"
-											style={{
-												position: "absolute",
-												top: 130,
-												left: 980,
-												maxWidth: "10%",
-												height: "auto",
-											}}
-										/>
-									</Typography.Title>
-									<Typography.Text
-										style={{
-											fontFamily: "Pretendard-Regular",
-											fontSize: "3rem", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
-											color: "white",
-										}}
-									>
-										개발자, 디자이너, 기획자 등 IT 업계 검증 가능한 다양한
-										팀원들을 만나보세요.
-									</Typography.Text>
-									<img
-										src="/ring.png"
-										alt="ring"
-										style={{
-											// 링 모양 이미지 스타일 조정
-											position: "absolute",
-											transform: "translate(-50%, -49%)",
-											left: "50%",
-											top: "calc(50% + 60px)",
-											zIndex: "-1",
-											maxWidth: "110%",
-											height: "auto",
-										}}
-									/>
-								</div>
-
-								<Footer
+								<img
+									src="/character.png" // 캐릭터 3명 이미지 스타일 지정
+									alt="character"
 									style={{
-										textAlign: "center",
-										position: "relative",
+										width: 400,
+										height: "auto",
+									}}
+								/>
+								<img
+									src="/sticker.png" // Beta 스티커 이미지 스타일 지정
+									alt="sticker"
+									style={{
+										position: "absolute",
+										top: "8rem",
+										right: "-3rem",
+										width: "10rem",
+										height: "auto",
+									}}
+								/>
+								<Typography.Title
+									level={1}
+									style={{
+										fontFamily: "PyeongChangPeace",
+										color: "white",
+										fontSize: "5rem", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
+										lineHeight: "150%",
+										marginTop: "-3px",
 									}}
 								>
-									<div
+									사이드 프로젝트를
+									<br />
+									시작하는 가장 쉽고 빠른 방법
+								</Typography.Title>
+								<Typography.Text
+									style={{
+										fontFamily: "Pretendard-Regular",
+										fontSize: "1.5rem", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
+										color: "white",
+									}}
+								>
+									개발자, 디자이너, 기획자 등 IT 업계 검증 가능한 다양한
+									팀원들을 만나보세요.
+								</Typography.Text>
+								<div
+									style={{
+										// CTA 버튼 스타일 지정
+										width: "fit-content",
+										paddingTop: 125
+									}}
+								>
+									<a
+										href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform"
 										style={{
-											// CTA 버튼 스타일 지정
-											margin: "20px auto",
-											width: "fit-content",
+											display: "flex", // 버튼 리다이렉션 주소 지정 및 버튼 내 텍스트 스타일
+											alignItems: "center",
+											backgroundColor: primary,
+											color: "white",
+											padding: "13px 28px",
+											borderRadius: "50px",
+											textDecoration: "none",
+											fontSize: "1.5rem", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
+											fontFamily: "Pretendard-Medium",
 										}}
+										target="_blank"
 									>
-										<a
-											href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform"
+										<span style={{ marginRight: "10px" }}>
+											베타서비스 이용 신청하기
+										</span>
+										<img
+											src="/ei_arrow-left.png"
+											alt="button-icon"
 											style={{
-												display: "inline-flex", // 버튼 리다이렉션 주소 지정 및 버튼 내 텍스트 스타일
-												alignItems: "center",
-												backgroundColor: primary,
-												color: "white",
-												padding: "13px 28px",
-												borderRadius: "50px",
-												textDecoration: "none",
-												fontSize: "calc(0.7vw + 14px)", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
-												fontFamily: "Pretendard-Medium",
+												width: "3rem",
+												height: "3rem",
 											}}
-											target="_blank"
-										>
-											<span style={{ marginRight: "10px" }}>
-												베타서비스 이용 신청하기
-											</span>
-											<img
-												src="/ei_arrow-left.png"
-												alt="button-icon"
-												style={{
-													width: "calc(1.5vw + 25px)",
-													height: "calc(1.5vw + 25px)",
-												}} // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
-											/>
-										</a>
-									</div>
-								</Footer>
-							</div>
+										/>
+									</a>
+								</div>
+							</Flex>
 
 							{/* (2) 두번째 메인 설명글과 이미지 첨부 구현  */}
 							<div style={{ position: "relative" }}>
@@ -180,13 +164,9 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								<Typography.Text
 									style={{
 										//이미지 아래 서브 설명글 스타일
-										position: "absolute",
 										fontFamily: "Pretendard-Regular",
 										fontSize: "1rem",
 										color: white,
-										top: "780px",
-										left: "50%",
-										transform: "translate(-50%, +50%)",
 									}}
 								>
 									<br />
