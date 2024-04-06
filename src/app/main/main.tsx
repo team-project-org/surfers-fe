@@ -100,7 +100,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									style={{
 										// CTA 버튼 스타일 지정
 										width: "fit-content",
-										paddingTop: 125
+										paddingTop: 125,
 									}}
 								>
 									<a
@@ -134,28 +134,35 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 							</Flex>
 
 							{/* (2) 두번째 메인 설명글과 이미지 첨부 구현  */}
-							<div style={{ position: "relative" }}>
-								<img
-									src="/mainimage2.png"
-									alt="mainimage2"
+							<Flex
+								justify={"center"}
+								align={"center"}
+								style={{
+									flexDirection: "column",
+									width: "100%",
+									maxWidth: "1200px",
+								}}
+							>
+								<div
 									style={{
-										maxWidth: "73%", // 두번째 메인 이미지 스타일
-										height: "auto",
-										marginTop: "40px",
-										zIndex: "-2",
+										backgroundImage: "url('/mainimage2.png')",
+										backgroundSize: "contain",
+										backgroundRepeat: 'no-repeat',
+										backgroundPosition: 'center',
+										maxWidth: 700, // 두번째 메인 이미지 스타일
+										width: "100%",
+										height: 700,
 									}}
 								/>
+
 								<Typography.Text
 									style={{
 										//이미지 아래 메인 설명글 스타일
-										position: "absolute",
 										fontFamily: "Pretendard-SemiBold",
 										fontSize: "2.5rem",
 										fontWeight: "bold",
 										color: white,
-										bottom: "120px",
-										left: "50%",
-										transform: "translate(-50%, +100%)",
+										marginTop: '-10rem'
 									}}
 								>
 									IT 업계 협업 풀 스프린터
@@ -175,7 +182,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									가장 간편하게 진행할 수 있는 IT 업계 협업 풀 스프린터
 									베타서비스를 오픈했어요.
 								</Typography.Text>
-							</div>
+							</Flex>
 						</div>
 					</Content>
 
