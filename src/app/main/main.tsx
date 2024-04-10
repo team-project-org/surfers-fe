@@ -180,7 +180,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					</Content>
 
 					{/* (3) 세번째 설명글과 동영상 첨부 작업 */}
-					<Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
+					<Content style={{ padding: "24px 16px", width: '100%' }}>
 						<div
 							style={{
 								padding: "40px 100px",
