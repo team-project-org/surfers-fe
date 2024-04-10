@@ -6,14 +6,16 @@ interface ILeftRightProps {
   right: any
   leftWeight?: number
   rightWeight?: number
+  leftStyle?: any
+  rightStyle?: any
 }
 
-const LeftRight: React.FunctionComponent<ILeftRightProps> = ({ left, right, leftWeight = 5, rightWeight = 5 }: ILeftRightProps) => {
-  return <Flex flex={"center"} style={{ flexDirection: 'row' }}>
-    <Flex flex={'center'} style={{ flexGrow: leftWeight }}>
+const LeftRight: React.FunctionComponent<ILeftRightProps> = ({ left, right, leftWeight = 5, rightWeight = 5, leftStyle, rightStyle }: ILeftRightProps) => {
+  return <Flex className='left_right'>
+    <Flex className='left' style={{ flexGrow: leftWeight, ...leftStyle }}>
       {left}
     </Flex>
-    <Flex flex={'center'} style={{ flexGrow: rightWeight }}>
+    <Flex className='right' style={{ flexGrow: rightWeight, ...rightStyle }}>
       {right}
     </Flex>
   </Flex>;

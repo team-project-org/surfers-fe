@@ -5,6 +5,7 @@ import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
 import MainHeader from "@/app/mainheader";
+import LeftRight from "@/app/component/LeftRight";
 
 const { Content, Footer } = Layout;
 
@@ -27,7 +28,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 						maxWidth: "1200px",
 					}}
 				>
-					<Content style={{ width: '100%', padding: "24px 16px" }}>
+					<Content style={{ width: "100%", padding: "24px 16px" }}>
 						<div
 							style={{
 								padding: 24,
@@ -48,7 +49,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									padding: "40px 0",
 									backgroundPosition: "center",
 									backgroundRepeat: "no-repeat",
-									width: '100%'
+									width: "100%",
 								}}
 							>
 								{/* (1) 첫번째 메인 설명 글과 버튼 작업  */}
@@ -139,8 +140,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									style={{
 										backgroundImage: "url('/mainimage2.png')",
 										backgroundSize: "contain",
-										backgroundRepeat: 'no-repeat',
-										backgroundPosition: 'center',
+										backgroundRepeat: "no-repeat",
+										backgroundPosition: "center",
 										maxWidth: 700, // 두번째 메인 이미지 스타일
 										width: "100%",
 										height: 700,
@@ -154,7 +155,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										fontSize: "2.5rem",
 										fontWeight: "bold",
 										color: white,
-										marginTop: '-10rem'
+										marginTop: "-10rem",
 									}}
 								>
 									IT 업계 협업 풀 스프린터
@@ -188,106 +189,129 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 						>
 							{/* (3)-1 첫번째 기능 설명 글 */}
 							<div style={{ marginTop: "80px" }}>
-								<IntroBox title={"프로필 등록하기"}>
-									<div
-										style={{
-											fontFamily: "Pretendard-SemiBold",
-											fontSize: "45px",
-											marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절
-											lineHeight: "1.5",
-										}}
-									>
-										내 프로필 등록
-										<br />
-										{/* <span style={{ color: orange, lineHeight: "1.5" }}>
-                  1분
-                </span>{" "} */}
-										1분 안에 간편하게
-									</div>
-									{/* 서브 텍스트 */}
-									<div
-										style={{
-											fontFamily: "Pretendard-Regular",
-											fontSize: "16px",
-											marginTop: 30,
-											lineHeight: "1.5",
-										}}
-									>
-										기존에 사용하던 링크드인, 노션, 깃헙과 같은 기타 여러 링크로
-										<br />
-										복잡하게 프로필 및 커리어 내용을 작성할 필요없이,
-										<br />
-										1분 안에 내 프로필 등록이 가능해요.
-									</div>
-								</IntroBox>
-							</div>
-
-							{/* 프로필 등록하기 영상첨부 */}
-							<div
-								style={{
-									display: "flex",
-									justifyContent: "flex-end",
-									marginTop: "-300px",
-								}}
-							>
-								<iframe
-									width="400"
-									height="300"
-									src={`https://www.youtube.com/embed/bHoefwpj6L8`}
-									title="YouTube video player"
-									frameBorder="0" // frameborder로 넣기
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowFullScreen
-								></iframe>
+								<LeftRight
+									left={
+										<IntroBox title={"프로필 등록하기"}>
+											<div
+												style={{
+													fontFamily: "Pretendard-SemiBold",
+													fontSize: "45px",
+													marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절
+													lineHeight: "1.5",
+												}}
+											>
+												내 프로필 등록
+												<br />
+												1분 안에 간편하게
+											</div>
+											{/* 서브 텍스트 */}
+											<div
+												style={{
+													fontFamily: "Pretendard-Regular",
+													fontSize: "16px",
+													marginTop: 30,
+													lineHeight: "1.5",
+												}}
+											>
+												기존에 사용하던 링크드인, 노션, 깃헙과 같은 기타 여러
+												링크로
+												<br />
+												복잡하게 프로필 및 커리어 내용을 작성할 필요없이,
+												<br />
+												1분 안에 내 프로필 등록이 가능해요.
+											</div>
+										</IntroBox>
+									}
+									leftWeight={4}
+									right={
+										<Flex align={"flex-start"} justify="center">
+											<div
+												style={{
+													borderRadius: 27,
+													overflow: "hidden",
+													height: 300,
+												}}
+											>
+												<iframe
+													width="400"
+													height="300"
+													src={`https://www.youtube.com/embed/bHoefwpj6L8`}
+													title="YouTube video player"
+													frameBorder="0"
+													allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+													allowFullScreen
+												/>
+											</div>
+										</Flex>
+									}
+									rightWeight={6}
+									rightStyle={{ marginLeft: 80 }}
+								/>
 							</div>
 
 							{/* (3)-2 두번째 기능 설명 글 */}
 							<div style={{ marginTop: "250px" }}>
-								<IntroBox right title={"IT업계 내 인재풀"}>
-									<div
-										style={{
-											fontFamily: "Pretendard-SemiBold",
-											fontSize: "45px",
-											marginTop: "25px",
-											textAlign: "right", // 오른쪽 정렬 추가
-											lineHeight: "1.5",
-										}}
-									>
-										함께{" "}
-										{/* <span style={{ color: orange, lineHeight: "1.5" }}>성장</span> */}
-										성장할
-										<br />
-										좋은 팀과 팀원 찾기
-									</div>
-									{/*서브 텍스트 */}
-									<div
-										style={{
-											fontFamily: "Pretendard-Regular",
-											fontSize: "16px",
-											marginTop: 30,
-											lineHeight: "1.5",
-											textAlign: "right", // 오른쪽 정렬 추가
-										}}
-									>
-										개발자, 디자이너, 기획자 등 프로필 등록을 완료한 유저들은
-										<br />
-										팀원 구인 게시글 작성 및 개별 프로필 컨택 기능을 사용할 수
-										있어요.
-									</div>
-								</IntroBox>
-							</div>
-
-							{/*IT업계 내 인재풀 동영상첨부 */}
-							<div style={{ marginTop: "-300px" }}>
-								<iframe
-									width="400"
-									height="300"
-									src={`https://www.youtube.com/embed/f8YqprA7hms`}
-									title="YouTube video player"
-									frameBorder="0" // frameborder로 넣기
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowFullScreen
-								></iframe>
+								<LeftRight
+									right={
+										<IntroBox right title={"IT업계 내 인재풀"}>
+											<div
+												style={{
+													fontFamily: "Pretendard-SemiBold",
+													fontSize: "45px",
+													marginTop: "25px",
+													textAlign: "right", // 오른쪽 정렬 추가
+													lineHeight: "1.5",
+												}}
+											>
+												함께{" "}
+												{/* <span style={{ color: orange, lineHeight: "1.5" }}>성장</span> */}
+												성장할
+												<br />
+												좋은 팀과 팀원 찾기
+											</div>
+											{/*서브 텍스트 */}
+											<div
+												style={{
+													fontFamily: "Pretendard-Regular",
+													fontSize: "16px",
+													marginTop: 30,
+													lineHeight: "1.5",
+													textAlign: "right", // 오른쪽 정렬 추가
+												}}
+											>
+												개발자, 디자이너, 기획자 등 프로필 등록을 완료한
+												유저들은
+												<br />
+												팀원 구인 게시글 작성 및 개별 프로필 컨택 기능을 사용할
+												수 있어요.
+											</div>
+										</IntroBox>
+									}
+									rightWeight={6}
+									left={
+										<Flex align={"flex-start"} justify="center">
+											<div
+												style={{
+													borderRadius: 27,
+													overflow: "hidden",
+													height: 300,
+												}}
+											>
+												<iframe
+													width="400"
+													height="300"
+													src={`https://www.youtube.com/embed/f8YqprA7hms`}
+													title="YouTube video player"
+													frameBorder="0" // frameborder로 넣기
+													allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+													allowFullScreen
+												/>
+											</div>
+										</Flex>
+									}
+									leftWeight={4}
+									leftStyle={{ marginRight: 80 }}
+								/>
 							</div>
 
 							{/* (3)-3 세번째 기능 설명 글 */}

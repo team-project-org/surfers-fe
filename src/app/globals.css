@@ -3,7 +3,7 @@ body {
 }
 
 * {
-	word-break: break-all !important;
+	word-break: keep-all !important;
 }
 
 .space {
@@ -49,6 +49,24 @@ body {
 	right: 150px;
 	width: 8rem;
 	height: auto;
+}
+
+.left_right {
+	flex-direction: row;
+}
+
+@media (max-width: 1000px) {
+	.left_right {
+		flex-direction: column;
+	}
+
+	.left_right > .left {
+		margin: 0 !important;
+	}
+	
+	.left_right > .right {
+		margin: 0 !important;
+	}
 }
 
 @media (max-width: 800px) {

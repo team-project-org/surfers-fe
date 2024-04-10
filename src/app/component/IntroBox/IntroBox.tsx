@@ -25,7 +25,6 @@ const IntroBox: FunctionComponent<IIntroBoxProps> = (props) => {
 					display: "inline-flex",
 					justifyContent: "center",
 					alignItems: "center",
-					marginTop: "25px",
 				}}
 			>
 				<div
