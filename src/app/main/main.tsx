@@ -258,7 +258,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 												style={{
 													fontFamily: "Pretendard-SemiBold",
 													fontSize: "45px",
-													marginTop: "25px",
+													marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절
 													textAlign: "right", // 오른쪽 정렬 추가
 													lineHeight: "1.5",
 												}}
@@ -312,86 +312,111 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									leftWeight={4}
 									leftStyle={{ marginRight: 80 }}
 								/>
-							</div>
 
-							{/* (3)-3 세번째 기능 설명 글 */}
-							<div style={{ marginTop: "250px" }}>
-								<IntroBox
-									title={"테스트 진행 후 오픈"}
-									backgroundColor={orange}
-								>
-									<div
-										style={{
-											fontFamily: "Pretendard-SemiBold",
-											fontSize: "45px",
-											marginTop: "25px",
-											lineHeight: "1.5",
-										}}
-									>
-										협업 경험을 확인하고,
-										<br />
-										검증된 팀원 구하기
-									</div>
-									{/* 서브 텍스트 */}
-									<div
-										style={{
-											fontFamily: "Pretendard-Regular",
-											fontSize: "16px",
-											marginTop: 30,
-											lineHeight: "1.5",
-										}}
-									>
-										함께할 팀원이 프로젝트를 끝까지 완수할 수 있는 사람인지,
-										<br />
-										과거 어떤 협업 경험이 있었는지 궁금하신가요?
-										<br />
-										상세 프로필 페이지 내 협업 역량 평가표로 확인해보세요!
-									</div>
-									{/* 이미지 */}
-									<img
-										src="/teamworkimage.png"
-										alt="alerttextbox"
-										style={{
-											width: "43%", // 도형의 가로 크기의 절반
-											height: "auto", // 이미지 비율 유지
-											float: "right",
-											marginTop: "-315px",
-										}}
+								{/* (3)-3 세번째 기능 설명 글 */}
+								<div style={{ marginTop: "250px" }}>
+									<LeftRight
+										left={
+											<IntroBox
+												title={"테스트 진행 후 오픈"}
+												backgroundColor={orange}
+											>
+												<div
+													style={{
+														fontFamily: "Pretendard-SemiBold",
+														fontSize: "45px",
+														marginTop: 25,
+														lineHeight: "1.5",
+													}}
+												>
+													협업 경험을 확인하고,
+													<br />
+													검증된 팀원 구하기
+												</div>
+												{/* 서브 텍스트 */}
+												<div
+													style={{
+														fontFamily: "Pretendard-Regular",
+														fontSize: "16px",
+														marginTop: 30,
+														lineHeight: "1.5",
+													}}
+												>
+													함께할 팀원이 프로젝트를 끝까지 완수할 수 있는
+													사람인지,
+													<br />
+													과거 어떤 협업 경험이 있었는지 궁금하신가요?
+													<br />
+													상세 프로필 페이지 내 협업 역량 평가표로 확인해보세요!
+												</div>
+												{/* 이미지 */}
+												<img
+													src="/teamworkimage.png"
+													alt="alerttextbox"
+													style={{
+														width: "43%", // 도형의 가로 크기의 절반
+														height: "auto", // 이미지 비율 유지
+														float: "right",
+														marginTop: "-315px",
+													}}
+												/>
+												{/* (3)-3 세번째 기능 설명 아래 안내 메세지*/}
+												<div
+													style={{
+														position: "relative",
+														backgroundColor: "rgba(255, 255, 255, 0.1)", // 배경색
+														borderRadius: "15px", // 도형의 모서리를 둥글게 만듦
+														display: "flex", // 내부 요소들을 가로로 정렬
+														alignItems: "center", // 내부 요소들을 세로로 정렬
+														padding: "20px", // 내부 여백
+														marginTop: 30,
+													}}
+												>
+													{/* 느낌표 아이콘 */}
+													<img
+														src="alerticon.png"
+														alt="alerticon"
+														style={{
+															width: "30px",
+															height: "auto",
+															marginRight: "10px",
+														}}
+													/>
+													{/* 안내 텍스트 */}
+													<span
+														style={{
+															fontFamily: "Arial",
+															color: "white",
+															fontSize: "0.8rem",
+															lineHeight: "1.5",
+														}}
+													>
+														해당 기능은 서비스 오픈 이후 유저 테스트를 거쳐
+														적용되며,
+														<br />
+														기술 평가를 제외한 협업 역량에 대해서 다룹니다.
+													</span>
+												</div>
+											</IntroBox>
+										}
+										leftWeight={5}
+										right={
+											<Flex align={"flex-start"} justify="center">
+												<div
+													style={{
+														borderRadius: 27,
+														overflow: "hidden",
+														height: 300,
+													}}
+												>
+													{/** TODO 여기 이미지 빠짐 */}
+												</div>
+											</Flex>
+										}
+										rightWeight={5}
+										rightStyle={{ marginLeft: 80 }}
 									/>
-								</IntroBox>
-							</div>
-
-							{/* (3)-3 세번째 기능 설명 아래 안내 메세지*/}
-							<div
-								style={{
-									position: "relative",
-									backgroundColor: "rgba(255, 255, 255, 0.1)", // 배경색
-									borderRadius: "15px", // 도형의 모서리를 둥글게 만듦
-									display: "flex", // 내부 요소들을 가로로 정렬
-									alignItems: "center", // 내부 요소들을 세로로 정렬
-									padding: "20px", // 내부 여백
-									marginTop: 30,
-								}}
-							>
-								{/* 느낌표 아이콘 */}
-								<img
-									src="alerticon.png"
-									alt="alerticon"
-									style={{ width: "30px", height: "auto", marginRight: "10px" }}
-								/>
-								{/* 안내 텍스트 */}
-								<span
-									style={{
-										fontFamily: "Arial",
-										color: "white",
-										fontSize: "16px",
-										lineHeight: "1.5",
-									}}
-								>
-									해당 기능은 서비스 오픈 이후 유저 테스트를 거쳐 적용되며,
-									<br />
-									기술 평가를 제외한 협업 역량에 대해서 다룹니다.
-								</span>
+								</div>
 							</div>
 						</div>
 					</Content>
