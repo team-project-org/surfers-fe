@@ -5,7 +5,7 @@ import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
 import MainHeader from "@/app/mainheader";
 import LeftRight from "@/app/component/LeftRight";
-import { sendGTMEvent } from "@next/third-parties/google";
+import { sendGAEvent, sendGTMEvent } from "@next/third-parties/google";
 
 const { Content, Footer } = Layout;
 
@@ -113,7 +113,11 @@ const Main: FunctionComponent<IMainProps> = (props) => {
     									justifyContent: 'center',
     									alignItems: 'center'
 										}}
-										onClick={() => sendGTMEvent({ event: 'apply_beta', value: 'pre' })}
+										onClick={() => {
+											sendGTMEvent({ event: 'apply_beta', value: 'pre' })
+											sendGAEvent({ event: 'apply_beta', value: 'pre' })
+											console.log('gtmEvent')
+										}}
 										href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform"
 										target="_blank"
 									>
