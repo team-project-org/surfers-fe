@@ -71,7 +71,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								<Typography.Title
 									className="big_title"
 									style={{
-										fontFamily: "PyeongChangPeace",
+										fontFamily: "PyeongChangPeace-Bold",
 										color: "white",
 										lineHeight: "150%",
 										marginTop: "-3px",
@@ -103,7 +103,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										size="large"
 										shape="round"
 										style={{
-											fontFamily: "Pretendard-Medium",
+											fontFamily: "Pretendard-Regular",
 											height: 'auto',
 											fontSize: 24,
 											display: 'inline-flex',
@@ -153,7 +153,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								<Typography.Text
 									style={{
 										//이미지 아래 메인 설명글 스타일
-										fontFamily: "Pretendard-SemiBold",
+										fontFamily: "Pretendard-Regular",
 										fontSize: "2.5rem",
 										fontWeight: "bold",
 										color: white,
@@ -196,7 +196,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										<IntroBox title={"프로필 등록하기"}>
 											<div
 												style={{
-													fontFamily: "Pretendard-SemiBold",
+													fontFamily: "Pretendard-Regular",
+													fontWeight: 'bold',
 													fontSize: "45px",
 													marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절
 													lineHeight: "1.5",
@@ -235,7 +236,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 												}}
 											>
 												<iframe
-													width="400"
+													width="300"
 													height="300"
 													src={`https://www.youtube.com/embed/bHoefwpj6L8`}
 													title="YouTube video player"
@@ -258,7 +259,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										<IntroBox right title={"IT업계 내 인재풀"}>
 											<div
 												style={{
-													fontFamily: "Pretendard-SemiBold",
+													fontFamily: "Pretendard-Regular",
+													fontWeight: 'bold',
 													fontSize: "45px",
 													marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절
 													textAlign: "right", // 오른쪽 정렬 추가
@@ -326,7 +328,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											>
 												<div
 													style={{
-														fontFamily: "Pretendard-SemiBold",
+														fontFamily: "Pretendard-Regular",
+														fontWeight: 'bold',
 														fontSize: "45px",
 														marginTop: 25,
 														lineHeight: "1.5",
@@ -446,7 +449,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 						<div
 							style={{
 								color: "white",
-								fontFamily: "Pretendard-Medium",
+								fontFamily: "Pretendard-Regular",
 								fontSize: "23px",
 							}}
 						>
@@ -456,7 +459,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					{/* 메인 타이틀 텍스트 */}
 					<div
 						style={{
-							fontFamily: "Pretendard-SemiBold",
+							fontFamily: "Pretendard-Regular",
+							fontWeight: 'bold',
 							fontSize: "45px",
 							color: "white",
 							marginBottom: "20px",
@@ -526,7 +530,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									<div
 										style={{
 											color: "white",
-											fontFamily: "Pretendard-Light",
+											fontFamily: "Pretendard-Regular",
+											fontWeight: 200,
 											fontSize: "18px",
 											textAlign: "left", // 텍스트 왼쪽으로 정렬
 											paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
@@ -581,7 +586,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									<div
 										style={{
 											color: "white",
-											fontFamily: "Pretendard-Light",
+											fontFamily: "Pretendard-Regular",
+											fontWeight: 200,
 											fontSize: "18px",
 											textAlign: "left", // 텍스트 왼쪽으로 정렬
 											lineHeight: "150%", // 문장 사이 여백을 조절합니다.
@@ -635,7 +641,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									<div
 										style={{
 											color: "white",
-											fontFamily: "Pretendard-Light",
+											fontFamily: "Pretendard-Regular",
+											fontWeight: 200,
 											fontSize: "18px",
 											textAlign: "left", // 텍스트 왼쪽으로 정렬
 											lineHeight: "150%", // 문장 사이 여백을 조절합니다.
@@ -664,7 +671,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 				<div
 					style={{
 						color: "white",
-						fontFamily: "Pretendard-Light",
+						fontFamily: "Pretendard-Regular",
+						fontWeight: 200,
 						fontSize: 20,
 					}}
 				>
