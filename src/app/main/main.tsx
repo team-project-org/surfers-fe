@@ -1,13 +1,11 @@
 "use client";
-import React, { FunctionComponent, useRef, useState, useEffect } from "react";
-import { Layout, theme, Typography, Space, Flex } from "antd";
-// import ResponseCarousel from "./responseCarousel";
+import React, { FunctionComponent } from "react";
+import { Layout, theme, Typography, Flex } from "antd";
 import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
 import MainHeader from "@/app/mainheader";
 
-const { Title, Text, Link } = Typography;
 const { Content, Footer } = Layout;
 
 interface IMainProps {}
@@ -29,7 +27,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 						maxWidth: "1200px",
 					}}
 				>
-					<Content style={{ margin: "24px 16px 0" }}>
+					<Content style={{ width: '100%', padding: "24px 16px" }}>
 						<div
 							style={{
 								padding: 24,
@@ -50,6 +48,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									padding: "40px 0",
 									backgroundPosition: "center",
 									backgroundRepeat: "no-repeat",
+									width: '100%'
 								}}
 							>
 								{/* (1) 첫번째 메인 설명 글과 버튼 작업  */}
@@ -64,20 +63,13 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								<img
 									src="/sticker.png" // Beta 스티커 이미지 스타일 지정
 									alt="sticker"
-									style={{
-										position: "absolute",
-										top: "8rem",
-										right: "-3rem",
-										width: "10rem",
-										height: "auto",
-									}}
+									className="beta_sticker"
 								/>
 								<Typography.Title
-									level={1}
+									className="big_title"
 									style={{
 										fontFamily: "PyeongChangPeace",
 										color: "white",
-										fontSize: "5rem", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
 										lineHeight: "150%",
 										marginTop: "-3px",
 									}}

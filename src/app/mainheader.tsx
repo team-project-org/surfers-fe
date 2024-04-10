@@ -80,8 +80,8 @@ const MainHeader: FunctionComponent<Partial<IHeaderProps>> = (props) => {
 					</Header>
 				</Flex>
 				<Content style={{ zIndex: 1 }}>
-					<Flex justify={"center"} align={"flex-start"}>
-						<div>{children}</div>
+					<Flex justify={"center"} align={"flex-start"} style={{ width: '100%' }}>
+						{children}
 					</Flex>
 				</Content>
 			</Layout>
