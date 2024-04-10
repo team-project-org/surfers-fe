@@ -47,7 +47,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									backgroundImage: "url('/intro/main1/intro_main1_sticker2.png')", // 이미지 경로 수정 3 
 									backgroundSize: "cover",
 									padding: "40px 0",
-									backgroundPosition: "center",
+									backgroundPositionX: "center",
+									backgroundPositionY: -100,
 									backgroundRepeat: "no-repeat",
 									width: "100%",
 								}}

@@ -12,10 +12,10 @@ interface ILeftRightProps {
 
 const LeftRight: React.FunctionComponent<ILeftRightProps> = ({ left, right, leftWeight = 5, rightWeight = 5, leftStyle, rightStyle }: ILeftRightProps) => {
   return <Flex className='left_right'>
-    <Flex className='left' style={{ width: '100%', flexGrow: leftWeight, ...leftStyle }}>
+    <Flex className='left' justify='center' style={{ width: '100%', flexGrow: leftWeight, ...leftStyle }}>
       {left}
     </Flex>
-    <Flex className='right' style={{ width: '100%', flexGrow: rightWeight, ...rightStyle }}>
+    <Flex className='right' justify='center' style={{ width: '100%', flexGrow: rightWeight, ...rightStyle }}>
       {right}
     </Flex>
   </Flex>;
