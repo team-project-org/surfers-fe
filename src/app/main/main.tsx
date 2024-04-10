@@ -59,7 +59,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									src="/intro/main1/intro_main1_character.png" // 이미지 경로 수정 1
 									alt="main1_character" // 이미지 이름 수정 1
 									style={{
-										width: '100%',
+										width: "100%",
 										maxWidth: 400,
 										height: "auto",
 									}}
@@ -105,31 +105,35 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										shape="round"
 										style={{
 											fontFamily: "Pretendard-Regular",
-											height: 'auto',
-											width: 'auto',
+											height: "auto",
+											width: "auto",
 											fontSize: 24,
-											display: 'flex',
-											whiteSpace: 'break-spaces',
-    									justifyContent: 'center',
-    									alignItems: 'center'
+											display: "flex",
+											whiteSpace: "break-spaces",
+											justifyContent: "center",
+											alignItems: "center",
 										}}
 										onClick={() => {
-											sendGTMEvent({ event: 'custom_event', value: 'apply_beta' })
-											sendGAEvent({ event: "custom_event", value: 'apply_beta' })
+											sendGTMEvent({
+												event: "custom_event",
+												value: "apply_beta",
+											});
+											sendGAEvent({
+												event: "custom_event",
+												value: "apply_beta",
+											});
 										}}
 										href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform"
 										target="_blank"
 									>
-										<span>
-											베타서비스 이용 신청하기
-										</span>
+										<span>베타서비스 이용 신청하기</span>
 										<img
 											src="/icons/intro_arrowleft.png"
 											alt="arrow_icon"
 											style={{
 												width: "3rem",
 												height: "3rem",
-												marginLeft: 10
+												marginLeft: 10,
 											}}
 										/>
 									</Button>
@@ -206,7 +210,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											<div
 												style={{
 													fontFamily: "Pretendard-Regular",
-													fontWeight: 'bold',
+													fontWeight: "bold",
 													fontSize: "45px",
 													marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절
 													lineHeight: "1.5",
@@ -236,12 +240,16 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									}
 									leftWeight={4}
 									right={
-										<Flex align={"flex-start"} justify="center" style={{ width: '100%' }}>
+										<Flex
+											align={"flex-start"}
+											justify="center"
+											style={{ width: "100%" }}
+										>
 											<div
 												style={{
 													borderRadius: 27,
 													overflow: "hidden",
-													width: '100%',
+													width: "100%",
 													height: 300,
 												}}
 											>
@@ -258,7 +266,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										</Flex>
 									}
 									rightWeight={6}
-									rightStyle={{ marginLeft: 80, width: '100%' }}
+									rightStyle={{ marginLeft: 80, width: "100%" }}
 								/>
 							</div>
 
@@ -270,7 +278,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											<div
 												style={{
 													fontFamily: "Pretendard-Regular",
-													fontWeight: 'bold',
+													fontWeight: "bold",
 													fontSize: "45px",
 													marginTop: "25px", // IT 업계 협업 풀 스프린터와 간격 조절
 													textAlign: "right", // 오른쪽 정렬 추가
@@ -303,7 +311,11 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									}
 									rightWeight={6}
 									left={
-										<Flex align={"flex-start"} justify="center" style={{ width: '100%' }}>
+										<Flex
+											align={"flex-start"}
+											justify="center"
+											style={{ width: "100%" }}
+										>
 											<div
 												style={{
 													borderRadius: 27,
@@ -340,7 +352,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 												<div
 													style={{
 														fontFamily: "Pretendard-Regular",
-														fontWeight: 'bold',
+														fontWeight: "bold",
 														fontSize: "45px",
 														marginTop: 25,
 														lineHeight: "1.5",
@@ -471,7 +483,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					<div
 						style={{
 							fontFamily: "Pretendard-Regular",
-							fontWeight: 'bold',
+							fontWeight: "bold",
 							fontSize: "45px",
 							color: "white",
 							marginBottom: "20px",
@@ -545,7 +557,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											fontWeight: 200,
 											fontSize: "18px",
 											textAlign: "left", // 텍스트 왼쪽으로 정렬
-											paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
 											lineHeight: "150%", // 문장 사이 여백을 조절합니다.
 											marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
 										}}
