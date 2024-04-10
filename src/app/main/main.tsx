@@ -114,9 +114,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
     									alignItems: 'center'
 										}}
 										onClick={() => {
-											sendGTMEvent({ event: 'apply_beta', value: 'pre' })
-											sendGAEvent({ event: 'apply_beta', value: 'pre' })
-											console.log('gtmEvent')
+											sendGTMEvent({ event: 'custom_event', value: 'apply_beta' })
+											sendGAEvent({ event: "custom_event", value: 'apply_beta' })
 										}}
 										href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform"
 										target="_blank"
