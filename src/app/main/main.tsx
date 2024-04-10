@@ -1,6 +1,6 @@
 "use client";
 import React, { FunctionComponent } from "react";
-import { Layout, theme, Typography, Flex } from "antd";
+import { Layout, theme, Typography, Flex, Row, Col } from "antd";
 import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
@@ -44,7 +44,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									position: "relative",
 									textAlign: "center",
 									flexDirection: "column",
-									backgroundImage: "url('/intro/main1/intro_main1_sticker2.png')", // 이미지 경로 수정 3 
+									backgroundImage:
+										"url('/intro/main1/intro_main1_sticker2.png')", // 이미지 경로 수정 3
 									backgroundSize: "cover",
 									padding: "40px 0",
 									backgroundPositionX: "center",
@@ -56,14 +57,14 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 								{/* (1) 첫번째 메인 설명 글과 버튼 작업 */}
 								<img
 									src="/intro/main1/intro_main1_character.png" // 이미지 경로 수정 1
-									alt="main1_character" // 이미지 이름 수정 1 
+									alt="main1_character" // 이미지 이름 수정 1
 									style={{
 										width: 400,
 										height: "auto",
 									}}
 								/>
 								<img
-									src="/intro/main1/intro_main1_sticker.png" // 이미지 경로 수정 2 
+									src="/intro/main1/intro_main1_sticker.png" // 이미지 경로 수정 2
 									alt="main1_sticker" // 이미지 이름 수정 2
 									className="beta_sticker"
 								/>
@@ -116,8 +117,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											베타서비스 이용 신청하기
 										</span>
 										<img
-											src="/icons/intro_arrowleft.png" // 이미지 경로 수정 4 
-											alt="arrow_icon" // 이미지 이름 수정 4 
+											src="/icons/intro_arrowleft.png" // 이미지 경로 수정 4
+											alt="arrow_icon" // 이미지 이름 수정 4
 											style={{
 												width: "3rem",
 												height: "3rem",
@@ -139,7 +140,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 							>
 								<div
 									style={{
-										backgroundImage: "url('/intro/main2/intro_main2_character.png')", //이미지 경로 수정 5 
+										backgroundImage:
+											"url('/intro/main2/intro_main2_character.png')", //이미지 경로 수정 5
 										backgroundSize: "contain",
 										backgroundRepeat: "no-repeat",
 										backgroundPosition: "center",
@@ -181,10 +183,10 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					</Content>
 
 					{/* (3) 세번째 설명글과 동영상 첨부 작업 */}
-					<Content style={{ padding: "24px 16px", width: '100%' }}>
+					<Content style={{ padding: "24px 16px", width: "100%" }}>
 						<div
 							style={{
-								padding: "40px 100px",
+								padding: "10px",
 								marginBottom: 100,
 							}}
 						>
@@ -320,6 +322,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										left={
 											<IntroBox
 												title={"테스트 진행 후 오픈"}
+												className="it_talents"
 												backgroundColor={orange}
 											>
 												<div
@@ -392,14 +395,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										leftWeight={5}
 										right={
 											<Flex align={"flex-start"} justify="center">
-												<div
-													style={{
-														borderRadius: 27,
-														overflow: "hidden",
-														height: 300,
-													}}
-												>
-													{/* 이미지 */}
+												<div>
 													<img
 														src="/intro/main2/intro_main2_image.png"
 														alt="teamwork"
@@ -426,12 +422,12 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 				align={"center"}
 				style={{
 					backgroundColor: primary,
-					// padding: "0px 100px",
+					padding: "120px 10px",
 					position: "relative",
 					minHeight: "75vh", // 파란색 배경 높이 조절
 				}}
 			>
-				<div style={{ textAlign: "center", marginTop: "-50px" }}>
+				<div style={{ textAlign: "center" }}>
 					{/* 검정색 버튼 모양의 도형 */}
 					<div
 						style={{
@@ -477,185 +473,180 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					</div>
 
 					{/* 서비스 이용 방법 도형 그룹 section */}
-					<div style={{ marginTop: "70px" }}>
-						<section
-							style={{
-								display: "flex",
-								justifyContent: "space-between",
-							}}
-						>
-							{/* 서비스 이용 방법 (1) 도형과 텍스트와 이미지 */}
-							<div
-								style={{
-									backgroundColor: "black",
-									width: "320px",
-									height: "400px",
-									borderRadius: "32px",
-									marginRight: "40px",
-									display: "inline-block",
-									alignItems: "center",
-									justifyContent: "center",
-									marginBottom: "20px",
-									padding: "0 20px", // 텍스트 좌우 여백 설정
-									boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
-								}}
+					<Flex
+						justify={"center"}
+						align={"center"}
+						style={{
+							flexDirection: "column",
+							width: "100%",
+							maxWidth: "1200px",
+							paddingTop: "20px",
+							paddingBottom: "20px",
+						}}
+					>
+						<Row gutter={[16, 16]}>
+							<Col
+								xs={{ span: 24 }}
+								sm={{ span: 24 }}
+								md={{ span: 24 }}
+								lg={{ span: 8 }}
 							>
+								{/* 서비스 이용 방법 (1) 도형과 텍스트와 이미지 */}
 								<div
 									style={{
-										color: "white",
-										fontFamily: "Prompt",
-										fontSize: "22px",
-										textAlign: "left", // 텍스트 왼쪽으로 정렬
-										paddingLeft: "15px", // 텍스트 좀 더 왼쪽으로 이동
-										marginTop: "25px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+										width: "100%",
+										backgroundColor: "black",
+										borderRadius: "32px",
+										display: "inline-block",
+										alignItems: "center",
+										justifyContent: "center",
+										padding: "20px", // 텍스트 좌우 여백 설정
+										boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
 									}}
 								>
-									STEP 1
-								</div>
+									<div
+										style={{
+											color: "white",
+											fontFamily: "Prompt",
+											fontSize: "22px",
+											textAlign: "left", // 텍스트 왼쪽으로 정렬
+										}}
+									>
+										STEP 1
+									</div>
 
-								{/* 이미지 (1) */}
-								<img
-									src="/intro/main3/intro_main3_image1.png" //이미지 경로 수정 8
-									alt="main3_image1" //이미지 이름 수정 8
-									style={{
-										width: "90%", // 도형의 가로 크기의 절반ㄹ
-										height: "auto", // 이미지 비율 유지
-										borderRadius: "32px", // 이미지에도 모서리를 둥글게
-										marginTop: "10px", // 텍스트와 이미지를 아래로 이동
-									}}
-								/>
-								<div
-									style={{
-										color: "white",
-										fontFamily: "Pretendard-Light",
-										fontSize: "18px",
-										textAlign: "left", // 텍스트 왼쪽으로 정렬
-										paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
-										lineHeight: "150%", // 문장 사이 여백을 조절합니다.
-										marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
-									}}
-								>
-									따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로
-									간편하게 내 프로필 등록하기
+									{/* 이미지 (1) */}
+									<img
+										src="/intro/main3/intro_main3_image1.png" //이미지 경로 수정 8
+										alt="main3_image1" //이미지 이름 수정 8
+										style={{
+											width: 220, // 이미지 비율 유지
+											height: 160,
+										}}
+									/>
+									<div
+										style={{
+											color: "white",
+											fontFamily: "Pretendard-Light",
+											fontSize: "18px",
+											textAlign: "left", // 텍스트 왼쪽으로 정렬
+											paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
+											lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+											marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+										}}
+									>
+										따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로 간편하게 내 프로필 등록하기
+									</div>
 								</div>
-							</div>
-
-							{/* 서비스 이용 방법 (2) 도형과 텍스트와 이미지 */}
-							<div
-								style={{
-									backgroundColor: "black",
-									width: "320px",
-									height: "400px",
-									borderRadius: "32px",
-									marginRight: "40px",
-									display: "inline-block",
-									alignItems: "center",
-									justifyContent: "center",
-									marginBottom: "20px",
-									padding: "0 20px", // 텍스트 좌우 여백 설정
-									boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
-								}}
+							</Col>
+							<Col
+								xs={{ span: 24 }}
+								sm={{ span: 24 }}
+								md={{ span: 24 }}
+								lg={{ span: 8 }}
 							>
+								{/* 서비스 이용 방법 (2) 도형과 텍스트와 이미지 */}
 								<div
 									style={{
-										color: "white",
-										fontFamily: "Prompt",
-										fontSize: "22px",
-										textAlign: "left", // 텍스트 왼쪽으로 정렬
-										paddingLeft: "15px", // 텍스트 좀 더 왼쪽으로 이동
-										marginTop: "25px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+										width: "100%",
+										backgroundColor: "black",
+										borderRadius: "32px",
+										display: "inline-block",
+										alignItems: "center",
+										justifyContent: "center",
+										padding: "20px", // 텍스트 좌우 여백 설정
+										boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
 									}}
 								>
-									STEP 2
-								</div>
+									<div
+										style={{
+											color: "white",
+											fontFamily: "Prompt",
+											fontSize: "22px",
+											textAlign: "left", // 텍스트 왼쪽으로 정렬
+										}}
+									>
+										STEP 2
+									</div>
 
-								{/* 이미지 (2) */}
-								<img
-									src="/intro/main3/intro_main3_image2.png" //이미지 경로 수정 9
-									alt="main3_image2" //이미지 이름 수정 9
-									style={{
-										width: "auto", // 이미지 비율 유지
-										height: "45%", // 도형의 세로 크기의 절반
-										margin: "10px", // 여백 설정
-										marginTop: "11px", // 텍스트와 이미지를 아래로 이동
-									}}
-								/>
-								<div
-									style={{
-										color: "white",
-										fontFamily: "Pretendard-Light",
-										fontSize: "18px",
-										textAlign: "left", // 텍스트 왼쪽으로 정렬
-										paddingLeft: "10px", // 텍스트 좀 더 왼쪽으로 이동
-										lineHeight: "150%", // 문장 사이 여백을 조절합니다.
-										marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
-									}}
-								>
-									베타서비스 오픈 후 연락처와 메일로 전송되는 사이트 링크
-									확인하기
+									{/* 이미지 (2) */}
+									<img
+										src="/intro/main3/intro_main3_image2.png" //이미지 경로 수정 9
+										alt="main3_image2" //이미지 이름 수정 9
+										style={{
+											width: 220, // 이미지 비율 유지
+											height: 160,
+										}}
+									/>
+									<div
+										style={{
+											color: "white",
+											fontFamily: "Pretendard-Light",
+											fontSize: "18px",
+											textAlign: "left", // 텍스트 왼쪽으로 정렬
+											lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+											marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+										}}
+									>
+										베타서비스 오픈 후 연락처와 메일로 전송되는 사이트 링크 확인하기
+									</div>
 								</div>
-							</div>
-
-							{/* 서비스 이용 방법 (3) 도형과 텍스트와 이미지 */}
-							<div
-								style={{
-									backgroundColor: "black",
-									width: "320px",
-									height: "400px",
-									borderRadius: "32px",
-									marginRight: "10px",
-									display: "inline-block",
-									alignItems: "center",
-									justifyContent: "center",
-									marginBottom: "20px",
-									padding: "0 20px", // 텍스트 좌우 여백 설정
-									boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
-								}}
+							</Col>
+							<Col
+								xs={{ span: 24 }}
+								sm={{ span: 24 }}
+								md={{ span: 24 }}
+								lg={{ span: 8 }}
 							>
+								{/* 서비스 이용 방법 (3) 도형과 텍스트와 이미지 */}
 								<div
 									style={{
-										color: "white",
-										fontFamily: "Prompt",
-										fontSize: "22px",
-										textAlign: "left", // 텍스트 왼쪽으로 정렬
-										paddingLeft: "15px", // 텍스트 좀 더 왼쪽으로 이동
-										marginTop: "25px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+										width: "100%",
+										backgroundColor: "black",
+										borderRadius: "32px",
+										display: "inline-block",
+										alignItems: "center",
+										justifyContent: "center",
+										padding: "20px", // 텍스트 좌우 여백 설정
+										boxSizing: "border-box", // 내부 여백을 요소의 크기에 포함
 									}}
 								>
-									STEP 3
-								</div>
+									<div
+										style={{
+											color: "white",
+											fontFamily: "Prompt",
+											fontSize: "22px",
+											textAlign: "left", // 텍스트 왼쪽으로 정렬
+										}}
+									>
+										STEP 3
+									</div>
 
-								{/* 이미지 (3) */}
-								<img
-									src="/intro/main3/intro_main3_image3.png" //이미지 경로 수정 10
-									alt="main3_image3" //이미지 이름 수정 10 
-									style={{
-										width: "auto", // 이미지 비율 유지
-										height: "45%", // 도형의 세로 크기의 절반
-										margin: "10px", // 여백 설정
-										marginTop: "10px", // 텍스트와 이미지를 아래로 이동
-									}}
-								/>
-								<div
-									style={{
-										color: "white",
-										fontFamily: "Pretendard-Light",
-										fontSize: "18px",
-										textAlign: "left", // 텍스트 왼쪽으로 정렬
-										paddingLeft: "15px", // 텍스트 좀 더 왼쪽으로 이동
-										lineHeight: "150%", // 문장 사이 여백을 조절합니다.
-										marginTop: "10px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
-									}}
-								>
-									사이트 접속 후, 인재풀 둘러보기
-									<br />
-									및 게시글 작성하기 등의 서비스
-									<br />
-									이용하기
+									{/* 이미지 (3) */}
+									<img
+										src="/intro/main3/intro_main3_image3.png" //이미지 경로 수정 10
+										alt="main3_image3" //이미지 이름 수정 10
+										style={{
+											width: 220, // 이미지 비율 유지
+											height: 160,
+										}}
+									/>
+									<div
+										style={{
+											color: "white",
+											fontFamily: "Pretendard-Light",
+											fontSize: "18px",
+											textAlign: "left", // 텍스트 왼쪽으로 정렬
+											lineHeight: "150%", // 문장 사이 여백을 조절합니다.
+											marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
+										}}
+									>
+										사이트 접속 후, 인재풀 둘러보기 및 게시글 작성하기 등의 서비스 이용하기
+									</div>
 								</div>
-							</div>
-						</section>
-					</div>
+							</Col>
+						</Row>
+					</Flex>
 				</div>
 			</Flex>
 			{/* (5) Footer */}
@@ -663,24 +654,16 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 				style={{
 					backgroundColor: "#002DCC", // 배경색 설정
 					textAlign: "center",
-					height: "18vh", // 약 4분의 1 높이 설정
+					paddingTop: 50,
+					paddingBottom: 50
 				}}
 			>
 				{/* 가운데 정렬된 텍스트 */}
-
-				<div style={{ marginTop: "30px" }}>
-					<img
-						src="/logo/big_whitelogo.png" // 로고 경로 수정 11 
-						alt="Logo" 
-						style={{ maxWidth: "8%", height: "auto" }}
-					/>
-				</div>
 				<div
 					style={{
 						color: "white",
 						fontFamily: "Pretendard-Light",
-						fontSize: "18px",
-						marginTop: "20px",
+						fontSize: 20,
 					}}
 				>
 					<a
@@ -692,9 +675,15 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 						www.sprinterteam.com
 					</a>
 				</div>
-				<div>
-					<br />
+				<div style={{ marginTop: 20, fontSize: 20 }}>
 					All rights reserved sprinter
+				</div>
+				<div style={{ marginTop: 25 }}>
+					<img
+						src="/logo/big_whitelogo.png" // 로고 경로 수정 11
+						alt="Logo"
+						style={{ width: 110, height: "auto" }}
+					/>
 				</div>
 			</Footer>
 		</>

@@ -3,18 +3,20 @@ import React, { FunctionComponent } from "react";
 
 interface IIntroBoxProps {
 	title: string;
+	className?: string;
 	children: any;
+	style?: any;
 	right?: boolean;
 	backgroundColor?: string; // backgroundColor prop 추가
 }
 
 const IntroBox: FunctionComponent<IIntroBoxProps> = (props) => {
-	const { title, children, right, backgroundColor } = props;  // backgroundColor 추가
+	const { title, children, className, style, right, backgroundColor } = props;  // backgroundColor 추가
 	const defaultBackgroundColor = primary;
 	const textColor = title === "테스트 진행 후 오픈" ? "black" : "white"; // 제목이 "테스트 진행 후 오픈"일 때만 텍스트 색상을 검정색으로 설정
 
 	return (
-		<div style={right ? { textAlign: "right" } : {}}>
+		<div className={className} style={{ ...style, ...(right ? { textAlign: "right" } : {}) }}>
 			<div
 				style={{
 					width: "auto",

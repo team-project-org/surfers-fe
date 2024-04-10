@@ -31,7 +31,7 @@ body {
 }
 
 .white_logo {
-	width: 162px;
+	width: 110px;
 	height: 70px;
 	background-image: url("/logo/big_whitelogo.png");
 	background-position: center;
@@ -55,6 +55,10 @@ body {
 	flex-direction: row;
 }
 
+.it_talents {
+	width: auto;
+}
+
 @media (max-width: 1000px) {
 	.left_right {
 		flex-direction: column;
@@ -65,7 +69,14 @@ body {
 	}
 	
 	.left_right > .right {
-		margin: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		margin-bottom: 0 !important;
+		margin-top: 16px !important;
+	}
+
+	.it_talents {
+		width: 100%;
 	}
 }
 
