@@ -1,6 +1,6 @@
 "use client";
 import React, { FunctionComponent } from "react";
-import { Layout, theme, Typography, Flex, Row, Col } from "antd";
+import { Layout, theme, Typography, Flex, Row, Col, Button } from "antd";
 import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
@@ -95,36 +95,34 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									style={{
 										// CTA 버튼 스타일 지정
 										width: "fit-content",
-										paddingTop: 125,
+										paddingTop: 60,
 									}}
 								>
-									<a
-										href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform"
+									<Button
+										type="primary"
+										size="large"
+										shape="round"
 										style={{
-											display: "flex", // 버튼 리다이렉션 주소 지정 및 버튼 내 텍스트 스타일
-											alignItems: "center",
-											backgroundColor: primary,
-											color: "white",
-											padding: "13px 28px",
-											borderRadius: "50px",
-											textDecoration: "none",
-											fontSize: "1.5rem", // 미디어 쿼리를 사용하여 화면 크기에 따라 동적으로 조절됨
 											fontFamily: "Pretendard-Medium",
+											height: 'auto',
+											fontSize: 24,
+    									justifyContent: 'center',
+    									alignItems: 'center'
 										}}
+										href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform"
 										target="_blank"
 									>
-										<span style={{ marginRight: "10px" }}>
-											베타서비스 이용 신청하기
-										</span>
+										베타서비스 이용 신청하기
 										<img
-											src="/icons/intro_arrowleft.png" // 이미지 경로 수정 4
-											alt="arrow_icon" // 이미지 이름 수정 4
+											src="/icons/intro_arrowleft.png"
+											alt="arrow_icon"
 											style={{
 												width: "3rem",
 												height: "3rem",
+												marginLeft: 10
 											}}
 										/>
-									</a>
+									</Button>
 								</div>
 							</Flex>
 
@@ -535,7 +533,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
 										}}
 									>
-										따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로 간편하게 내 프로필 등록하기
+										따로 이력서를 작성할 필요 없이, 기존에 관리하던 링크로
+										간편하게 내 프로필 등록하기
 									</div>
 								</div>
 							</Col>
@@ -588,7 +587,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
 										}}
 									>
-										베타서비스 오픈 후 연락처와 메일로 전송되는 사이트 링크 확인하기
+										베타서비스 오픈 후 연락처와 메일로 전송되는 사이트 링크
+										확인하기
 									</div>
 								</div>
 							</Col>
@@ -641,7 +641,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											marginTop: "30px", // 텍스트를 아래로 이동하여 이미지와 간격 조정
 										}}
 									>
-										사이트 접속 후, 인재풀 둘러보기 및 게시글 작성하기 등의 서비스 이용하기
+										사이트 접속 후, 인재풀 둘러보기 및 게시글 작성하기 등의
+										서비스 이용하기
 									</div>
 								</div>
 							</Col>
@@ -655,7 +656,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 					backgroundColor: "#002DCC", // 배경색 설정
 					textAlign: "center",
 					paddingTop: 50,
-					paddingBottom: 50
+					paddingBottom: 50,
 				}}
 			>
 				{/* 가운데 정렬된 텍스트 */}
