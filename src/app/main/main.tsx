@@ -106,6 +106,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											fontFamily: "Pretendard-Medium",
 											height: 'auto',
 											fontSize: 24,
+											display: 'inline-flex',
     									justifyContent: 'center',
     									alignItems: 'center'
 										}}
