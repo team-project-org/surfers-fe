@@ -109,8 +109,8 @@ body {
 
 	.beta_sticker {
 		position: absolute;
-		top: 80px;
-		right: -30px;
+		top: -40px;
+		right: -40px;
 		width: 8rem;
 		height: auto;
 	}

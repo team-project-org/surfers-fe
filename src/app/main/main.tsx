@@ -1,7 +1,6 @@
 "use client";
 import React, { FunctionComponent } from "react";
 import { Layout, theme, Typography, Flex, Row, Col, Button } from "antd";
-import "@/app/fonts/font.css";
 import { white, orange, primary } from "@/app/color";
 import IntroBox from "@/app/component/IntroBox";
 import MainHeader from "@/app/mainheader";
@@ -59,7 +58,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									src="/intro/main1/intro_main1_character.png" // 이미지 경로 수정 1
 									alt="main1_character" // 이미지 이름 수정 1
 									style={{
-										width: 400,
+										width: '100%',
+										maxWidth: 400,
 										height: "auto",
 									}}
 								/>
@@ -105,15 +105,19 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										style={{
 											fontFamily: "Pretendard-Regular",
 											height: 'auto',
+											width: 'auto',
 											fontSize: 24,
-											display: 'inline-flex',
+											display: 'flex',
+											whiteSpace: 'break-spaces',
     									justifyContent: 'center',
     									alignItems: 'center'
 										}}
 										href="https://docs.google.com/forms/d/e/1FAIpQLSeWhJrzkMPPpc-gRmurB45bHE3Xu8ga3-dbpfQej1NHXte9yw/viewform"
 										target="_blank"
 									>
-										베타서비스 이용 신청하기
+										<span>
+											베타서비스 이용 신청하기
+										</span>
 										<img
 											src="/icons/intro_arrowleft.png"
 											alt="arrow_icon"
@@ -227,16 +231,17 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									}
 									leftWeight={4}
 									right={
-										<Flex align={"flex-start"} justify="center">
+										<Flex align={"flex-start"} justify="center" style={{ width: '100%' }}>
 											<div
 												style={{
 													borderRadius: 27,
 													overflow: "hidden",
+													width: '100%',
 													height: 300,
 												}}
 											>
 												<iframe
-													width="300"
+													width="100%"
 													height="300"
 													src={`https://www.youtube.com/embed/bHoefwpj6L8`}
 													title="YouTube video player"
@@ -248,7 +253,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 										</Flex>
 									}
 									rightWeight={6}
-									rightStyle={{ marginLeft: 80 }}
+									rightStyle={{ marginLeft: 80, width: '100%' }}
 								/>
 							</div>
 
@@ -293,16 +298,17 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									}
 									rightWeight={6}
 									left={
-										<Flex align={"flex-start"} justify="center">
+										<Flex align={"flex-start"} justify="center" style={{ width: '100%' }}>
 											<div
 												style={{
 													borderRadius: 27,
 													overflow: "hidden",
+													width: "100%",
 													height: 300,
 												}}
 											>
 												<iframe
-													width="400"
+													width="100%"
 													height="300"
 													src={`https://www.youtube.com/embed/f8YqprA7hms`}
 													title="YouTube video player"
