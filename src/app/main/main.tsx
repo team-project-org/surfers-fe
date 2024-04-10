@@ -349,17 +349,6 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 													<br />
 													상세 프로필 페이지 내 협업 역량 평가표로 확인해보세요!
 												</div>
-												{/* 이미지 */}
-												<img
-													src="/teamworkimage.png"
-													alt="alerttextbox"
-													style={{
-														width: "43%", // 도형의 가로 크기의 절반
-														height: "auto", // 이미지 비율 유지
-														float: "right",
-														marginTop: "-315px",
-													}}
-												/>
 												{/* (3)-3 세번째 기능 설명 아래 안내 메세지*/}
 												<div
 													style={{
@@ -374,7 +363,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 												>
 													{/* 느낌표 아이콘 */}
 													<img
-														src="alerticon.png"
+														src="icons/intro_alerticon.png"
 														alt="alerticon"
 														style={{
 															width: "30px",
@@ -409,7 +398,15 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 														height: 300,
 													}}
 												>
-													{/** TODO 여기 이미지 빠짐 */}
+													{/* 이미지 */}
+													<img
+														src="/intro/main2/intro_main2_image.png"
+														alt="teamwork"
+														style={{
+															width: "100%", // 도형의 가로 크기의 절반
+															height: "auto", // 이미지 비율 유지
+														}}
+													/>
 												</div>
 											</Flex>
 										}

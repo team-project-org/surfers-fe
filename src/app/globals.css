@@ -25,7 +25,7 @@ body {
 .logo {
 	width: 200px;
 	height: 70px;
-	background-image: url("/logo.png");
+	background-image: url("/logo/bluelogo.png");
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -33,7 +33,7 @@ body {
 .white_logo {
 	width: 162px;
 	height: 70px;
-	background-image: url("/logowhite.png");
+	background-image: url("/logo/big_whitelogo.png");
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
