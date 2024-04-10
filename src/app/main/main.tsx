@@ -44,7 +44,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									position: "relative",
 									textAlign: "center",
 									flexDirection: "column",
-									backgroundImage: "url('/ring.png')",
+									backgroundImage: "url('/intro/main1/intro_main1_sticker2.png')", // 이미지 경로 수정 3 
 									backgroundSize: "cover",
 									padding: "40px 0",
 									backgroundPosition: "center",
@@ -52,18 +52,18 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 									width: "100%",
 								}}
 							>
-								{/* (1) 첫번째 메인 설명 글과 버튼 작업  */}
+								{/* (1) 첫번째 메인 설명 글과 버튼 작업 */}
 								<img
-									src="/character.png" // 캐릭터 3명 이미지 스타일 지정
-									alt="character"
+									src="/intro/main1/intro_main1_character.png" // 이미지 경로 수정 1
+									alt="main1_character" // 이미지 이름 수정 1 
 									style={{
 										width: 400,
 										height: "auto",
 									}}
 								/>
 								<img
-									src="/sticker.png" // Beta 스티커 이미지 스타일 지정
-									alt="sticker"
+									src="/intro/main1/intro_main1_sticker.png" // 이미지 경로 수정 2 
+									alt="main1_sticker" // 이미지 이름 수정 2
 									className="beta_sticker"
 								/>
 								<Typography.Title
@@ -115,8 +115,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 											베타서비스 이용 신청하기
 										</span>
 										<img
-											src="/ei_arrow-left.png"
-											alt="button-icon"
+											src="/icons/intro_arrowleft.png" // 이미지 경로 수정 4 
+											alt="arrow_icon" // 이미지 이름 수정 4 
 											style={{
 												width: "3rem",
 												height: "3rem",
@@ -138,7 +138,7 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 							>
 								<div
 									style={{
-										backgroundImage: "url('/mainimage2.png')",
+										backgroundImage: "url('/intro/main2/intro_main2_character.png')", //이미지 경로 수정 5 
 										backgroundSize: "contain",
 										backgroundRepeat: "no-repeat",
 										backgroundPosition: "center",
@@ -517,8 +517,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 
 								{/* 이미지 (1) */}
 								<img
-									src="/Serviceimage1.png"
-									alt="ServiceInfoImage1"
+									src="/intro/main3/intro_main3_image1.png" //이미지 경로 수정 8
+									alt="main3_image1" //이미지 이름 수정 8
 									style={{
 										width: "90%", // 도형의 가로 크기의 절반ㄹ
 										height: "auto", // 이미지 비율 유지
@@ -573,8 +573,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 
 								{/* 이미지 (2) */}
 								<img
-									src="/Serviceimage2.png"
-									alt="ServiceInfoImage2"
+									src="/intro/main3/intro_main3_image2.png" //이미지 경로 수정 9
+									alt="main3_image2" //이미지 이름 수정 9
 									style={{
 										width: "auto", // 이미지 비율 유지
 										height: "45%", // 도형의 세로 크기의 절반
@@ -629,8 +629,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 
 								{/* 이미지 (3) */}
 								<img
-									src="/Serviceimage3.png"
-									alt="ServiceInfoImage3"
+									src="/intro/main3/intro_main3_image3.png" //이미지 경로 수정 10
+									alt="main3_image3" //이미지 이름 수정 10 
 									style={{
 										width: "auto", // 이미지 비율 유지
 										height: "45%", // 도형의 세로 크기의 절반
@@ -672,8 +672,8 @@ const Main: FunctionComponent<IMainProps> = (props) => {
 
 				<div style={{ marginTop: "30px" }}>
 					<img
-						src="/logowhite.png"
-						alt="Logo"
+						src="/logo/big_whitelogo.png" // 로고 경로 수정 11 
+						alt="Logo" 
 						style={{ maxWidth: "8%", height: "auto" }}
 					/>
 				</div>
