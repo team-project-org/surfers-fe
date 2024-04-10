@@ -3,7 +3,9 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "./globals.css";
 import Provider from "./utils/Provider";
 import { ConfigProvider } from "antd";
+import { GoogleTagManager } from '@next/third-parties/google';
 import { transparent, primary, black, white } from "@/app/color";
+import { GTM_TAG } from "@/app/contants";
 
 export const metadata: Metadata = {
 	title: "스프린터",
@@ -20,6 +22,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<link rel="icon" href="/favicon/favicon-32x32.png" sizes="any" />
+			<GoogleTagManager gtmId={GTM_TAG} />
 			<body>
 				<AntdRegistry>
 					<Provider>
